@@ -1,0 +1,629 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Oswald',sans-serif;
+    font-weight: 300;
+    color: #666666;
+    background: url(../img/mbs-bg.jpg);
+}
+
+header {
+    display: block;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    padding: 8px 30px;
+    background: rgba(0,0,0,0.5);
+}
+
+.muda-header {
+    height: 80px;
+    padding: 17px 30px;
+    background: rgb(0,0,0);
+}
+
+.transicao {
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.sombra {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+}
+
+nav.menu-principal {
+    text-transform: uppercase;
+    font-family: "oswald_",sans-serif;
+    font-size: 0.7em;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+nav.menu-principal h1 {
+    display: block;
+    width: 160px;
+    height: 45px;
+    text-align: center;
+    text-indent: -9999px;
+    background: url(../img/mbs-meu-nome.png) 0 0 no-repeat;
+}
+
+nav.menu-principal h1:hover {
+    background: none;
+    background: url(../img/mbs-meu-nome.png) 0 -42px no-repeat;
+}
+
+nav.menu-principal a {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: top;
+    color: #fff;
+}
+
+nav.menu-principal a:hover {
+    color: #FFCC00;
+}
+
+nav.menu-principal ul {
+    display: block;
+    float: right;
+    height: 45px;
+}
+
+nav.menu-principal ul li {
+    display: inline-block;
+    height: 45px;
+    padding: 14px 32px 10px 32px;
+}
+
+/*HOME*/
+
+.fundo-parallax {
+    padding: 0 0 40px 0;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.internas {
+    z-index: 1000;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: #000;
+}
+
+.centralizar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.home,
+.pessoal,
+.profissional,
+.portifolio,
+.contato {
+    display: block;
+    position: relative;
+    background-size: cover;
+}
+
+.home {
+    height: 100%;
+    background: url(../img/mbs-home-bg.jpg) 0 0 fixed;
+    background-size: cover;
+}
+
+.pessoal {
+    height: 100%;
+    text-align: center;
+    background: url(../img/mbs-bg.jpg) fixed;
+}
+
+.home-conteudo {
+    width: 370px;
+    height: 170px;
+    text-align: center;
+}
+
+.home-conteudo small {
+    display: inline-block;
+    clear: both;
+    margin: 5px 0;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.7);
+    color: #fff;
+}
+
+/*SETA*/
+
+.ff {
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 37px;
+    margin: 0 auto;
+    text-indent: -9999px;
+    background: url(../img/mbs-seta-branca.png) center no-repeat;
+}
+
+.seta-laranja {
+    background: url(../img/mbs-seta-laranja.png) center no-repeat;
+}
+
+.centralizado {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 96%;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+/*PESSOAL*/
+
+.section-cabecalho {
+    display: block;
+    width: 100%;
+    height: 90px;
+    text-align: center;
+}
+
+.section-cabecalho__comfundo {
+    height: 135px;
+    padding: 20px;
+    color: #fff;
+    background: rgba(0,0,0,0.8);
+}
+
+.section-cabecalho h2 {
+    font-size: 2.5em;
+    color: #ff9900;
+}
+
+.section-cabecalho__comfundo h2 {
+    color: #fff;
+}
+
+.section-cabecalho small {
+    display: block;
+    margin-top: 10px;
+}
+
+.pessoal p {
+    display: block;
+    width: 90%;
+    margin: 0 auto 50px auto;
+    line-height: 1.3em;
+}
+
+strong {
+    font-weight: 400;
+}
+
+.redes-sociais li {
+    display: inline-block;
+    margin: 0 25px;
+}
+
+.redes-sociais li a {
+    display: inline-block;
+    width: 45px;
+    height: 48px;
+    text-indent: -9999px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.redes-sociais li a[href *="linkedin"] {
+    background: url("../img/redes-sociais.png") 0 0 no-repeat;
+}
+
+.redes-sociais li a[href *="facebook"] {
+    background: url("../img/redes-sociais.png") -45px 0 no-repeat;
+}
+
+.redes-sociais li a[href *="twitter"] {
+    background: url("../img/redes-sociais.png") -90px 0 no-repeat;
+}
+
+.redes-sociais li a[href *="instagram"] {
+    background: url("../img/redes-sociais.png") -135px 0 no-repeat;
+}
+
+.redes-sociais li a[href *="pinterest"] {
+    background: url("../img/redes-sociais.png") -180px 0 no-repeat;
+}
+
+.redes-sociais li a:hover {
+    -webkit-transform: translate(0px,-15px);
+    -moz-transform: translate(0px,-15px);
+    -ms-transform: translate(0px,-15px);
+    -o-transform: translate(0px,-15px);
+    transform: translate(0px,-15px);
+}
+
+/*    PROFISSIONAL  */
+
+.profissional {
+    display: block;
+    height: auto;
+    padding: 80px 0 0 0;
+    min-height: 100%;
+    text-align: left;
+    color: #fff;
+    background: url(../img/mbs-profissional-bg.jpg) 0 0 fixed no-repeat;
+}
+
+.empresas {
+    display: inline-block;
+    width: 55%;
+    height: auto;
+    margin: 10px 0 20px 0;
+    vertical-align: top;
+}
+
+.empresas-habilidades {
+    display: inline-block;
+    width: 44%;
+    margin: 25px 0 0 0;
+    padding: 0 0 0 130px;
+    min-height: 490px;
+    vertical-align: top;
+    background: url(../img/mbs-profissional-escala.png) top left no-repeat;
+}
+
+.empresas-habilidades small {
+    display: block;
+    font-size: 1.4em;
+}
+
+.empresas li {
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+    margin: 10px 10px;
+    padding: 10px 22px;
+    text-align: center;
+    vertical-align: top;
+    background: rgba(0,0,0,0.8);
+}
+
+.empresas li p {
+    display: block;
+    padding: 5px 5px;
+    font-size: 0.8em;
+    line-height: 1.35;
+}
+
+.empresas li p:nth-child(2) {
+    font-size: 0.75em;
+}
+
+.empresas li p:nth-child(3) {
+    font-size: 0.65em;
+}
+
+.firma {
+    color: #FFCC00;
+}
+
+.grafico,
+.grafico-fechado,
+.grafico-legenda {
+    display: block;
+    width: 100%;
+    height: 390px;
+    margin: 5px 0 0 0;
+}
+
+.grafico-legenda {
+    height: auto;
+    margin: 25px 0 0 0;
+}
+
+.grafico li,
+.grafico-fechado li {
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    margin: 35px 4% 0 4%;
+    text-align: center;
+    text-indent: -9999px;
+    vertical-align: bottom;
+    background: #000;
+    background: -webkit-gradient(linear,left top,right top,from(#FF9900), to(#ffcc00) );
+    background: -webkit-linear-gradient(top,#FF9900,#ffcc00);
+    background: -moz-linear-gradient(top,#FF9900,#ffcc00);
+    background: -o-linear-gradient(top,#FF9900,#ffcc00);
+    background: -ms-linear-gradient(top,#FF9900,#ffcc00);
+    background: linear-gradient(top,#FF9900,#ffcc00);
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease;    
+}
+
+.grafico li:nth-child(1) {
+    height: 90%;
+}
+
+.grafico li:nth-child(2) {
+    height: 80%;
+}
+
+.grafico li:nth-child(3) {
+    height: 50%;
+}
+
+.grafico li:nth-child(4) {
+    height: 95%;
+}
+
+.grafico li:nth-child(5) {
+    height: 25%;
+}
+
+.grafico-fechado li {
+    margin-top: 370px;
+}
+
+.grafico-fechado li:nth-child(1) {
+    height: 10%;
+}
+
+.grafico-fechado li:nth-child(2) {
+    height: 10%;
+}
+
+.grafico-fechado li:nth-child(3) {
+    height: 10%;
+}
+
+.grafico-fechado li:nth-child(4) {
+    height: 10%;
+}
+
+.grafico-fechado li:nth-child(5) {
+    height: 10%;
+}
+
+.grafico-legenda li {
+    display: inline-block;
+    width: 10%;
+    height: auto;
+    margin: 0 4%;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.outras {
+    display: block;
+    height: 100%;
+    padding: 60px 0;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    color: #666;
+    background-image: url(../img/mbs-profissional-outras-bg.png), url(../img/mbs-bg.jpg);
+    background-position: center center,center center;
+    background-repeat: no-repeat repeat;
+}
+
+.outras li {
+    display: inline-block;
+    width: 39%;
+    margin: 0 5%;
+    text-align: center;
+    vertical-align: top;
+}
+
+.outras h3 {
+    margin: 0 0 20px 0;
+    font-size: 1.3em;
+    color: #ff9900;
+}
+
+.outras p {
+    margin: 0 0 35px 0;
+    line-height: 1.3;
+}
+
+.outras small {
+    display: block;
+    font-weight: 400;
+}
+
+/*    PORTIFÓLIO  */
+
+.portifolio {
+    display: block;
+    height: auto;
+    padding: 80px 0 100px 0;
+    min-height: 100%;
+    text-align: left;
+    color: #fff;
+    background: rgb(0,0,0);
+}
+
+.jobs {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.jobs li {
+    display: inline-block;
+    position: relative;
+    width: 33.333333333%;
+    margin-left: -0.25%;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.jobs .capa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 35% 0;
+    opacity: 0;
+    background: rgba(0,0,0,0.8);
+    filter: alpha(opacity=0);
+}
+
+.jobs li:hover > a div {
+    padding: 26% 0;
+    opacity: 1;
+    filter: alpha(opacity=1);
+}
+
+.jobs li:hover > a img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.jobs li img {
+    width: 100%;
+}
+
+.jobs a {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.jobs a p:nth-child(1) {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    font-size: 1.2em;
+}
+
+.jobs a p:nth-child(2) {
+    width: 30px;
+    height: 30px;
+    margin: 15px auto;
+    border: 2px solid #fc0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    color: #fc0;
+}
+
+.jim-carrey {
+    display: block;
+    width: 100%;
+	height: auto;
+    padding: 40px 0;
+    color: #666666;
+    background: #d9d9d9;
+	-webkit-transition: visibility 0.4s ease;
+    -moz-transition: visibility 0.4s ease;
+    -o-transition: visibility 0.4s ease;
+    transition: visibility 0.4s ease;
+}
+
+.jobs-abertos img {
+    display: inline-block!important;
+    width: 45%;
+    margin: 0 30px 0 60px;
+    padding: 3px;
+    vertical-align: top;
+}
+
+.jobs-abertos a {
+    color: #f90;
+}
+
+.jobs-abertos p {
+    display: inline-block;
+    width: 35%;
+    height: auto;
+    padding: 30px 0;
+    line-height: 1.3;
+    vertical-align: top;
+}
+
+
+
+.jobs-abertos ul li {
+    background: #d9d9d9;
+}
+
+.jobs-abertos small {
+    display: inline-block;
+    width: 120px;
+    margin-right: 5px;
+    text-align: right;
+    font-weight: 400;
+}
+
+/* CONTATO  */
+
+.contato {
+    height: 100%;
+    margin: 0!important;
+    padding: 0!important;
+    text-align: center;
+    background: url(../img/mbs-contato-bg.jpg) 0 0 fixed;
+}
+
+.contato h3 {
+    display: block;
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+    color: #fff;
+}
+
+.contato small {
+    color: #fff;
+}
+
+.contato a {
+    text-decoration: none;
+    color: #ff0;
+}
+
+.contato address {
+    display: block;
+    margin: 50px;
+    font-size: 1.5em;
+    line-height: 1.3;
+    color: #ff0;
+}
+
+.rw {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 87px;
+    margin: 0 auto;
+    padding: 35px 0 0 0;
+    text-indent: 0;
+    color: #fff;
+    background: url(../img/mbs-seta-voltar.png) top center no-repeat;
+}
+
+a.rw {
+    color: #fff;
+}
