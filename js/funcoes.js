@@ -54,8 +54,9 @@
             console.log(numVetor);
 
             
-                 $('.jim-carrey').css("visibility", "visible");
+                $('.jim-carrey').css("visibility", "visible");
                 $('.jim-carrey').css("height", "auto");
+                $('.jim-carrey').css("padding", "40px 0 35px 0");
                 $('.jim-carrey').css("overflow", "show");
 
             return false;
