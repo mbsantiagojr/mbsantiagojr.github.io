@@ -18,6 +18,7 @@
 		onSliderLoad: function() {
                 $('.jim-carrey').css("visibility", "hidden");
                 $('.jim-carrey').css("height", "0");
+                $('.jim-carrey').css("padding", "0");			
                 $('.jim-carrey').css("overflow", "hidden");
             }
     });
@@ -82,6 +83,7 @@
             $('body,html').animate( {scrollTop:posicaoVetor},1000) ;     
                 $('.jim-carrey').css("visibility", "hidden");
                 $('.jim-carrey').css("height", "0");
+                $('.jim-carrey').css("padding", "0");			
                 $('.jim-carrey').css("overflow", "hidden");
 
             return false;
@@ -109,6 +111,7 @@
             $('body,html').animate( {scrollTop:posicaoVetor},1000) ;   
                 $('.jim-carrey').css("visibility", "hidden");
                 $('.jim-carrey').css("height", "0");
+                $('.jim-carrey').css("padding", "0");			
                 $('.jim-carrey').css("overflow", "hidden");
             return false;
 
