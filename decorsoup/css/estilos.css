@@ -1,0 +1,428 @@
+/*************** ARQUIVOS DE SCSS **************/
+html, body {
+  width: 100%;
+  height: 100%; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-weight: normal; }
+
+a {
+  text-decoration: none; }
+
+li {
+  margin-right: -4px; }
+
+strong {
+  font-weight: bold; }
+
+strong {
+  font-weight: 700; }
+
+body {
+  color: #7c7c7c;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: #fff; }
+
+header {
+  display: block;
+  width: 100%;
+  height: 205px;
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#e0e0e0), to(#d9d8dd));
+  background: -webkit-radial-gradient(circle, #e0e0e0, #d9d8dd);
+  background: -moz-radial-gradient(circle, #e0e0e0, #d9d8dd);
+  background: -o-radial-gradient(circle, #e0e0e0, #d9d8dd);
+  background: -ms-radial-gradient(circle, #e0e0e0, #d9d8dd);
+  background: radial-gradient(circle, #e0e0e0, #d9d8dd);
+  background-color: #d9d8dd;
+  padding: 34px 9.4% 0 9.4%; }
+  header section {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto; }
+    header section:first-child {
+      border-bottom: 1px solid #3969bd;
+      padding: 0 0 20px 0; }
+    header section a {
+      display: inline-block;
+      width: 532px;
+      height: 78px;
+      padding: 0 0 0 20px; }
+      header section a h1 {
+        width: 332px;
+        height: 78px;
+        text-indent: -9999px;
+        background: url("../img/dcs-logo.png") center center no-repeat; }
+    header section div.perfil {
+      display: inline-block;
+      position: absolute;
+      right: 2%;
+      width: 346px;
+      height: 80px; }
+      header section div.perfil div {
+        display: inline-block;
+        width: 143px;
+        margin: 0 5px;
+        font-size: 1.1em;
+        vertical-align: top; }
+        header section div.perfil div span {
+          display: block;
+          margin: 0 0 15px 0; }
+        header section div.perfil div a {
+          display: inline-block;
+          width: 100%;
+          margin: 0 auto;
+          height: auto;
+          padding: 8% 0;
+          background: #ababb3;
+          text-transform: uppercase;
+          color: white;
+          text-align: center;
+          font-size: 1em;
+          -webkit-box-shadow: 0px 0px 1px #000000;
+          -moz-box-shadow: 0px 0px 1px #000000;
+          box-shadow: 0px 0px 1px #000000;
+          -webkit-transition: all 0.4s ease;
+          -moz-transition: all 0.4s ease;
+          -o-transition: all 0.4s ease;
+          transition: all 0.4s ease; }
+          header section div.perfil div a:hover {
+            background: #5c82c0; }
+    header section nav {
+      display: inline-block;
+      margin: 0 -4px 0 0;
+      width: 64%;
+      height: 70px; }
+      header section nav ul {
+        display: block;
+        width: 87%;
+        margin: 0 auto; }
+        header section nav ul li {
+          display: inline-block;
+          vertical-align: top;
+          width: 21%;
+          height: 70px;
+          padding: 27px 0; }
+          header section nav ul li:nth-child(1) {
+            width: 37%; }
+          header section nav ul li a {
+            display: block;
+            width: 96%;
+            height: auto;
+            text-align: center;
+            color: #666;
+            text-transform: uppercase;
+            font-size: 1.25em;
+            font-weight: 600;
+            -webkit-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            transition: all 0.4s ease; }
+            header section nav ul li a:hover {
+              color: #5c82c0;
+              margin: -4px 0 0 0; }
+    header section div.busca {
+      display: inline-block;
+      vertical-align: top;
+      text-align: right;
+      width: 360px;
+      margin: 20px 0 0 0;
+      padding: 0 5% 0 0; }
+      header section div.busca form input[type="text"] {
+        border: 0;
+        display: inline-block;
+        width: 225px;
+        height: 30px; }
+      header section div.busca form input[type="submit"] {
+        display: inline-block;
+        vertical-align: top;
+        background: url(../img/dcs-icn-lupa.png) center center no-repeat;
+        background-color: #5c82c0;
+        height: 30px;
+        width: 66px;
+        padding: 5px 0px;
+        text-align: center;
+        border: none;
+        margin: 0 0 0 5px;
+        text-indent: -9999px;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease; }
+        header section div.busca form input[type="submit"]:hover {
+          background-color: #ababb3; }
+
+main {
+  display: inline-block;
+  width: 100%;
+  min-height: 200px;
+  padding: 0 9.4%; }
+  main section {
+    display: block;
+    width: 100%;
+    margin: 0 0 30px 0; }
+    main section div.carrossel {
+      display: inline-block;
+      vertical-align: top;
+      width: 74.2%;
+      height: 416px;
+/*      min-width: 749px;*/
+      margin: 0 -5px 0 0; }
+      main section div.carrossel img {
+        display: block;
+        width: 100%; }
+    main section div.montelook {
+      display: inline-block;
+      vertical-align: top;
+      text-align: right;
+      width: 25.8%;
+      /*min-width: 261px;*/ }
+  main section.looks h2 {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 1.75em;
+    margin: 0 0 15px 20px;
+    color: #8c8c8c; }
+  main section.looks ul {
+    display: block;
+    margin: 0 0 15px 0; }
+    main section.looks ul li {
+      display: inline-block;
+      vertical-align: top;
+      border: 1px solid #bbb;
+      width: 32%;
+      height: auto;
+      padding: 10px; }
+      main section.looks ul li:nth-child(even) {
+        margin: 0 2%; }
+      main section.looks ul li img.produto {
+        display: block;
+        margin: 0 auto;
+        width: 100%; }
+      main section.looks ul li small {
+        display: block;
+        text-align: right;
+        width: 100%;
+        padding: 7px 0;
+        border-bottom: 1px solid #999;
+        margin: 0 0 10px 0;
+        font-size: 0.9em; }
+        main section.looks ul li small:nth-child(5) {
+          text-align: left;
+          padding: 7px 0 7px 10px; }
+        main section.looks ul li small:last-child {
+          text-align: right;
+          padding: 0;
+          margin: 0;
+          text-transform: uppercase;
+          border: none; }
+          main section.looks ul li small:last-child a {
+            background-image: none;
+            padding: 5px 10px;
+            margin: 0 0 0 9px; }
+            main section.looks ul li small:last-child a:first-child {
+              margin: 0 -7px 0 0; }
+        main section.looks ul li small a {
+          display: inline-block;
+          text-align: center;
+          color: white;
+          padding: 5px 28px 5px 4px;
+          background-color: #97B6E2;
+          background-image: url(../img/dcs-icn-fav.png);
+          background-position: right 0;
+          background-repeat: no-repeat;
+          -webkit-transition: all 0.4s ease;
+          -moz-transition: all 0.4s ease;
+          -o-transition: all 0.4s ease;
+          transition: all 0.4s ease; }
+          main section.looks ul li small a:hover {
+            background-color: #f00; }
+      main section.looks ul li h3 {
+        font-size: 1em;
+        text-transform: none;
+        font-weight: bold;
+        padding: 0 0 0 10px; }
+      main section.looks ul li p {
+        padding: 10px; }
+      main section.looks ul li img.usuario {
+        vertical-align: top;
+        display: inline-block; }
+  main section.mais {
+    text-align: center;
+    height: 40px; }
+    main section.mais a {
+      display: inline-block;
+      width: auto;
+      margin: 0 auto;
+      padding: 10px 55px;
+      background: #5c82c0;
+      text-transform: uppercase;
+      color: white;
+      text-align: center;
+      font-size: 1.3em;
+      -webkit-box-shadow: 0px 0px 1px #000000;
+      -moz-box-shadow: 0px 0px 1px #000000;
+      box-shadow: 0px 0px 1px #000000; }
+
+.painel-compacto {
+  display: none !important; }
+
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+  bottom: 8px !important; }
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #ccc !important;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: #fff !important; }
+
+.bx-wrapper .bx-viewport {
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+  border: none !important;
+  left: -5px;
+  background: none !important; }
+
+footer {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#e6e6e8), to(#dbdadf));
+  background: -webkit-radial-gradient(circle, #e6e6e8, #dbdadf);
+  background: -moz-radial-gradient(circle, #e6e6e8, #dbdadf);
+  background: -o-radial-gradient(circle, #e6e6e8, #dbdadf);
+  background: -ms-radial-gradient(circle, #e6e6e8, #dbdadf);
+  background: radial-gradient(circle, #e6e6e8, #dbdadf);
+  background-color: #dbdadf;
+  border-bottom: 13px solid #a8a8a8;
+  padding: 20px 0;
+  font-size: 0.95em; }
+  footer p.cprght {
+    display: block;
+    text-align: center;
+    width: auto;
+    margin: 30px auto 0 auto; }
+  footer ul {
+    display: block;
+    width: 82.2%;
+    margin: 0 auto; }
+    footer ul li {
+      display: inline-block;
+      vertical-align: top;
+      width: 41.33%;
+      height: 110px;
+      padding: 20px 0;
+      border-right: 1px dotted #aaa; }
+      footer ul li a {
+        display: inline-block;
+        width: 50%;
+        margin: 0 -5px 20px 0;
+        color: #587dc3;
+        text-transform: uppercase;
+        padding: 0 0 0 20px; }
+      footer ul li:nth-child(2) {
+        width: 39.33%;
+        text-align: center; }
+        footer ul li:nth-child(2) form {
+          text-align: left;
+          display: inline-block;
+          width: 340px; }
+        footer ul li:nth-child(2) h2 {
+          display: inline-block;
+          width: auto;
+          margin: 0 0 5px 0;
+          color: #587dc3; }
+        footer ul li:nth-child(2) input[type="email"] {
+          border: 0;
+          width: 225px;
+          height: 20px;
+          font-size: 0.9em; }
+        footer ul li:nth-child(2) input[type="submit"] {
+          font-size: 0.9em;
+          background-color: #99B6E0;
+          height: 20px;
+          width: auto;
+          padding: 0 15px;
+          text-align: center;
+          border: none;
+          margin: 0 0 0 5px;
+          color: white; }
+      footer ul li:nth-child(3) {
+        border: none;
+        width: 19.33%; }
+
+.redessociais {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0px 15px; }
+
+.redessociais li {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 3px;
+  border: none !important;
+  width: 32px !important;
+  height: 32px;
+  padding: 0 !important; }
+
+.redessociais li a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  .redessociais li a:hover {
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    filter: grayscale(1); }
+
+.redessociais li a[href*="facebook"] {
+  background: url("../img/dcs-icn-redessociais.png") 0 0 no-repeat; }
+
+.redessociais li a[href*="twitter"] {
+  background: url("../img/dcs-icn-redessociais.png") -32px 0 no-repeat; }
+
+.redessociais li a[href*="instagram"] {
+  background: url("../img/dcs-icn-redessociais.png") -64px 0 no-repeat; }
+
+.redessociais li a[href*="pinterest"] {
+  background: url("../img/dcs-icn-redessociais.png") -96px 0 no-repeat; }
+
+.assinatura {
+  display: inline-block;
+  position: absolute;
+  right: 9.8%;
+  bottom: 40px; }
+
+/***********************************************/
+
+/*# sourceMappingURL=estilos.css.map */
