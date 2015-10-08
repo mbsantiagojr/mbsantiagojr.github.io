@@ -1,0 +1,180 @@
+header {
+    display: block;
+    width: 100%;
+    height: 60px;
+//    background: rgba(0,0,0,0.4); 
+    padding: 0 4%;
+    position: fixed;
+    z-index: 99999;
+    @include transicao(0.6s);
+    
+    section {
+        
+        display: block;
+        height: inherit;
+
+        
+        a.logo {
+            display: inline-block;
+            vertical-align: top;
+            height: 79px;
+            width: auto;
+            margin: 0 20px 0 0;
+            
+             h1 {
+                text-indent: -9999px;
+                display: inline-block;
+                vertical-align:middle;
+                width: 129px;
+                height: 79px;
+                background: url(../img/b2u-logo-b.png) center 11px no-repeat;
+                @include transicao(0.4s);
+            }   
+            
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                width: auto;
+                height: 30px;
+                color: white;
+                padding: 10px;
+                
+                small {
+                    color: $laranja;
+                    font-weight: bold;
+                }
+            }
+        }
+        
+        nav {
+            display: inline-block;
+            vertical-align: top;
+            position: absolute;
+            width: 62%;
+            right: 0;
+            height: 60px;
+
+            
+            ul {
+                display: block;
+                
+                li {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 19.66667%;
+                    margin: 0 -5px 0 0;
+                    text-align: center;
+                    height: inherit;
+                    
+                    &:hover > .submenu {
+                        display: block; 
+                    }
+                    
+                    &:first-child {
+                        width: 10.66667%;
+                    }  
+                    
+                    &:last-child {
+                        width: 10.66667%;
+                    }
+
+                    a {
+                        display: block;
+                        font-family: $fonte-titulos;
+                        text-transform: uppercase;
+                        font-size: 0.95em;
+                        font-weight: 300;
+                        color: white;
+                        width: 100%;
+                        height: 60px;
+                        padding: 22px;
+                        letter-spacing: 1px;
+                        @include transicao(0.2s);
+                        text-shadow: 1px 1px 0px #000000;
+
+                        
+                        &:hover {
+                            border-bottom: 8px solid rgba(245, 131, 0, 0.95);
+                        }                        
+  
+                        
+                    }
+                    
+                    div.submenu {
+                        display: none;
+                        width: 100%;
+                        height: auto;
+                        position: absolute;
+                        left: 0;
+                        background: rgba(0,0,0,0.6);
+                        @include transicao(0.2s);
+
+                        
+                        ul {
+                            display: block;
+                            width: 100%;
+                            @include transicao(0.4s);
+                            border-top: 1px solid $laranja;
+
+
+                            li {
+                                float: left;
+                                width: 16.66666666666667%;
+                                height: 100%;
+                                margin: 0;
+
+                                a {
+                                    display: block;
+                                    height: 100%;
+                                    width: 100%;
+                                    color: white;
+                                    padding: 11px 0;
+                                    border: none;
+                                    text-shadow: none;
+                                    margin: 0;
+
+                                    &:hover {
+                                        background: rgba(245, 131, 0, 0.95);
+                                    }
+
+
+                                }
+                            }
+                        }
+                    
+                    }
+                    
+                    
+                    
+                }
+            }
+        }
+        
+
+    }
+}
+
+.muda-header {
+    background: rgba(0,0,0,0.9);
+
+    
+    section {
+        a.logo {
+                    height: 47px;
+        }
+    }
+    
+    h1:nth-of-type(1){
+        background-size: 81px 40px;
+        background-position: center center;
+        height: 59px;
+    }
+    
+    span:nth-of-type(1) {
+        display: none;
+    }
+    
+      div.submenu:nth-of-type(1) {
+        background: rgba(0,0,0,1);
+      }
+}

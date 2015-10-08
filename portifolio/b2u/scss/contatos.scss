@@ -1,0 +1,174 @@
+/* ====================== [ Form ] ====================== */
+
+.contato {
+	display: block;
+	color: $cor-texto;
+	
+	strong {
+	}
+}
+
+
+form { 
+    display: block;
+    position: relative;
+    margin: 20px 0px; 
+}
+
+form label {
+    display: block;
+    margin: 4px 0;
+    color: $cor-fundo;
+    font-size: 1em;
+}
+
+form input,
+textarea {
+    width: 100%;
+    height: 30px;
+    margin: 0 0 20px 0;
+    color: #555;
+    background: #fff;
+    border: 1px dotted #aaa;
+	font-family: $fonte-principal;
+	padding: 3px 10px;
+}
+
+form input:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid $cor-fundo; }
+
+form textarea {
+    height: 100%;
+    height: 182px;
+    color: #555;
+	font-family: $fonte-principal;
+	padding: 3px 10px;
+
+}
+
+form > div {
+    width: 500px;
+}
+
+address a {
+    color: $cor-texto!important;  
+    text-decoration: none;  
+}
+
+address a:hover {
+    text-decoration: underline;   
+} 
+
+
+.botao-form {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: $cor-fundo;
+    clear: both;
+    cursor: pointer;
+}
+
+.contato-titulo {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal;
+    color: #ffc;
+}
+
+#form-esquerda { 
+    display: block;
+    width: 40%;
+    float: left;
+    position: relative;
+    padding: 0 50px 0 0;
+} 
+
+#form-direita {
+    display: block;
+    width: 60%;
+    float: left;
+    position: relative;
+} 
+
+
+.form-resposta {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: rgba(0,0,0,0.9); 
+	z-index: 99999;
+	line-height: 1.6;
+
+	
+	section {
+		display: block;
+		position: relative;
+		width: 500px;
+		height: auto;
+		padding: 20px 30px;
+		background: #fff;
+		border: 6px solid rgba(0,0,0,0.2);
+		@include borda-redonda(10px);
+		text-align: center;
+		
+		&:hover {
+			border: 6px solid #fff; 
+
+			
+			a {
+							color: white;
+			}
+
+		}
+		
+		a {
+			display: block;			
+		}
+	}
+}
+
+.enviar-form {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 4.25em;
+    padding: .5em 0 .3em;
+    border-radius: .8em .8em 0 0;
+    text-align: center;
+    font-family: "neo_sans_stdregular";
+    color: #FFF;
+    background-color: #4986c2;
+}
+
+.enviar-form a {
+    display: block;
+    position: relative;
+    width: 18em;
+    margin: .5em auto 0;
+    padding: .5em 0;
+    border-radius: .5em;
+    font-size: .8em;
+    color: #4986c2;
+    background-color: #FFF;
+}
+
+.enviar-form a:hover,
+.enviar-form a:active {
+    border: .15em dashed #FFF;
+    color: #FFF;
+    background-color: #4986c2;
+}
+
+.form-enviado {
+    display: block;
+}

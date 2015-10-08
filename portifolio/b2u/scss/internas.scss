@@ -1,0 +1,24 @@
+.botao {
+    display: inline-block;
+    width: auto;
+    font-size: 1.2em;
+    margin: 0 auto;
+    padding: 5px 20px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    color: $marsala;
+    clear: both;
+    cursor: pointer;
+    border: 1px solid $marsala;
+    @include transicao(0.3s);
+    
+    &:hover {
+        color: white;
+        background: $marsala;
+        padding: 5px 36px;
+
+    }
+}
+
