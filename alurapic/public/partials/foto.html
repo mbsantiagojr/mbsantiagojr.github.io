@@ -1,0 +1,41 @@
+<div class="jumbotron jumbotron-extras">
+    <h1 class="text-center">AluraPic</h1>
+</div>
+
+<!-- public/partials/foto.html -->
+
+<div class="page-header text-center">
+    <h1>{{foto.titulo}}</h1>
+</div>
+
+<p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+
+<form novalidate name="formulario" class="row" ng-submit="submeter()">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Título</label>
+            <input name="titulo" class="form-control" ng-model="foto.titulo" required ng-maxlength="20">   
+            <span class="form-control alert-danger" ng-show="formulario.$submitted && formulario.titulo.$error.required">Título Obrigatório</span>
+            <span class="form-control alert-danger" ng-show="formulario.$submitted && formulario.titulo.$error.maxlength">Máximo 20 Caracteres</span>
+        </div>
+        <div class="form-group">
+            <label>URL</label>
+            <input name="url" class="form-control" ng-model="foto.url" required>
+            <span class="form-control alert-danger" ng-show="formulario.$submitted && formulario.url.$error.required">URL Obrigatório</span>             
+        </div>
+        <div class="form-group">
+            <label>Descrição</label>
+            <textarea name="descricao" class="form-control" ng-model="foto.descricao">
+            </textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid">
+            Salvar
+        </button>
+         <a href="/" class="btn btn-primary">Voltar</a>
+        <hr>
+    </div>
+    <div class="col-md-6">
+        <minha-foto url="{{foto.url}}" titulo="{{foto.titulo}}"></minha-foto>
+    </div>
+</form>

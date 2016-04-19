@@ -1,0 +1,167 @@
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+}
+body {
+    background: url(https://www.alura.com.br/assets/img/home/background-cidade-fundo.1461085672.svg) bottom no-repeat!important;
+    padding-bottom: 30px;
+    /*    background: url('http://cdn1.bestpsdfreebies.com/wp-content/uploads/2014/05/Part-1-Background-17-without-Glare.jpg') #f3f3f3;*/
+    /*    background: #4dba7a;*/
+    /* fallback for old browsers */
+    /*    background: -webkit-radial-gradient(to left, #4dba7a, #96DEDA);*/
+    /* Chrome 10-25, Safari 5.1-6 */
+    /*    background: radial-gradient(to left, #4dba7a, #96DEDA);*/
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.jumbotron {
+    position: absolute;
+    display: block;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: white;
+    color: #fd5a5b;
+    border-radius: 0!important;
+    padding: 0!important;
+    border-top: 2px solid #fdc14a;
+    margin-bottom: 0;
+}
+.jumbotron h1 {
+    margin: 10px 0;
+    font-size: 2.5em;
+    text-align: center;
+    padding: 10px 6%;
+    color: #517fa4;
+    text-transform: uppercase;
+    background: url(https://www.alura.com.br/assets/img/alura-logo.1460494415.svg) center center no-repeat;
+    text-indent: -9999px;
+}
+.row {
+    margin: 0;
+}
+body > div.container {
+    margin: 87px auto 0 auto;
+    padding: 0;
+    box-shadow: 0px 0px 6px #000;
+    background: white;
+}
+meu-painel {
+    padding: 0!important;
+}
+meu-painel > div {
+    border: none!important;
+    margin: 0!important;
+}
+.panel-default>.panel-heading {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-transform: uppercase;
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    border: none;
+    border-radius: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: all 0.4s ease!important;
+    -moz-transition: all 0.4s ease!important;
+    -o-transition: all 0.4s ease!important;
+    transition: all 0.4s ease!important;
+    cursor: pointer
+}
+.panel-default>.panel-heading:hover {
+    background: rgba(0, 0, 0, 0);
+}
+.panel-default >.panel-heading > h3 {
+    font-size: 1.8em;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: inline-block;
+    text-align: left;
+}
+
+.page-header {
+    margin: 0;
+    padding: 13px 0;
+        background: #4dba7a;
+
+}
+.page-header h1 {
+    margin: 0 0 0 20px;
+    color: white;
+    text-align: left;
+    font-size: 1.7em;
+}
+
+form[name*="formulario"] {
+    padding: 20px 0;
+    background: #f7fafb;
+}
+
+#filtrar {
+    display: block;
+    padding: 20px 0;
+    background: #4dba7a;
+}
+#filtrar input.form-control {
+    border: none;
+}
+.panel-body {
+    /* background: #f1f0ec; */
+    padding: 0;
+    height: 280px;
+    overflow: hidden;
+    /* border: 1px solid rgba(253, 193, 74, 0.5); */
+}
+.panel-body img {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+}
+.fundo-branco {
+    background: white;
+}
+
+.form-control {
+
+    border: 2px solid #666;
+
+}
+
+button.btn-primary, form[name*="formulario"] a.btn-primary {
+    background: #4dbb7b;
+    border: transparent;
+    border-radius: 0;
+    padding: 10px 40px;
+    text-transform: uppercase;
+}
+
+/***********************************************/
+
+.painel-animado.ng-leave-active {
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -o-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    transform: scale(0.1);
+}
+.painel-animado-opacity.ng-leave-active {
+    -webkit-filter: opacity(0);
+}
+.painel-animado {
+    -webkit-transition: all 0.8s ease!important;
+    -moz-transition: all 0.8s ease!important;
+    -o-transition: all 0.8s ease!important;
+    transition: all 0.8s ease!important;
+}
+.painel-animado-opacity {
+    -webkit-transition: all 0.4s ease!important;
+    -moz-transition: all 0.4s ease!important;
+    -o-transition: all 0.4s ease!important;
+    transition: all 0.4s ease!important;
+}

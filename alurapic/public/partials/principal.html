@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <h1 class="text-center">AluraPic</h1>
+</div>
+
+<div class="row" id="filtrar">
+    <div class="col-md-12">
+        <form>
+            <div class="input-group">
+                <span class="input-group-btn"><a href="fotos/new" class="btn btn-primary">NOVO</a></span>
+                <input type="text" class="form-control" placeholder="Filtrar" ng-model="filtro" ng-model-options="{ debounce: 0 }">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <!-- inicio do panel -->
+    <meu-painel titulo="{{foto.titulo}}" ng-repeat="foto in fotos | filter:filtro" class="col-md-4 painel-animado-opacity">
+        <img src="{{foto.url}}" alt="{{foto.titulo}}" class="img-responsive center-block">
+    </meu-painel>
+
+    <!-- fim do panel -->
+</div>

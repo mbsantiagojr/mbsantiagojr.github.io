@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="alurapic">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width">
+    <title>AluraPic | Álbum de Fotos </title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/extras.css">
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <ng-view></ng-view>
+
+    </div>
+    <!-- fim container -->
+</body>
+
+
+
+<!-- Controllers -->
+<script src="js/controllers/fotos-controller.js"></script>
+<script src="js/controllers/foto-controller.js"></script>
+
+<!-- Services -->
+
+<!-- Directives -->
+<script src="js/directives/minhas-diretivas.js"></script>
+
+
+</html>
