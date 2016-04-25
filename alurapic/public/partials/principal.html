@@ -14,10 +14,14 @@
 </div>
 
 <div class="row">
-    <!-- inicio do panel -->
-    <meu-painel titulo="{{foto.titulo}}" ng-repeat="foto in fotos | filter:filtro" class="col-md-4 painel-animado-opacity">
-        <img src="{{foto.url}}" alt="{{foto.titulo}}" class="img-responsive center-block">
-    </meu-painel>
+    <p ng-show="mensagem.length" class="alert alert-info">
+        {{mensagem}}
+    </p>
+    <meu-painel class="col-md-4 painel-animado" ng-repeat="foto in fotos | filter: filtro" titulo="{{foto.titulo}}">
+        <minha-foto url="{{foto.url}}" titulo="{{foto.titulo}}" clique="{{foto._id}}">
+        </minha-foto>
 
-    <!-- fim do panel -->
+        <a class="btn btn-primary btn-block" href="fotos/edit/{{foto._id}}">Editar</a>
+        <button class="btn btn-danger btn-block" ng-click="remover(foto)">Remover</button>
+    </meu-painel>
 </div>

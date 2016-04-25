@@ -76,7 +76,7 @@ meu-painel > div {
     background: rgba(0, 0, 0, 0);
 }
 .panel-default >.panel-heading > h3 {
-    font-size: 1.8em;
+    font-size: 1.7em;
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -139,6 +139,25 @@ button.btn-primary, form[name*="formulario"] a.btn-primary {
     border-radius: 0;
     padding: 10px 40px;
     text-transform: uppercase;
+}
+
+meu-painel > div > div.panel-body > a, meu-painel > div > div.panel-body > button {
+    position: absolute;
+    z-index: 1000;
+    display: inline-block;
+    width: 80px;
+    right: 10px;
+    bottom: 45px;
+    font-size: 0.78em;
+    text-transform: uppercase;
+}
+meu-painel > div > div.panel-body > button {
+
+    bottom: 10px;
+}
+
+.alert {
+    margin: 10px 0;
 }
 
 /***********************************************/
