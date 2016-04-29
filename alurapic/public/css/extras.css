@@ -141,7 +141,7 @@ button.btn-primary, form[name*="formulario"] a.btn-primary {
     text-transform: uppercase;
 }
 
-meu-painel > div > div.panel-body > a, meu-painel > div > div.panel-body > button {
+meu-painel > div > div.panel-body > a, meu-painel > div > div.panel-body > button, meu-botao-perigo {
     position: absolute;
     z-index: 1000;
     display: inline-block;
@@ -151,9 +151,23 @@ meu-painel > div > div.panel-body > a, meu-painel > div > div.panel-body > butto
     font-size: 0.78em;
     text-transform: uppercase;
 }
-meu-painel > div > div.panel-body > button {
+meu-painel > div > div.panel-body > button, meu-botao-perigo {
 
-    bottom: 10px;
+    bottom: 8px;
+}
+
+form[name*='formulario'] minha-foto {
+/*    border: 1px dashed #d0d0d0;*/
+    height: 280px;
+    width: 280px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+form[name*='formulario'] minha-foto img {
+    width: 100%;
+    height: 100%;
+    border-image-width: 0;
 }
 
 .alert {
