@@ -1,0 +1,681 @@
+.numeroCarbono {
+	background-color: rgba(27, 87, 110, 0.2);
+}
+span.jtable-column-header-text span.subtitulo {
+	color: gray;
+	font-size: 8px;
+	font-weight: normal;
+}
+
+/*
+ * PAGINA DO BLOTTER
+ */
+/*#blotter {
+	border: 1px solid #bfbfbf;
+	padding: 1px;
+}
+div.iconeMercado {
+	padding: 4px 8px 4px 4px;
+	float: left;
+}
+div.tituloMercado {
+	float: left;
+}
+div.tituloMercado p.tituloPrincipal {
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	margin: 0px;
+}
+div.tituloMercado p.subtitulo {
+	font-size: 10px;
+	color: white;
+	margin: 0px;
+}
+div.comandosMercado {
+	padding: 0px 4px 0px 0px;
+}
+div.cabecalhoPreco {
+	float: left;
+	width: 90px;
+	padding-right: 4px;
+	text-align: right;
+	font-size: 9px;
+	color: white;
+}
+div.linhaAtivo div.ticker {
+	float: left;
+	text-align: left;
+	padding-left: 4px;
+	margin: 0px;
+	width: 120px;
+}
+div.linhaAtivo div.ticker a {
+	font-weight: bold;
+	color: #555555;
+}
+div.linhaAtivo div.ticker a:visited {
+	font-weight: bold;
+	color: #555555;
+}
+div.linhaAtivo div.descricao {
+	float: left;
+	text-align: left;
+	padding-left: 4px;
+	width: 396px;
+}
+div.linhaAtivo div.bid {
+	float: left;
+	text-align: right;
+	padding-left: 4px;
+	width: 90px;
+}
+div.linhaAtivo div.ask {
+	float: left;
+	text-align: right;
+	padding-left: 4px;
+	width: 90px;
+}
+div.linhaAtivo div.last {
+	float: left;
+	text-align: right;
+	padding-left: 4px;
+	width: 90px;
+}
+div.linhaAtivo div.tend {
+	float: left;
+	text-align: right;
+	padding-left: 4px;
+	width: 90px;
+}
+div.evenline {
+	background-color: #e7e7e7;
+}
+div.percTendencia {
+	float: right;
+}
+div.tendenciaBaixa {
+	margin-top: 4px;
+	float: right;
+	width: 16px;
+	height: 16px;
+	background: url('/img/engine/tendencia/tendencias.png') 0 0;
+	border: 0px;
+}
+div.tendenciaAlta {
+	margin-top: 4px;
+	float: right;
+	width: 16px;
+	height: 16px;
+	background: url('/img/engine/tendencia/tendencias.png') -16px 0;
+	border: 0px;
+}
+div.tendenciaNeutra {
+	margin-top: 4px;
+	float: right;
+	width: 16px;
+	height: 16px;
+	background: url('/img/engine/tendencia/tendencias.png') -32px 0;
+	border: 0px;
+}*/
+span.tendenciaBaixa {
+	margin-left: 4px;
+	float: right;
+	width: 16px;
+	height: 16px;
+	background: url('/img/engine/tendencia/tendencias.png') 0 0;
+	border: 0px;
+}
+span.tendenciaAlta {
+	margin-left: 4px;
+	float: right;
+	width: 16px;
+	height: 16px;
+	background: url('/img/engine/tendencia/tendencias.png') -16px 0;
+	border: 0px;
+}
+span.tendenciaNeutra {
+	margin-left: 4px;
+	float: right;
+	width: 16px;
+	height: 16px;
+	background: url('/img/engine/tendencia/tendencias.png') -32px 0;
+	border: 0px;
+}
+span.link {
+	cursor: pointer;
+}
+
+/*
+ * PAGINAS DE MERCADO EM GERAL
+ */
+.superTituloOrdens {
+	font-weight: bold;
+	font-size: 14px;
+	color: #F3550B;
+	border-bottom: 1px solid #F3550B;
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+/*.superTituloOrdens > .left {
+	line-height: 22px;
+}
+.superTituloOrdens > .right {
+	line-height: 21px;
+}*/
+.tituloOrdens {
+	color: #F3550B;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.superTituloOrdensCarbono {
+	font-weight: bold;
+	font-size: 14px;
+	color: #307da0;
+	border-bottom: 1px solid #307da0;
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+/*.superTituloOrdensCarbono > .left {
+	line-height: 22px;
+}
+.superTituloOrdensCarbono > .right {
+	line-height: 21px;
+}*/
+.tituloOrdensCarbono {
+	color: #307da0;
+	margin-top: 0px;
+}
+p.aguardando {
+	margin-bottom: 0px;
+	margin-top: 4px;
+	font-size: 9px;
+	text-align: center;
+	color: gray;
+}
+thead {
+	background: url('/js/jquery/jtable/themes/lightcolor/bg-thead.png') repeat-x scroll top left #dddddd;
+	border-bottom: 1px solid #bfbfbf;
+	font-weight: bold;
+	color: black;
+}
+.even {
+	background-color: white;
+	border-top: 1px solid #dfdfdf;
+}
+.odd {
+	background-color: #efefef;
+	border-top: 1px solid #dfdfdf;
+}
+.even:hover {
+	background-color: #e7e7e7;
+}
+.odd:hover {
+	background-color: #e7e7e7;
+}
+
+/*
+ * PAGINA DE LIVRO DE ORDENS
+ */
+#ordensMercado {
+	width: 400px;
+	float: left;
+	margin-right: 50px;
+}
+#ordensParticipante {
+	width: 450px;
+	float: left;
+}
+#ordensAbertasGestor {
+	width: 300px;
+	float: left;
+	margin-right: 50px;
+}
+#ordensExecutadasGestor {
+	width: 550px;
+	float: left;
+}
+#ordensVendaAbertasMercado {
+	margin-bottom: 20px;
+}
+#ordensCompraAbertasMercado {
+	margin-bottom: 20px;
+}
+#ordensExecutadasMercado {
+	margin-bottom: 20px;
+}
+#ordensVendaAbertasParticipante {
+	margin-bottom: 20px;
+}
+#ordensCompraAbertasParticipante {
+	margin-bottom: 20px;
+}
+#ordensExecutadasParticipante {
+	margin-bottom: 20px;
+}
+
+/*
+ * PAGINA DE SALDOS
+ */
+#ordensAbertasParticipante {
+	margin-bottom: 20px;
+}
+
+/*
+ * Componente de ofertas abertas do participante (com ticker único)
+ */
+/*table.tabelaOrdensAbertasParticipanteSingleTicker {
+	width: 100%;
+	border: 1px solid #bfbfbf;
+}
+table.tabelaOrdensAbertasParticipanteSingleTicker td {
+	padding: 2px;
+	color: black;
+	vertical-align: top;
+	font-size: 10px;
+	line-height: 16px;
+}
+table.tabelaOrdensAbertasParticipanteSingleTicker td.colComandos a {
+	text-decoration: none;
+	color: blue;
+	font-size: 10px;
+}
+table.tabelaOrdensAbertasParticipanteSingleTicker td.colComandos a:hover {
+	text-decoration: underline;
+}*/
+
+/*
+ * Componente de ofertas abertas do participante (com múltiplos tickers)
+ */
+/*table.tabelaOrdensAbertasParticipanteMultiTicker {
+	width: 100%;
+	border: 1px solid #bfbfbf;
+}
+table.tabelaOrdensAbertasParticipanteMultiTicker td {
+	padding: 2px;
+	color: black;
+	vertical-align: top;
+	font-size: 10px;
+	line-height: 16px;
+}
+table.tabelaOrdensAbertasParticipanteMultiTicker td.colComandos a {
+	text-decoration: none;
+	color: blue;
+	font-size: 10px;
+}
+table.tabelaOrdensAbertasParticipanteMultiTicker td.colComandos a:hover {
+	text-decoration: underline;
+}*/
+
+/*
+ * Componente de ofertas executadas do participante (com ticker único)
+ */
+/*table.tabelaOrdensFechadasParticipanteSingleTicker {
+	width: 100%;
+	border: 1px solid #bfbfbf;
+}
+table.tabelaOrdensFechadasParticipanteSingleTicker td {
+	padding: 2px;
+	color: black;
+	vertical-align: top;
+	font-size: 10px;
+	line-height: 16px;
+}*/
+
+/*
+ * Componente de ofertas executadas do participante (com múltiplos tickers)
+ */
+/*table.tabelaOrdensFechadasParticipanteMultiTicker {
+	width: 100%;
+	border: 1px solid #bfbfbf;
+}
+table.tabelaOrdensFechadasParticipanteMultiTicker td {
+	padding: 2px;
+	color: black;
+	vertical-align: top;
+	font-size: 10px;
+	line-height: 16px;
+}*/
+
+/*
+ * Componente de ofertas abertas do mercado (com ticker único)
+ */
+/*table.tabelaOrdensAbertasMercado {
+	width: 100%;
+	border: 1px solid #bfbfbf;
+}
+table.tabelaOrdensAbertasMercado td {
+	padding: 2px;
+	color: black;
+	vertical-align: top;
+	font-size: 10px;
+	line-height: 16px;
+}*/
+
+/*
+ * Componente de ofertas executadas do mercado (com ticker único)
+ */
+/*table.tabelaOrdensFechadasMercado {
+ 	width: 100%;
+	border: 1px solid #bfbfbf;
+}
+table.tabelaOrdensFechadasMercado td {
+	padding: 2px;
+	color: black;
+	vertical-align: top;
+	font-size: 10px;
+	line-height: 16px;
+}*/
+
+/*
+ * Componente de saldos de ativos do participante
+ */
+table.tabelaSaldoAtivosParticipante {
+	width: 100%;
+	border: 1px solid #bfbfbf;
+}
+table.tabelaSaldoAtivosParticipante td {
+	padding: 2px;
+	color: black;
+	font-size: 12px;
+	line-height: 16px;
+	vertical-align: middle;
+}
+table.tabelaSaldoAtivosParticipante td a {
+	text-decoration: none;
+	color: black;
+	font-size: 10px;
+}
+table.tabelaSaldoAtivosParticipante td a:hover {
+	text-decoration: underline;
+}
+table.tabelaSaldoAtivosParticipante td.colQuantidade {
+	text-align: right;
+}
+table.tabelaSaldoAtivosParticipante td.colComandos {
+	text-align: center;
+}
+
+/*
+ * Componente das janelas de ofertas de compra e venda
+ */
+td.valorTotal {
+	width: 300px; 
+	background-color: #EAF3FE; 
+	border: 1px solid #ADD2EE;	
+}
+td.valorTotal p.header {
+	font-size: 12px; 
+	text-align: center; 
+	margin: 0px; 
+	font-weight: bold;	
+}
+td.valorTotal p.valorTotal {
+	font-size: 24px; 
+	text-align: center;	
+}
+/*p.precoReferenciaOrdemVenda {
+	margin-top: -4px;	
+	margin-bottom: 0px;	
+	text-align: right;
+	font-size: 9px;
+	color: blue;
+	width: 142px;
+}
+td.anotacaoOrdemVenda {
+	line-height: 12px;
+	font-size: 9px;
+	color: blue;
+	text-align: justify;
+	padding-bottom: 8px;
+}*/
+
+/*
+ * TELA DE DEPURACAO DE CONTAS CORRENTES
+ */
+.divFiltroContaCorrente {
+	border: 1px solid #bebebe;
+	background-color: rgb(240, 240, 240);
+	margin-bottom: 8px;
+	padding: 4px;
+}
+.divFiltroContaCorrente .descricao {
+	font-weight: bold;
+	font-size: 14px;
+	padding-bottom: 8px;
+}
+#tbContaCorrente {
+	width: 100%;
+	border: 1px solid #bfbfbf;
+}
+#tbContaCorrente thead {
+	background: url('/js/jquery/jtable/themes/lightcolor/bg-thead.png') repeat-x scroll top left #dddddd;
+	border-bottom: 1px solid #bfbfbf;
+	font-weight: bold;
+	color: black;
+}
+#tbContaCorrente td {
+	padding: 2px;
+	color: black;
+	vertical-align: top;
+	font-size: 10px;
+	line-height: 16px;
+}
+.colContaData {
+	width: 130px;
+}
+.colContaHistorico {
+	width: 360px;
+}
+.colContaQuantidade {
+	width: 70px;
+	text-align: right;
+}
+.colContaPrecoUnitario {
+	width: 70px;
+	text-align: right;
+}
+.colContaSaldo {
+	width: 70px;
+	text-align: right;
+}
+p.saldoDisponivel {
+	font-weight: normal;
+}
+span.saldoDisponivel {
+	font-weight: bold;
+}
+
+/*
+ * SELETOR DE PARTICIPANTE
+ */
+div.seletorParticipante {
+	background-color: #eee;  
+	border: 1px solid #ccc; 
+	margin-bottom: 16px; 
+	padding: 4px;
+}
+div.seletorParticipante > div {
+	margin-right: 4px;
+}
+div.seletorParticipante > div.nome {
+	margin-top: 4px;
+	overflow: hidden;
+} 
+
+/*
+ * BOTOES
+ */
+.btn-micro {
+  padding: 0px 2px;
+  font-size: 9px;
+  line-height: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  *padding-top: 1px;
+  *padding-bottom: 1px;
+}
+
+.btn-florestal.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn-florestal {
+	color: #ffffff;
+	font-weight: normal;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #739431;
+	*background-color: #486705;
+	background-image: -moz-linear-gradient(top, #799031, #486705);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#799031), to(#486705));
+	background-image: -webkit-linear-gradient(top, #799031, #486705);
+	background-image: -o-linear-gradient(top, #799031, #486705);
+	background-image: linear-gradient(to bottom, #799031, #486705);
+	background-repeat: repeat-x;
+	border-color: #486705 #486705 #0B5500;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff799031', endColorstr='#ff486705', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-florestal:hover,
+.btn-florestal:focus,
+.btn-florestal:active,
+.btn-florestal.active,
+.btn-florestal.disabled,
+.btn-florestal[disabled] {
+	color: #ffffff;
+	font-weight: normal;
+	background-color: #486705;
+	*background-color: #346100;
+}
+.btn-florestal:active,
+.btn-florestal.active {
+  background-color: #1F5B00 \9;
+}
+
+.btn-logreversa {
+	color: #ffffff;
+	font-weight: normal;
+	text-shadow: none;
+	background: #F3550B;
+	border-color: #F3550B;
+}
+.btn-logreversa:hover,
+.btn-logreversa:focus,
+.btn-logreversa:active,
+.btn-logreversa.active,
+.btn-logreversa.disabled,
+.btn-logreversa[disabled] {
+	color: #ffffff;
+	font-weight: normal;
+	background: #F3550B;
+}
+.btn-carbono {
+	color: #ffffff;
+	font-weight: normal;
+	text-shadow: none;
+	background: #307da0;
+	border-color: #307da0;
+}
+.btn-carbono:hover,
+.btn-carbono:focus,
+.btn-carbono:active,
+.btn-carbono.active,
+.btn-carbono.disabled,
+.btn-carbono[disabled] {
+	color: #ffffff;
+	font-weight: normal;
+	background: #307da0;
+}
+
+
+
+.colID {
+	text-align: left;
+}
+.colData {
+	text-align: left;
+}
+.colTicker {
+	text-align: left;
+}
+.colQuantidade {
+	text-align: right;
+}
+.colPreco {
+	text-align: right;
+}
+.colValorTotal {
+	text-align: right;
+}
+table.jtable tbody > tr {
+	padding: 0px;
+	height: auto;
+}
+table.jtable tbody td {
+	font-family: Arial, sans-serif;
+	padding: 2px;
+	color: black;
+	vertical-align: top;
+	font-size: 12px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	line-height: 16px;
+}
+table.jtable thead {
+	background: url('/js/jquery/jtable/themes/lightcolor/bg-thead.png') repeat-x scroll top left #dddddd;
+	border-bottom: 1px solid #bfbfbf;
+	font-weight: bold;
+	color: black;
+}
+table.jtable thead th {
+	font-size: 10px;
+	padding: 2px;
+}
+table.jtable thead th.small {
+	font-size: 8px;
+	padding: 2px;
+	line-height: 12px;
+}
+table.jtable th.jtable-column-header div.jtable-column-header-container {
+	height: auto;
+	line-height: 16px;
+}
+table.jtable th.jtable-column-header div.jtable-column-header-container span.jtable-column-header-text {
+	margin: 0px;
+	line-height: 16px;
+}
+table.jtable th.jtable-column-header div.jtable-column-header-container div.jtable-column-resize-handler {
+	height: auto;
+}
+table.jtable thead th.left {
+	text-align: left;	
+}
+table.jtable thead th.right {
+	text-align: right;	
+}
+table.jtable thead th.center {
+	text-align: center;	
+}
+table.jtable tbody td.left {
+	text-align: left;	
+	vertical-align: middle;	
+}
+table.jtable tbody td.right {
+	text-align: right;	
+	vertical-align: middle;	
+}
+table.jtable tbody td.center {
+	text-align: center;
+	vertical-align: middle;	
+}
+
+/*div.ofertasEsquerda {
+	width: 400px; 
+	margin-right: 50px; 
+	float: left;
+}
+div.ofertasDireita {
+	width: 450px; 
+	float: left;
+}*/

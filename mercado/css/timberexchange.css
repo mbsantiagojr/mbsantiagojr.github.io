@@ -1,0 +1,538 @@
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: "myriad", sans-serif;
+    color: rgb(81, 89,91);
+    letter-spacing: 2;
+    font-size: 16px;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ffffff), to(#f7f7f7));
+    background: -webkit-radial-gradient(circle, #ffffff, #f7f7f7);
+    background: -moz-radial-gradient(circle, #ffffff, #f7f7f7);
+    background: -o-radial-gradient(circle, #ffffff, #f7f7f7);
+    background: -ms-radial-gradient(circle, #ffffff, #f7f7f7);
+    background: radial-gradient(circle, #ffffff, #f7f7f7);
+    padding: 0 20px;
+}
+
+button, a {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+#header {
+    padding: 0;
+    background: none;
+    border-width: 0;
+}
+
+#header *:not(input) {
+    color: rgb(81, 89,91);
+}
+
+
+#user-menu > ul * {
+    color: rgb(81, 89,91);
+}
+
+.navbar {
+    display: block;
+    width: 100%;
+    height: 70px;
+    padding: 15px;
+    background: none;
+}
+
+.navbar-header > div:nth-child(1) > a {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0 20px 0 0;
+}
+
+.origem-site {
+    text-align: right;
+    margin-bottom: 2px;
+}
+
+#header > div > div.navbar-header > div:nth-child(2) > nav > ol > li > a {
+    color: rgb(81, 89,91)!important;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    
+}
+#header > div > div.navbar-header > div:nth-child(2) > nav > ol > li > a:hover {
+    text-decoration: underline;
+}
+
+#marquee-container {
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    background-color: #e6e7e8;
+    color: rgb(81, 89,91);
+    position: absolute;
+    z-index: 900;
+    left: 0;
+}
+
+#marquee-container .ticker {
+    font-size: 1.25em;
+    color: #757575;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2px 0 2px;
+    font-family: "myriad-bold", sans-serif;
+}
+
+#marquee-container .compra {
+    font-size: 1.25em;
+    color: #0CBFFF;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2px 0 2px;
+}
+
+#marquee-container .venda {
+    font-size: 1.25em;
+    color: #38CC51;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2px 0 2px;
+}
+
+#navigationheader * {
+    color: rgb(81, 89,91);
+}
+
+#divLoginBox > div.left {
+    padding: 7px 15px 5px 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 15px 0 0;
+}
+
+#user-menu {
+    margin: 0;
+}
+
+#navigationheader {
+    margin: 60px 0 20px 0;
+    padding: 0;
+    height: 40px;
+}
+
+#localMenu {
+    float: initial;
+    margin-right: 0;
+    position: absolute;
+    right: 15px;
+}
+
+#navigationbar {
+    float: initial;
+    padding-left: 0;
+    font-size: 12px;
+    color: black;
+    position: absolute;
+    left: 30px;
+}
+
+.navbar-collapse.collapse.navbar-right {
+    padding: 0;
+}
+
+#navigationbar a {
+    color: #cbcbcb!important;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    margin: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#navigationbar * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#navigationbar a:last-child {
+    color: rgb(81, 89,91)!important;
+    margin-right: 0;
+    font-family: "myriad-bold", sans-serif;
+}
+
+#navigationbar a:hover {
+    color: #cbcbcb!important;
+    text-decoration: none;
+}
+
+#localMenu * {
+    color: rgb(81, 89,91)!important;
+    text-transform: uppercase;
+}
+
+#localMenu {
+    display: block;
+    width: 475px;
+    height: 40px;
+    
+}
+
+#localMenu li {
+    width: 33.33%;
+    height: 40px;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    
+    text-align: center;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border: 5px solid transparent;
+}
+
+#localMenu li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    height: inherit;
+    padding: 6px;
+
+}
+
+#localMenu li:nth-child(n+1) {
+    border-bottom: 0px solid transparent;
+    background: none;
+    border: 5px solid rgb(255,203,5);
+    margin-left: 11px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+#localMenu li a:hover {
+    color: white!important;
+}
+#localMenu li:hover {
+
+    background: rgb(255,203,5);
+        outline: 0;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18) ,0 4px 15px 0 rgba(0,0,0,0.15);
+}
+
+
+#localMenu li:nth-child(3) {
+    width: 23%;
+    border: 5px solid transparent;
+    background: none;
+    margin-left: 11px;
+    border: 0;
+    border-bottom: 1px solid rgb(255,203,5);
+            -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+#localMenu li:nth-child(3)  {
+                outline: 0;
+        box-shadow: none;
+}
+#localMenu li:nth-child(3) a:hover {
+        color: rgb(255,203,5)!important;
+}
+
+
+
+
+
+
+
+/**************************************************/
+
+#bv-main-container {
+    padding: 0 0 0 0;
+    margin-bottom: 0;
+}
+
+.page-title.row {
+    text-align: left;
+    height: auto;
+    padding: 0 0 50px 0;
+}
+
+#bv-main-container > header > div.row-fluid > div {
+    margin: 0;
+}
+
+#bv-main-container > header > div.row-fluid {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.page-title * {
+    line-height: 1;
+}
+
+.page-title h2 {
+    display: inline-block;
+    padding: 0 5px 2px 5px;
+    margin: 0px;
+    border-bottom: none;
+    font-size: 2.5em;
+    color: rgb(81, 89,91);
+}
+
+.page-title > div {
+    margin: 0;
+}
+
+.page-title > div > p {
+    font-size: 1.5em;
+    color: rgb(81, 89,91);
+    margin: 0;
+    display: none;
+}
+
+#bv-main-container > div > div.row.menu {
+    position: absolute;
+    right: 20px;
+    width: 99%;
+    top: 200px;
+}
+
+#bv-main-container > div > div.row.menu > div.col-sm-6 > div > button {
+    border-radius: 10px 10px 0 0;
+    background: #ddd;
+    border: none;
+    color: #757575;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 47px 0px 7px 7px;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 10px 12px 4px 12px;
+    height: 42px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+#bv-main-container > div > div.row.menu > div.col-sm-6 > div > button:hover, #bv-main-container > div > div.row.menu > div.col-sm-6 > div > button:focus, #bv-main-container > div > div.row.menu > div.col-sm-6 > div > button:active {
+    background: #aaa;
+    color: white;
+}
+
+#bv-main-container > div > div.row.menu > div.col-sm-4.text-right > a > button {
+    padding: 9px 30px;
+    min-width: 220px;
+    border: none;
+    font-size: 1em;
+    background: rgb(166,206,57);
+    display: inline-block;
+    margin: 0 5px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+#bv-main-container > div > div.row.menu > div.col-sm-4.text-right > a > button:hover {
+    outline: 0;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18) ,0 4px 15px 0 rgba(0,0,0,0.15);
+}
+
+#bv-main-container > div > div.row.menu > div.col-sm-4.text-right {
+    width: 50%;
+    padding: 0 10px 0 0;
+}
+
+.col-sm-4.text-right > a > .btn > span {
+    display: block;
+    font-size: 1em!important;
+    color: white!important;
+}
+
+#bv-main-container > div > div.row.menu > div.col-sm-4.text-right > a:nth-child(2) > button {
+    background: rgb(0, 192, 243);
+}
+
+#bv-main-container #filtros {
+    margin: 0;
+    height: auto;
+    padding: 15px!important;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0 2px 5px;
+    background: white;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+#bv-main-container table.table {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.14902) 0 2px 5px;
+    -webkit-border-radius: 0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 5px 5px;
+    border: 0;
+}
+
+#bv-main-container table.table * {
+    color: rgb(81, 89,91)!important;
+    border: none!important;
+    font-size: 1em;
+}
+
+#bv-main-container table.table > tbody > tr {
+    background: none!important;
+    border-top: 1px solid #d6d6d6!important;
+}
+
+#bv-main-container table.table > tbody >tr > td {
+    padding: 10px!important;
+    color: rgb(81, 89,91);
+    background: none!important;
+    height: auto!important;
+    -webkit-border-radius: 0px!important;
+    border-radius: 0px!important;
+    vertical-align: middle!important;
+}
+
+#bv-main-container table.table thead tr {
+    background: #f7f7f7!important;
+}
+
+#bv-main-container table.table thead td {
+    padding: 12px 10px 10px 10px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border: none;
+    text-transform: uppercase;
+    border-left: 1px solid #f2f2f2;
+    font-weight: 600;
+    line-height: 1;
+    font-family: "myriad-bold", sans-serif;
+    color: #777;
+}
+
+#bv-main-container table.table tbody tr td:last-child {
+    padding: 0 2rem!important;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 36px;
+    letter-spacing: .5px;
+    vertical-align: middle;
+    outline: 0;
+    color: #fff!important;
+    background-color: #26a69a;
+    transition: .2s ease-out;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+#bv-main-container table > tbody > tr > td:nth-child(12) {
+    border: none;
+    border-radius: 4px!important;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    vertical-align: middle;
+    outline: 0;
+    color: #fff!important;
+    background-color: rgb(166,206,57)!important;
+    transition: .2s ease-out;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    margin: 5px;
+    display: inline-block;
+    width: 90%;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+#filtros * {
+    text-transform: uppercase!important;
+}
+
+#filtros * {
+    text-transform: uppercase!important;
+    font-family: "myriad-bold", sans-serif;
+    font-weight: bold;
+    color: #aaa!important;
+}
+
+#filtros .form-control,
+#filtros > div:nth-child(1) > select {
+    height: auto !important;
+    padding: 10px 15px 7px 15px!important;
+    border: 0!important;
+    background: #eee!important;
+}
+
+#filtros > div:nth-child(1) > select,
+#filtros > div:nth-child(5) > select {
+    height: 37px!important;
+}
+
+.pagination > li > a {
+    background: transparent!important;
+    border: transparent!important;
+        -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: rgb(81, 89,91)!important;
+    font-family: "myriad-bold", sans-serif;
+}
+
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+        background-color: rgb(166,206,57)!important;
+        color: white!important;
+}
+
+.pagination > li > a:hover, .pagination>.active>span:hover {
+        background-color: rgb(166,206,57)!important;
+    color: white!important;
+}
+
+div.ng-table-counts button {
+    background: none;
+    border: none;
+}
+div.ng-table-counts button.active {
+    background: rgb(166,206,57);
+    color: white;
+}
+
+.btn-group>.btn:hover, .btn-group-vertical>.btn:hover, .btn-group>.btn:focus, .btn-group-vertical>.btn:focus, .btn-group>.btn:active, .btn-group-vertical>.btn:active, .btn-group>.btn.active, .btn-group-vertical>.btn.active {
+    background: rgb(166,206,57);
+    color: white;
+}
+
+
+footer {
+    position: relative;
+    bottom: 0px;
+    border-top: 1px solid #c0c0c0;
+    padding: 15px 0;
+}

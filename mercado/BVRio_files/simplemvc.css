@@ -1,0 +1,494 @@
+/*
+ * SENHAS
+ */
+.testresult {
+	font-weight: bold;
+	color: #666;
+	padding-left: 20px;
+	margin-left: 10px;
+	display: inline;
+}
+.badPass {
+	background:url('./img/password/red_bad.png') no-repeat 0 0;
+}
+.goodPass {
+	background:url('./img/password/yellow_check.png') no-repeat 0 0;
+}
+.strongPass {
+	background:url('./img/password/green_check.png') no-repeat 0 0;
+}
+.diffPass {
+	background:url('./img/password/red_bad.png') no-repeat 0 0;
+}
+.equalPass {
+	background:url('./img/password/green_check.png') no-repeat 0 0;
+}
+
+/*
+ * TOOLTIP
+ */
+.tooltipcontainer {
+    position: relative;
+    display: none;
+}
+.tooltipcontainer > div {
+	position: absolute;
+	font-family: Arial, Verdana, sans-serif;
+	line-height: 12px;
+	font-size: 10px;
+	color: black;
+	text-align: left;
+	background-color: #F6F6CD;
+}
+.tooltipcontainer.big > div {
+	padding: 10px;
+	width: 230px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 0 20px #666;
+	-webkit-box-shadow: 0 0 20px #666;
+	box-shadow: 0 0 20px #666;
+}
+.tooltipcontainer.small > div {
+	padding: 2px 8px;
+	border: 1px solid #7f7f7f;
+	-moz-box-shadow: 2px 2px 2px 0px rgba(127,127,127,0.75);
+	-webkit-box-shadow: 2px 2px 2px 0px rgba(127,127,127,0.75);
+	box-shadow: 2px 2px 2px 0px rgba(127,127,127,0.75);
+	white-space: nowrap;
+}
+
+/*
+ * ROLL OUT BOX
+ */
+div.rolloutbox-major {
+	width: 100%;
+	/*background: #f5faff;*/
+	border: 1px solid lightgray;
+}
+div.rolloutbox-title {
+	border: 1px solid #C8C8C8;
+	background: #f0f0f0;
+	/*border: 1px solid #a3b0bf;
+	background: #cedff2;*/
+	margin: 3px;
+	padding-left: 3px;
+	font-weight: bold;
+}
+div.rolloutbox-collapse {
+	float: right;
+	margin-right: 5px;
+}
+div.rolloutbox-content {
+	margin: 3px;
+	overflow: auto;
+}
+div.rolloutbox-content a {
+	color: navy;
+	text-decoration: none;
+}
+div.rolloutbox-commands {
+	float: right;
+	font-size: 10px;
+	font-weight: normal;
+	margin-right: 4px;
+	margin-top: 3px;
+}
+div.rolloutbox-commands a {
+	color: blue;
+	text-decoration: none;
+}
+div.rolloutbox-commands a:hover {
+	text-decoration: underline;
+}
+
+/*
+ * DROP DOWN MENU
+ */
+div.simplemvc-dropdownmenu-container {
+	font-family: arial, verdana;
+	font-size: 12px;
+	font-weight: normal;
+	background-color: #eee;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-color: #CCCCCC #BBBBBB #A0A0A0;
+	border-left: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	border-style: solid;
+	border-width: 1px;
+	color: #000000;
+	cursor: default;
+	margin: 0 8px 0 0;
+	outline: medium none;
+	padding: 1px 6px 1px 4px;
+	text-align: left;
+	vertical-align: middle;
+	white-space: nowrap;
+	position: relative;
+	float: left;
+	height: 24px;
+	overflow: visible;
+}
+div.simplemvc-dropdownmenu-container a.menu {
+	text-decoration: none;
+	color: black;
+}
+div.simplemvc-dropdownmenu-container a.menu img {
+	margin-right: 4px;
+	margin-top: 6px;
+}
+div.simplemvc-dropdownmenu-container ul {
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	list-style: none outside none;
+	margin: 0;
+	position: absolute;
+	top: 25px;
+	display: none;
+	padding: 0;
+    z-index: 999;
+}
+div.simplemvc-dropdownmenu-container ul li { 
+	margin: 2px;
+}
+div.simplemvc-dropdownmenu-container ul li:hover {
+	background-color: #3470A6;
+	cursor: pointer;
+	color: #fff;
+}
+
+/*
+ * BANDEIRAS BRASILEIRAS
+ */
+.bandeira {
+	display: inline-block;
+	width: 20px;
+	height: 14px;
+	margin-top: 0px;
+	margin-right: 2px;
+	line-height: 14px;
+	vertical-align: text-top;
+	background-image: url("./img/bandeiras20x14/estados.png");
+	background-position: 14px 14px;
+	background-repeat: no-repeat;
+}
+.AC {
+	background-position: 0px 0px;
+}
+.AL {
+	background-position: -20px 0px;
+}
+.AM {
+	background-position: -40px 0px;
+}
+.AP {
+	background-position: -60px 0px;
+}
+.BA {
+	background-position: -80px 0px;
+}
+.CE {
+	background-position: -100px 0px;
+}
+.DF {
+	background-position: -120px 0px;
+}
+.ES {
+	background-position: -140px 0px;
+}
+.GO {
+	background-position: -160px 0px;
+}
+.MA {
+	background-position: 0px -14px;
+}
+.MG {
+	background-position: -20px -14px;
+}
+.MS {
+	background-position: -40px -14px;
+}
+.MT {
+	background-position: -60px -14px;
+}
+.PA {
+	background-position: -80px -14px;
+}
+.PB {
+	background-position: -100px -14px;
+}
+.PE {
+	background-position: -120px -14px;
+}
+.PI {
+	background-position: -140px -14px;
+}
+.PR {
+	background-position: -160px -14px;
+}
+.RJ {
+	background-position: 0px -28px;
+}
+.RN {
+	background-position: -20px -28px;
+}
+.RO {
+	background-position: -40px -28px;
+}
+.RR {
+	background-position: -60px -28px;
+}
+.RS {
+	background-position: -80px -28px;
+}
+.SC {
+	background-position: -100px -28px;
+}
+.SE {
+	background-position: -120px -28px;
+}
+.SP {
+	background-position: -140px -28px;
+}
+.TO {
+	background-position: -160px -28px;
+}
+
+/*
+ * ESTRELAS
+ */
+.estrelas-pequenas {
+	display: inline-block;
+	width: 40px;
+	height: 8px;
+	margin-top: 0px;
+	margin-right: 2px;
+	line-height: 8px;
+	vertical-align: text-top;
+	background-image: url("./img/fivestars/8x8.png");
+	background-repeat: no-repeat;
+}
+.estrelas-pequenas.um {
+	background-position: 0px 0px;
+}
+.estrelas-pequenas.dois {
+	background-position: 0px -8px;
+}
+.estrelas-pequenas.tres {
+	background-position: 0px -16px;
+}
+.estrelas-pequenas.quatro {
+	background-position: 0px -24px;
+}
+.estrelas-pequenas.cinco {
+	background-position: 0px -32px;
+}
+
+.estrelas-medias {
+	display: inline-block;
+	width: 60px;
+	height: 12px;
+	line-height: 12px;
+	margin-top: 0px;
+	margin-right: 2px;
+	vertical-align: text-top;
+	background-image: url("./img/fivestars/12x12.png");
+	background-repeat: no-repeat;
+}
+.estrelas-medias.um {
+	background-position: 0px 0px;
+}
+.estrelas-medias.dois {
+	background-position: 0px -12px;
+}
+.estrelas-medias.tres {
+	background-position: 0px -24px;
+}
+.estrelas-medias.quatro {
+	background-position: 0px -36px;
+}
+.estrelas-medias.cinco {
+	background-position: 0px -48px;
+}
+
+.estrelas-grandes {
+	display: inline-block;
+	width: 80px;
+	height: 16px;
+	line-height: 16px;
+	margin-top: 0px;
+	margin-right: 2px;
+	vertical-align: text-top;
+	background-image: url("./img/fivestars/16x16.png");
+	background-repeat: no-repeat;
+}
+.estrelas-grandes.um {
+	background-position: 0px 0px;
+}
+.estrelas-grandes.dois {
+	background-position: 0px -16px;
+}
+.estrelas-grandes.tres {
+	background-position: 0px -32px;
+}
+.estrelas-grandes.quatro {
+	background-position: 0px -48px;
+}
+.estrelas-grandes.cinco {
+	background-position: 0px -64px;
+}
+
+/*
+ * IOS CHECK BOXES
+ */
+:root input[type="checkbox"].ios-switch {
+	position: absolute;
+	opacity: 0;
+}
+:root input[type="checkbox"].ios-switch + div {
+	display: inline-block;
+	vertical-align: middle;
+	width: 3em;	
+	height: 1em;
+	border: 1px solid rgba(0,0,0,.3);
+	border-radius: 999px;
+	margin: 0 .5em;
+	background: white;
+	background-image: linear-gradient(rgba(0,0,0,.1), transparent), linear-gradient(90deg, hsl(210, 90%, 60%) 50%, transparent 50%);
+	background-size: 200% 100%;
+	background-position: 100% 0;
+	background-origin: border-box;
+	background-clip: border-box;
+	overflow: hidden;
+	transition-duration: .4s;
+	transition-property: padding, width, background-position, text-indent;
+	box-shadow: 0 .1em .1em rgba(0,0,0,.2) inset, 0 .45em 0 .1em rgba(0,0,0,.05) inset;
+	font-size: 100%; /* change this and see how they adjust! */
+}
+:root input[type="checkbox"].ios-switch:checked + div {
+	padding-left: 2em;	
+	/*width: 1em;*/
+	background-position: 0 0;
+}
+:root input[type="checkbox"].ios-switch + div:before {
+	content: 'On';
+	float: left;
+	width: 1.65em; 
+	height: 1.65em;
+	margin: -.1em;
+	border: 1px solid rgba(0,0,0,.35);
+	border-radius: inherit;
+	background: white;
+	background-image: linear-gradient(rgba(0,0,0,.2), transparent);
+	box-shadow: 0 .1em .1em .1em hsla(0, 0%, 100%,.8) inset, 0 0 .5em rgba(0, 0, 0, .3);
+	color: white;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, .3);
+	text-indent: -2.5em;
+}
+:root input[type="checkbox"].ios-switch:active + div:before {
+	background-color: #eee;
+}
+:root input[type="checkbox"].ios-switch:focus + div {
+	box-shadow: 0 0 1px 1px rgb(164, 198, 253);/*0 .1em .1em rgba(0,0,0,.2) inset, 0 .45em 0 .1em rgba(0,0,0,.05) inset, 0 0 .4em 1px rgba(0,0,255,.5);*/
+}
+:root input[type="checkbox"].ios-switch + div:before,
+:root input[type="checkbox"].ios-switch + div:after {
+	font: bold 60%/1.7 sans-serif;		/* o numero depois do 1.7 varia de acordo com o tamanho da fonte */
+	text-transform: uppercase;
+}
+:root input[type="checkbox"].ios-switch + div:after {
+	content: 'Off';
+	float: left;
+	text-indent: .5em;
+	color: rgba(0,0,0,.45);
+	text-shadow: none;
+}
+
+/*
+ * IOS CHECK-BOX: VERSÃO YOUTUBE
+ */
+.checkbox-on-off {
+	vertical-align: top;
+	font-size: 13px;
+	font-weight: bold;
+	color: #767676;
+}
+.checkbox-on-off > label {
+	margin-bottom: 0px;
+	margin-right: 8px;
+	font-weight: normal;
+}
+.checkbox-on-off > span > label {
+	margin-bottom: 0px;
+}
+.yt-uix-checkbox-on-off {
+	position: relative;
+	display: inline-block;
+	width: 35px;
+	padding-right: 2px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.yt-uix-checkbox-on-off input[type=checkbox] {
+	position: absolute;
+	opacity: 0;
+	width: 37px;
+	height: 15px;
+	margin: 0;
+}
+.yt-uix-checkbox-on-off input[type=checkbox]:checked+label {
+	background-color: #167ac6;
+}
+.yt-uix-checkbox-on-off label {
+	display: inline-block;
+	border: 1px solid transparent;
+	height: 13px;
+	width: 100%;
+	background: #b8b8b8;
+	cursor: pointer;
+	border-radius: 20px;
+	-webkit-box-sizing: initial;
+	-moz-box-sizing: initial;
+	box-sizing: initial;
+}
+.yt-uix-checkbox-on-off input[type=checkbox]:checked+label .checked {
+	display: inline-block;
+	/*margin-top: 3px;
+	margin-left: 6px;*/
+	margin-bottom: 2px;
+	background: no-repeat url(https://s.ytimg.com/yts/imgbin/www-hitchhiker-vfl1WP9DO.webp) -252px -601px;
+	background-size: auto;
+	width: 10px;
+	height: 7px;
+}
+.yt-uix-checkbox-on-off label .checked {
+	display: none;
+}
+.yt-uix-checkbox-on-off input[type=checkbox]:checked+label .unchecked {
+	display: none;
+}
+.yt-uix-checkbox-on-off label .unchecked {
+	display: inline-block;
+	float: right;
+	padding-right: 3px;
+}
+.yt-uix-checkbox-on-off input[type=checkbox]:checked+label .toggle {
+	float: right;
+}
+.yt-uix-checkbox-on-off label .toggle {
+	float: left;
+	background: #fbfbfb;
+	height: 13px;
+	width: 13px;
+	border-radius: 13px;
+}
+
+/*
+ * OUTROS
+ */
+thead {
+	background: url('/js/jquery/jtable/themes/lightcolor/bg-thead.png') repeat-x scroll top left #dddddd;
+	border-bottom: 1px solid #bfbfbf;
+	font-weight: bold;
+	color: black;
+}

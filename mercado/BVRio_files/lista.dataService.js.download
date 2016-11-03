@@ -1,0 +1,68 @@
+angular
+	.module("listaDemandas")
+	.factory("dataService", ["$http", function ($http) {
+		return {
+			query: function(params) {
+				var currentIndex = (params.page * params.per_page);
+				var filtros = params.filtros;
+				var url = "/madeira/negocio/negocio/listaDemanda.do?pageSize=" + params.per_page + "&startIndex=" + currentIndex
+				+ "&usuario=" + (params.usuario?"true":"false") + "&mercado=" + (params.mercado?"true":"false");
+				
+				if (filtros.tipoNegocio != undefined && filtros.tipoNegocio != null)
+					url += "&negocio=" + filtros.tipoNegocio.id;
+				
+				if (filtros.risco != undefined && filtros.risco != null)
+					url += "&risco=" + filtros.risco.codigo;
+				
+				if (filtros.produto != undefined && filtros.produto != null)
+					url += "&produto=" + filtros.produto.codigo;
+				
+				if (filtros.paises != undefined && filtros.paises != null)
+					url += "&paises=" + filtros.paises.sigla;
+				
+				if (filtros.especies != undefined && filtros.especies != null)
+					url += "&especies=" + filtros.especies.id;
+				
+				return $http.get(url, params);
+			},
+			
+			getEspeciesPais: function(pais, query) {
+				var stringPais = "";
+				if (pais != null)
+					stringPais = pais.sigla;
+				
+				return $http.get("/madeira/common/produto/capturaEspeciesPais.do?pais=" + stringPais + "&query=" + query);
+			},
+			
+			getProdutos: function () {
+				return $http.get("/madeira/common/produto/listaTiposProdutosBVRio.do");
+			},
+			
+			getPaises: function() {
+				return $http.get("/madeira/common/produto/capturaPaises.do");
+			},
+			
+			getRiscos: function() {
+				return $http.get("/madeira/common/produto/getStatusConsolidadoPessoa.do");
+			},
+			
+			getTiposNegocio: function() {
+				return $http.get("/madeira/common/produto/getTiposNegocio.do");
+			},
+			
+			getNegocioTemporario: function () {
+				return $http.get("/madeira/negocio/negocio/getNegocioTemporario.do");
+			},
+			
+			postRegistraPedido: function(pedido) { 
+				// Passagem de parametros deve ser feita assim, pois se enviarmos o objeto temos problema para pegar os parametros na action
+				var requestObj = {
+						pedido: angular.toJson(pedido)
+				};
+				
+				return $http.post("/madeira/negocio/negocio/registraNegocio.do", $.param(requestObj), {
+					headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+				});
+			}
+		};
+	}]);

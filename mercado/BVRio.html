@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+    <!--
+  /*************************************************************/
+   * Data           : 10/2016                       		 
+   * @copyright     : BVRio
+   * Layout         : MB Santiago Jr.  
+   * Front-End      : MB Santiago Jr.  
+   * Módulo         : Site / Sistema   	    	    		 
+   *************************************************************/
+  -->
+  
+  
+<!-- saved from url=(0054)http://localhost:9080/madeira/negocio/negocio/lista.do -->
+
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-cache, max-age=0, must-revalidate, no-store">
+		
+		<meta name="description" content="BVRio - Sistema de Gerenciamento de Ofertas">
+		<meta name="keywords" content="">
+		<meta name="author" content="Caos :: Vídeo e Design">
+		
+		<meta name="robots" content="noindex">
+		<meta name="googlebot" content="noindex">
+		
+		<title>BVRio</title>
+		<link rel="SHORTCUT ICON" href="http://localhost:9080/img/bvrio.ico">
+		
+		<link type="text/css" rel="stylesheet" href="./BVRio_files/jquery-ui.custom.css">
+		<link type="text/css" rel="stylesheet" href="./BVRio_files/jtable.css">
+		<link type="text/css" rel="stylesheet" href="./BVRio_files/custom-bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="./BVRio_files/template.min.css">
+		<link type="text/css" rel="stylesheet" href="./BVRio_files/jquery.growl.css">
+		<link type="text/css" rel="stylesheet" href="./BVRio_files/flag-icon.min.css">
+		<link type="text/css" rel="stylesheet" href="./BVRio_files/jquery.alerts.css">
+		<link type="text/css" rel="stylesheet" href="./BVRio_files/template.css">
+		
+		<!-- EXTRAS -->
+		<link type="text/css" rel="stylesheet" href="css/reset.css">
+		<link type="text/css" rel="stylesheet" href="css/fonts.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/timberexchange.css">
+        <link type="text/css" rel="stylesheet" href="css/animatecss/animate.css">
+
+		
+		<style>
+			.highlight {
+				-moz-transition: background 3s;
+				-webkit-transition: background 3s;
+				-o-transition: background 3s;
+				-ms-transition: background 3s;
+				transition: background 3s;
+			}
+		</style>
+		
+	<script async="" src="./BVRio_files/analytics.js.download"></script><script>
+	
+</script><script>
+		try {
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			ga('create', 'UA-51555002-2', 'auto');
+			ga('send', 'pageview');
+		} catch (exception) {
+			console.error(exception);
+		}
+	</script><style id="holderjs-style" type="text/css"></style><script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script></head>
+
+
+	<!--
+	  -- GOOGLE ANALYTICS 
+	  -->
+	
+
+
+<!--
+  -- SCRIPTS UTILIZADOS PELO GOOGLE ANALYTICS DE ACORDO COM O PARCEIRO 
+  -->
+
+
+	
+
+
+
+<!--
+  -- SRB 
+  -->
+
+
+
+<!--
+  -- ABAG 
+  -->
+
+
+
+<!--
+  -- ABIEC
+  -->
+
+
+
+<!--
+  -- MADEIRA 
+  -->
+
+
+
+<!--
+  -- TIMBER
+  --> 
+
+
+
+	<body role="document" class="__plain_text_READY__ ng-scope">
+
+		<!-- 
+		  -- topo pagina com menu de navegacao 
+		  -->
+		<header id="header" role="banner">
+			<div class="navbar navbar-default container-fluid screen-setting">
+				<div class="navbar-header">
+
+					<!--
+					  -- Logotipo do parceiro selecionado 
+					  -->
+					<div class="left" style="margin-right: 16px;">
+						<a href="http://localhost:9080/login/login.do">
+							
+								<img class="brand" src="./BVRio_files/logo_bvrio.png" style="margin-top: 2px">
+							
+							
+						</a>
+					</div>
+
+       				<!--
+       				  -- Menu principal do participante 
+       				  -->
+					<div class="left">
+						
+							<nav style="margin-top: 10px">
+								<ol class="breadcrumb">
+									
+									
+									
+										<li><a href="http://localhost:9080/plataforma/plataforma/documentos.do" class="caos">documents</a></li>
+									
+									
+									
+										<li><a href="http://localhost:9080/jsp/plataforma/portal/videos.jsp" class="caos">videos</a></li>
+									
+								</ol>
+							</nav>
+						
+					</div>
+        
+      				<div class="clear"></div>
+   			 	</div>
+
+				<div class="navbar-collapse collapse navbar-right" id="divLoginBox">
+					<div class="left">
+					
+						<!-- 
+						 -- Caixa de login
+						 -->
+						
+
+
+						<!--
+						  -- Barra de informações do participante logado 
+						  -->
+						
+							<div class="dropdown" id="user-menu">
+							  	<a href="http://localhost:9080/madeira/negocio/negocio/lista.do#" class="dropdown-toggle caos" type="button" data-toggle="dropdown">Hello, uriel b <span class="caret"></span></a>
+							  	<ul class="dropdown-menu">
+									<li><a href="http://localhost:9080/login/perfil.do" class="caos"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+							  		<li><a href="http://localhost:9080/login/preparaTrocaSenha.do" class="caos"><i class="glyphicon glyphicon-lock"></i> Change password</a></li>
+									<li><a href="http://localhost:9080/login/mensagens.do" class="caos"><i class="glyphicon glyphicon-envelope"></i> Contact Us</a></li>
+									<li class="divider"></li>
+							    	<li><a data-language="pt" class="caos languageButton"><span class="flag-icon flag-icon-br"></span> Change language</a></li>
+									
+									<li class="divider"></li>
+									<li><a href="http://localhost:9080/login/logout.do" class="caos"><i class="glyphicon glyphicon-log-out"></i> logout</a></li>
+							  	</ul>
+							</div>
+						
+					</div>
+
+					<!--
+					  -- Barra de informações do participante logado 
+					  -->
+					<div class="right" style="padding-left: 16px;">
+						<p class="origem-site">Supported by</p>
+						<a href="http://www.bvrio.org/" target="_blank">
+							<img class="brand" src="./BVRio_files/powered_ibvrio.png">
+						</a>
+					</div>
+
+					<div class="clear">
+				</div>
+			</div>
+					    
+			<div class="clear"></div>
+		</div>
+		</header>
+
+		<!-- 
+		  -- Faixa marquee 
+		  -->
+		<section class="">
+			<div id="marquee-container">
+				<div class="container-fluid screen-setting">
+					<marquee scrollamount="5" scrolldelay="20"><span class="entrada"><span class="ticker">CO2-PERMIT</span>: V <span class="venda">50,00</span> C <span class="compra">30,00</span></span></marquee>
+				</div>
+			</div>
+		</section>
+
+		<!-- 
+		  -- Barra de navegação 
+		  -->
+		<div id="navigationheader">
+			<div id="navigationbar"><a href="http://localhost:9080/login/homepage.do">Home</a> <img src="img/bvr-breadcrumb-seta.png" alt=""> <a href="http://localhost:9080/madeira/negocio/negocio/lista.do">Madeira</a></div>
+			<div id="localMenu">
+                <ul>
+                    <li>
+                         <a href="http://localhost:9080/madeira/analise/analise/dashboard.do" target="_blank" class="caos">Due Diligence</a>
+                    </li>
+                    <li>
+                         <a href="http://localhost:9080/madeira/analise/analise/mercadoENegociacao.do" target="_blank" class="caos">Price Index</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:9080/madeira/venda/venda/editaPerfil.do" class="caos">Profile</a>
+                    </li>
+                </ul>
+            </div>
+			<div id="globalpreload"><img src="./BVRio_files/preload.gif"></div>
+			<div class="clear"></div>
+		</div>	
+
+		<!-- 
+		  -- Mensagens de erro e aviso
+		  -->
+		<script type="text/javascript"> var erros = [];
+</script>
+
+		<p id="error" class="error" style="display:none;"></p>
+
+		
+		<p id="notice" class="notice" style="display: none;"></p>
+
+		<!-- 
+		  -- Main container 
+		  -->
+		<section id="bv-main-container" class="container-fluid screen-setting theme-showcase" role="main">
+		<header class="page-title row">
+		
+		<div class="row-fluid">
+			<div class="col-md-4 col-md-offset-4">
+				<h2 class="page-header">Timber Exchange</h2>
+			</div>
+		</div>
+		<div class="row">
+			<p class="col-xs-offset-2 col-xs-8 text-description-usuario">
+				Requests and offers of Timber
+			</p>
+		</div>
+	</header><div data-ng-controller="listaController as lista" class="ng-scope">
+		<div class="row menu">
+			<div class="col-sm-6">
+				
+					<div class="btn-group">
+						<button type="button" class="btn btn-default btn-menu">
+							MARKET
+						</button>
+						<button type="button" class="btn btn-default btn-menu ">
+							My deals
+						</button>
+					</div>
+				
+			</div>
+			
+			<div class="col-sm-2 text-center">
+				<!-- div data-ng-show="config.mercado">
+					<label class="apresentar-pedidos" for='concessao'>
+						Show my requests
+					</label>
+					<span style='display: inline-block;'><input class='ios-switch' id='minhas' type="checkbox" data-ng-model="config.usuario" data-ng-click="tableParams.reload()" /></span>
+				</div -->
+			</div>
+			
+			<div class="col-sm-4 text-right">
+				<a href="http://localhost:9080/madeira/venda/venda/editaPerfil.do">
+					<button class="btn btn-primary">
+						SELL TIMBER
+						<span>Launch new offer for sale</span>
+					</button>
+				</a>
+				<a href="http://localhost:9080/madeira/negocio/negocio/pedido.do">
+					<button class="btn btn-florestal" data-model="loginHelper">
+						BUY TIMBER
+						<span>Add new request</span>
+					</button>
+				</a>
+			</div>
+		</div>
+
+		<div class="row" data-ng-show="exibirTabela">
+			<div class="col-sm-12">
+				<div loading-container="tableParams.settings().$loading">
+			  		<div class="row" id="filtros">
+			  			<div class="col-md-1">
+		      				<select data-ng-change="atualizaFiltro()" class="form-control ng-pristine ng-untouched ng-valid ng-empty" data-ng-model="filtros.tipoNegocio" data-ng-options="tipo as tipo.nome for tipo in tiposNegocio track by tipo.id"><option value="" class="" selected="selected">B/S</option><option label="Buy" value="0">Buy</option><option label="Sell" value="1">Sell</option></select>
+	      				</div>
+	      				<div class="col-md-2">
+		      				<div class="ui-select-container ui-select-bootstrap dropdown ng-empty ng-valid" ng-class="{open: $select.open}" data-ng-model="filtros.produto" data-ng-change="atualizaFiltro()"><div class="ui-select-match ng-scope" ng-hide="$select.open &amp;&amp; $select.searchEnabled" ng-disabled="$select.disabled" ng-class="{&#39;btn-default-focus&#39;:$select.focus}" placeholder="Filter by product"><span tabindex="-1" class="btn btn-default form-control ui-select-toggle" aria-label="Select box activate" ng-disabled="$select.disabled" ng-click="$select.activate()" style="outline: 0;"><span ng-show="$select.isEmpty()" class="ui-select-placeholder text-muted ng-binding">Filter by product</span> <span ng-hide="$select.isEmpty()" class="ui-select-match-text pull-left ng-hide" ng-class="{&#39;ui-select-allow-clear&#39;: $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-transclude=""><span class="ng-binding ng-scope"></span></span> <i class="caret pull-right" ng-click="$select.toggle($event)"></i> <a ng-show="$select.allowClear &amp;&amp; !$select.isEmpty() &amp;&amp; ($select.disabled !== true)" aria-label="Select box clear" style="margin-right: 10px" ng-click="$select.clear($event)" class="btn btn-xs btn-link pull-right ng-hide"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></a></span></div><input type="search" autocomplete="off" tabindex="-1" aria-expanded="true" aria-label="Select box" aria-owns="ui-select-choices-0" aria-activedescendant="ui-select-choices-row-0-0" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-empty ng-hide" ng-class="{ &#39;ui-select-search-hidden&#39; : !$select.searchEnabled }" placeholder="Filter by product" ng-model="$select.search" ng-show="$select.open" style="width: 10px;"><ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope ng-hide" role="listbox" ng-show="$select.open &amp;&amp; $select.items.length &gt; 0" repeat="produto in produtos | propsFilter: {nome: $select.search}"><li class="ui-select-choices-group" id="ui-select-choices-0"><div class="divider ng-hide" ng-show="$select.isGrouped &amp;&amp; $index &gt; 0"></div><div ng-show="$select.isGrouped" class="ui-select-choices-group-label dropdown-header ng-binding ng-hide" ng-bind="$group.name"></div><!-- ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: produto in $select.items --></li></ul><div class="ui-select-no-choice"></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-0" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+	      				</div>
+	      				<div class="col-md-3">
+			      			<div class="col-md-12">
+								<div class="ui-select-container ui-select-bootstrap dropdown ng-empty ng-valid" ng-class="{open: $select.open}" id="especie" data-ng-change="atualizaFiltro()" data-ng-model="filtros.especies" theme="bootstrap"><div class="ui-select-match ng-scope" ng-hide="$select.open &amp;&amp; $select.searchEnabled" ng-disabled="$select.disabled" ng-class="{&#39;btn-default-focus&#39;:$select.focus}" placeholder="Search species"><span tabindex="-1" class="btn btn-default form-control ui-select-toggle" aria-label="Select box activate" ng-disabled="$select.disabled" ng-click="$select.activate()" style="outline: 0;"><span ng-show="$select.isEmpty()" class="ui-select-placeholder text-muted ng-binding">Search species</span> <span ng-hide="$select.isEmpty()" class="ui-select-match-text pull-left ng-hide" ng-class="{&#39;ui-select-allow-clear&#39;: $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-transclude=""><span class="ng-binding ng-scope">
+										 spp.  - 
+									</span></span> <i class="caret pull-right" ng-click="$select.toggle($event)"></i> <a ng-show="$select.allowClear &amp;&amp; !$select.isEmpty() &amp;&amp; ($select.disabled !== true)" aria-label="Select box clear" style="margin-right: 10px" ng-click="$select.clear($event)" class="btn btn-xs btn-link pull-right ng-hide"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></a></span></div><input type="search" autocomplete="off" tabindex="-1" aria-expanded="true" aria-label="Select box" aria-owns="ui-select-choices-1" aria-activedescendant="ui-select-choices-row-1-0" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-empty ng-hide" ng-class="{ &#39;ui-select-search-hidden&#39; : !$select.searchEnabled }" placeholder="Search species" ng-model="$select.search" ng-show="$select.open" style="width: 10px;"><ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope ng-hide" role="listbox" ng-show="$select.open &amp;&amp; $select.items.length &gt; 0" refresh="atualizaEspecies($select.search)" refresh-delay="0" repeat="item in especies"><li class="ui-select-choices-group" id="ui-select-choices-1"><div class="divider ng-hide" ng-show="$select.isGrouped &amp;&amp; $index &gt; 0"></div><div ng-show="$select.isGrouped" class="ui-select-choices-group-label dropdown-header ng-binding ng-hide" ng-bind="$group.name"></div><!-- ngRepeat: item in $select.items --></li></ul><div class="ui-select-no-choice"></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-1" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="ui-select-container ui-select-bootstrap dropdown ng-empty ng-valid" ng-class="{open: $select.open}" data-ng-change="atualizaFiltro()" data-ng-model="filtros.paises"><div class="ui-select-match ng-scope" ng-hide="$select.open &amp;&amp; $select.searchEnabled" ng-disabled="$select.disabled" ng-class="{&#39;btn-default-focus&#39;:$select.focus}" placeholder="Filter by country"><span tabindex="-1" class="btn btn-default form-control ui-select-toggle" aria-label="Select box activate" ng-disabled="$select.disabled" ng-click="$select.activate()" style="outline: 0;"><span ng-show="$select.isEmpty()" class="ui-select-placeholder text-muted ng-binding">Filter by country</span> <span ng-hide="$select.isEmpty()" class="ui-select-match-text pull-left ng-hide" ng-class="{&#39;ui-select-allow-clear&#39;: $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-transclude=""><span class="ng-binding ng-scope"></span></span> <i class="caret pull-right" ng-click="$select.toggle($event)"></i> <a ng-show="$select.allowClear &amp;&amp; !$select.isEmpty() &amp;&amp; ($select.disabled !== true)" aria-label="Select box clear" style="margin-right: 10px" ng-click="$select.clear($event)" class="btn btn-xs btn-link pull-right ng-hide"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></a></span></div><input type="search" autocomplete="off" tabindex="-1" aria-expanded="true" aria-label="Select box" aria-owns="ui-select-choices-2" aria-activedescendant="ui-select-choices-row-2-0" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-empty ng-hide" ng-class="{ &#39;ui-select-search-hidden&#39; : !$select.searchEnabled }" placeholder="Filter by country" ng-model="$select.search" ng-show="$select.open" style="width: 10px;"><ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope ng-hide" role="listbox" ng-show="$select.open &amp;&amp; $select.items.length &gt; 0" repeat="pais in paises | propsFilter: {nome: $select.search}"><li class="ui-select-choices-group" id="ui-select-choices-2"><div class="divider ng-hide" ng-show="$select.isGrouped &amp;&amp; $index &gt; 0"></div><div ng-show="$select.isGrouped" class="ui-select-choices-group-label dropdown-header ng-binding ng-hide" ng-bind="$group.name"></div><!-- ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: pais in $select.items --></li></ul><div class="ui-select-no-choice"></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-2" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+	      				</div>
+	      				<div class="col-md-1">
+			      			<select data-ng-change="atualizaFiltro()" class="form-control ng-pristine ng-untouched ng-valid ng-empty" data-ng-model="filtros.risco" data-ng-options="risco as risco.nome for risco in riscos track by risco.codigo"><option value="" selected="selected" class="">Risk</option><option label="LW" value="0">LW</option><option label="MD" value="1">MD</option><option label="HG" value="2">HG</option><option label="n.a." value="3">n.a.</option><option label="VH" value="4">VH</option></select>
+	      				</div>
+				  </div>
+			      <table data-ng-table="tableParams" class="table table-condensed table-bordered table-striped ng-scope ng-table">
+			      	<thead>
+				      	<tr style="background-color: #000; color: #fff;">
+				      		<td id="colNegociacao">B/S</td>
+				      		<td id="colId">Id</td>
+				      		<td id="colData">Date</td>
+				      		<td id="colProduto">Product</td>
+				      		<td id="colEspecie">Species</td>
+				      		<td id="colPais">Country 
+				      			<span class="badge helper" data-toggle="tooltip" data-placement="top" data-title="Timber country of origin" data-original-title="" title=""></span>
+			      			</td>
+				      		<td id="colRisco">Risk</td>
+				      		<td id="colVolume">Volume</td>
+				      		<td id="colFrequencia">Frequency</td>
+				      		<td id="colPreco">Price</td>
+				      		<td id="colAcao">Make offer</td>
+			      		</tr>
+		      		</thead>
+			        <tbody><!-- ngRepeat: pedido in $data --><tr data-ng-repeat="pedido in $data" data-disabled-ng-click="visualizaPedido(pedido.id)" class="ng-scope">
+			          <td data-ng-show="pedido.rfq" class="idCV compra">B</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV venda ng-hide">S</td>
+			          <td class="ng-binding">16</td>
+			          <td class="ng-binding">17/10/2016</td>
+			          <td class="ng-binding">Charcoal</td>
+			          <td class="ng-binding">Ferro, Pau</td>
+			          <td class="ng-binding">Indiferente</td>
+			          <td>
+			          	<span data-ng-show="!pedido.rfq" class="badge ng-hide" style="background-color: #FF0000">R</span>
+			          	<span data-ng-show="pedido.rfq">-</span>
+		          	  </td>
+			          <td class="ng-binding">50 m³</td>
+			          <td class="ng-binding">Monthly</td>
+			          <td>
+			            <span data-ng-show="pedido.preco == 0" class="ng-hide">-</span>
+			          	<span data-ng-show="pedido.preco != 0" class="ng-binding">BRL 50 / m³</span>
+			          </td>
+			          <td data-ng-show="pedido.rfq" class="idCV venda">Sell</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV compra ng-hide">Buy</td>
+			        </tr><!-- end ngRepeat: pedido in $data --><tr data-ng-repeat="pedido in $data" data-disabled-ng-click="visualizaPedido(pedido.id)" class="ng-scope">
+			          <td data-ng-show="pedido.rfq" class="idCV compra">B</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV venda ng-hide">S</td>
+			          <td class="ng-binding">15</td>
+			          <td class="ng-binding">17/10/2016</td>
+			          <td class="ng-binding">Sawn timber, finished</td>
+			          <td class="ng-binding">Ipe-Roxo</td>
+			          <td class="ng-binding">Ghana</td>
+			          <td>
+			          	<span data-ng-show="!pedido.rfq" class="badge ng-hide" style="background-color: #FF0000">R</span>
+			          	<span data-ng-show="pedido.rfq">-</span>
+		          	  </td>
+			          <td class="ng-binding">5 m³</td>
+			          <td class="ng-binding">Single batch</td>
+			          <td>
+			            <span data-ng-show="pedido.preco == 0">-</span>
+			          	<span data-ng-show="pedido.preco != 0" class="ng-binding ng-hide">BRL 0 / m³</span>
+			          </td>
+			          <td data-ng-show="pedido.rfq" class="idCV venda">Sell</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV compra ng-hide">Buy</td>
+			        </tr><!-- end ngRepeat: pedido in $data --><tr data-ng-repeat="pedido in $data" data-disabled-ng-click="visualizaPedido(pedido.id)" class="ng-scope">
+			          <td data-ng-show="pedido.rfq" class="idCV compra">B</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV venda ng-hide">S</td>
+			          <td class="ng-binding">14</td>
+			          <td class="ng-binding">14/10/2016</td>
+			          <td class="ng-binding">Plywoood</td>
+			          <td class="ng-binding">tab</td>
+			          <td class="ng-binding">Indiferente</td>
+			          <td>
+			          	<span data-ng-show="!pedido.rfq" class="badge ng-hide" style="background-color: #FF0000">R</span>
+			          	<span data-ng-show="pedido.rfq">-</span>
+		          	  </td>
+			          <td class="ng-binding">3.2 m³</td>
+			          <td class="ng-binding">Single batch</td>
+			          <td>
+			            <span data-ng-show="pedido.preco == 0">-</span>
+			          	<span data-ng-show="pedido.preco != 0" class="ng-binding ng-hide">BRL 0 / m³</span>
+			          </td>
+			          <td data-ng-show="pedido.rfq" class="idCV venda">Sell</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV compra ng-hide">Buy</td>
+			        </tr><!-- end ngRepeat: pedido in $data --><tr data-ng-repeat="pedido in $data" data-disabled-ng-click="visualizaPedido(pedido.id)" class="ng-scope">
+			          <td data-ng-show="pedido.rfq" class="idCV compra">B</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV venda ng-hide">S</td>
+			          <td class="ng-binding">12</td>
+			          <td class="ng-binding">14/10/2016</td>
+			          <td class="ng-binding">Beams</td>
+			          <td class="ng-binding">tab</td>
+			          <td class="ng-binding">Indiferente</td>
+			          <td>
+			          	<span data-ng-show="!pedido.rfq" class="badge ng-hide" style="background-color: #FF0000">R</span>
+			          	<span data-ng-show="pedido.rfq">-</span>
+		          	  </td>
+			          <td class="ng-binding">31.2 m³</td>
+			          <td class="ng-binding">Monthly</td>
+			          <td>
+			            <span data-ng-show="pedido.preco == 0">-</span>
+			          	<span data-ng-show="pedido.preco != 0" class="ng-binding ng-hide">BRL 0 / m³</span>
+			          </td>
+			          <td data-ng-show="pedido.rfq" class="idCV venda">Sell</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV compra ng-hide">Buy</td>
+			        </tr><!-- end ngRepeat: pedido in $data --><tr data-ng-repeat="pedido in $data" data-disabled-ng-click="visualizaPedido(pedido.id)" class="ng-scope">
+			          <td data-ng-show="pedido.rfq" class="idCV compra">B</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV venda ng-hide">S</td>
+			          <td class="ng-binding">11</td>
+			          <td class="ng-binding">14/10/2016</td>
+			          <td class="ng-binding">Planks</td>
+			          <td class="ng-binding">Tacapó</td>
+			          <td class="ng-binding">Indiferente</td>
+			          <td>
+			          	<span data-ng-show="!pedido.rfq" class="badge ng-hide" style="background-color: #FF0000">R</span>
+			          	<span data-ng-show="pedido.rfq">-</span>
+		          	  </td>
+			          <td class="ng-binding">77.7 m³</td>
+			          <td class="ng-binding">Single batch</td>
+			          <td>
+			            <span data-ng-show="pedido.preco == 0">-</span>
+			          	<span data-ng-show="pedido.preco != 0" class="ng-binding ng-hide">BRL 0 / m³</span>
+			          </td>
+			          <td data-ng-show="pedido.rfq" class="idCV venda">Sell</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV compra ng-hide">Buy</td>
+			        </tr><!-- end ngRepeat: pedido in $data --><tr data-ng-repeat="pedido in $data" data-disabled-ng-click="visualizaPedido(pedido.id)" class="ng-scope">
+			          <td data-ng-show="pedido.rfq" class="idCV compra">B</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV venda ng-hide">S</td>
+			          <td class="ng-binding">10</td>
+			          <td class="ng-binding">14/10/2016</td>
+			          <td class="ng-binding">Boards, finished</td>
+			          <td class="ng-binding">Ama</td>
+			          <td class="ng-binding">Indiferente</td>
+			          <td>
+			          	<span data-ng-show="!pedido.rfq" class="badge ng-hide" style="background-color: #FF0000">R</span>
+			          	<span data-ng-show="pedido.rfq">-</span>
+		          	  </td>
+			          <td class="ng-binding">213.3 m³</td>
+			          <td class="ng-binding">Single batch</td>
+			          <td>
+			            <span data-ng-show="pedido.preco == 0">-</span>
+			          	<span data-ng-show="pedido.preco != 0" class="ng-binding ng-hide">BRL 0 / m³</span>
+			          </td>
+			          <td data-ng-show="pedido.rfq" class="idCV venda">Sell</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV compra ng-hide">Buy</td>
+			        </tr><!-- end ngRepeat: pedido in $data --><tr data-ng-repeat="pedido in $data" data-disabled-ng-click="visualizaPedido(pedido.id)" class="ng-scope">
+			          <td data-ng-show="pedido.rfq" class="idCV compra">B</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV venda ng-hide">S</td>
+			          <td class="ng-binding">9</td>
+			          <td class="ng-binding">14/10/2016</td>
+			          <td class="ng-binding">Roundwood (logs)</td>
+			          <td class="ng-binding">ama</td>
+			          <td class="ng-binding">Indiferente</td>
+			          <td>
+			          	<span data-ng-show="!pedido.rfq" class="badge ng-hide" style="background-color: #FF0000">R</span>
+			          	<span data-ng-show="pedido.rfq">-</span>
+		          	  </td>
+			          <td class="ng-binding">23.3 m³</td>
+			          <td class="ng-binding">Single batch</td>
+			          <td>
+			            <span data-ng-show="pedido.preco == 0">-</span>
+			          	<span data-ng-show="pedido.preco != 0" class="ng-binding ng-hide">BRL 0 / m³</span>
+			          </td>
+			          <td data-ng-show="pedido.rfq" class="idCV venda">Sell</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV compra ng-hide">Buy</td>
+			        </tr><!-- end ngRepeat: pedido in $data --><tr data-ng-repeat="pedido in $data" data-disabled-ng-click="visualizaPedido(pedido.id)" class="ng-scope">
+			          <td data-ng-show="pedido.rfq" class="idCV compra">B</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV venda ng-hide">S</td>
+			          <td class="ng-binding">8</td>
+			          <td class="ng-binding">13/10/2016</td>
+			          <td class="ng-binding">Roundwood (logs)</td>
+			          <td class="ng-binding">Ipê Amarelo</td>
+			          <td class="ng-binding">Indiferente</td>
+			          <td>
+			          	<span data-ng-show="!pedido.rfq" class="badge ng-hide" style="background-color: #FF0000">R</span>
+			          	<span data-ng-show="pedido.rfq">-</span>
+		          	  </td>
+			          <td class="ng-binding">2.3 m³</td>
+			          <td class="ng-binding">Single batch</td>
+			          <td>
+			            <span data-ng-show="pedido.preco == 0">-</span>
+			          	<span data-ng-show="pedido.preco != 0" class="ng-binding ng-hide">BRL 0 / m³</span>
+			          </td>
+			          <td data-ng-show="pedido.rfq" class="idCV venda">Sell</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV compra ng-hide">Buy</td>
+			        </tr><!-- end ngRepeat: pedido in $data --><tr data-ng-repeat="pedido in $data" data-disabled-ng-click="visualizaPedido(pedido.id)" class="ng-scope">
+			          <td data-ng-show="pedido.rfq" class="idCV compra">B</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV venda ng-hide">S</td>
+			          <td class="ng-binding">7</td>
+			          <td class="ng-binding">13/10/2016</td>
+			          <td class="ng-binding">Pellets</td>
+			          <td class="ng-binding">TAB</td>
+			          <td class="ng-binding">Brazil</td>
+			          <td>
+			          	<span data-ng-show="!pedido.rfq" class="badge ng-hide" style="background-color: #FF0000">R</span>
+			          	<span data-ng-show="pedido.rfq">-</span>
+		          	  </td>
+			          <td class="ng-binding">232.3 m³</td>
+			          <td class="ng-binding">Monthly</td>
+			          <td>
+			            <span data-ng-show="pedido.preco == 0">-</span>
+			          	<span data-ng-show="pedido.preco != 0" class="ng-binding ng-hide">BRL 0 / m³</span>
+			          </td>
+			          <td data-ng-show="pedido.rfq" class="idCV venda">Sell</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV compra ng-hide">Buy</td>
+			        </tr><!-- end ngRepeat: pedido in $data --><tr data-ng-repeat="pedido in $data" data-disabled-ng-click="visualizaPedido(pedido.id)" class="ng-scope">
+			          <td data-ng-show="pedido.rfq" class="idCV compra">B</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV venda ng-hide">S</td>
+			          <td class="ng-binding">6</td>
+			          <td class="ng-binding">13/10/2016</td>
+			          <td class="ng-binding">Roundwood (logs)</td>
+			          <td class="ng-binding">TABEBUIA</td>
+			          <td class="ng-binding">Indiferente</td>
+			          <td>
+			          	<span data-ng-show="!pedido.rfq" class="badge ng-hide" style="background-color: #FF0000">R</span>
+			          	<span data-ng-show="pedido.rfq">-</span>
+		          	  </td>
+			          <td class="ng-binding">12312.3 m³</td>
+			          <td class="ng-binding">Monthly</td>
+			          <td>
+			            <span data-ng-show="pedido.preco == 0">-</span>
+			          	<span data-ng-show="pedido.preco != 0" class="ng-binding ng-hide">BRL 0 / m³</span>
+			          </td>
+			          <td data-ng-show="pedido.rfq" class="idCV venda">Sell</td>
+			          <td data-ng-show="!pedido.rfq" class="idCV compra ng-hide">Buy</td>
+			        </tr><!-- end ngRepeat: pedido in $data -->
+			      </tbody></table><div ng-table-pagination="params" template-url="templates.pagination" class="ng-scope ng-isolate-scope"><!-- ngInclude: templateUrl --><div ng-include="templateUrl" class="ng-scope"><!-- ngIf: params.data.length --><div class="ng-table-pager ng-scope" ng-if="params.data.length"> <!-- ngIf: params.settings().counts.length --><div ng-if="params.settings().counts.length" class="ng-table-counts btn-group pull-right ng-scope"> <!-- ngRepeat: count in params.settings().counts --><button ng-repeat="count in params.settings().counts" type="button" ng-class="{&#39;active&#39;:params.count()==count}" ng-click="params.count(count)" class="btn btn-default ng-scope active"> <span ng-bind="count" class="ng-binding">10</span> </button><!-- end ngRepeat: count in params.settings().counts --><button ng-repeat="count in params.settings().counts" type="button" ng-class="{&#39;active&#39;:params.count()==count}" ng-click="params.count(count)" class="btn btn-default ng-scope"> <span ng-bind="count" class="ng-binding">25</span> </button><!-- end ngRepeat: count in params.settings().counts --><button ng-repeat="count in params.settings().counts" type="button" ng-class="{&#39;active&#39;:params.count()==count}" ng-click="params.count(count)" class="btn btn-default ng-scope"> <span ng-bind="count" class="ng-binding">50</span> </button><!-- end ngRepeat: count in params.settings().counts --><button ng-repeat="count in params.settings().counts" type="button" ng-class="{&#39;active&#39;:params.count()==count}" ng-click="params.count(count)" class="btn btn-default ng-scope"> <span ng-bind="count" class="ng-binding">100</span> </button><!-- end ngRepeat: count in params.settings().counts --> </div><!-- end ngIf: params.settings().counts.length --> <!-- ngIf: pages.length --><ul ng-if="pages.length" class="pagination ng-table-pagination ng-scope"> <!-- ngRepeat: page in pages --><li ng-class="{&#39;disabled&#39;: !page.active &amp;&amp; !page.current, &#39;active&#39;: page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope disabled"> <!-- ngSwitchWhen: prev --><a ng-switch-when="prev" ng-click="params.page(page.number)" href="http://localhost:9080/madeira/negocio/negocio/lista.do" class="ng-scope">«</a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{&#39;disabled&#39;: !page.active &amp;&amp; !page.current, &#39;active&#39;: page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope active"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --><a ng-switch-when="first" ng-click="params.page(page.number)" href="http://localhost:9080/madeira/negocio/negocio/lista.do" class="ng-scope"><span ng-bind="page.number" class="ng-binding">1</span></a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: page --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{&#39;disabled&#39;: !page.active &amp;&amp; !page.current, &#39;active&#39;: page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --><a ng-switch-when="last" ng-click="params.page(page.number)" href="http://localhost:9080/madeira/negocio/negocio/lista.do" class="ng-scope"><span ng-bind="page.number" class="ng-binding">2</span></a><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: next --> </li><!-- end ngRepeat: page in pages --><li ng-class="{&#39;disabled&#39;: !page.active &amp;&amp; !page.current, &#39;active&#39;: page.current}" ng-repeat="page in pages" ng-switch="page.type" class="ng-scope"> <!-- ngSwitchWhen: prev --> <!-- ngSwitchWhen: first --> <!-- ngSwitchWhen: page --> <!-- ngSwitchWhen: more --> <!-- ngSwitchWhen: last --> <!-- ngSwitchWhen: next --><a ng-switch-when="next" ng-click="params.page(page.number)" href="http://localhost:9080/madeira/negocio/negocio/lista.do" class="ng-scope">»</a><!-- end ngSwitchWhen: --> </li><!-- end ngRepeat: page in pages --> </ul><!-- end ngIf: pages.length --> </div><!-- end ngIf: params.data.length --> </div></div>
+			    </div>
+	    
+				<div id="listaComprasMercado" class="lista-negocios">
+				</div>
+	
+				<div id="listaComprasUsuario" class="lista-negocios hidden">
+				</div>
+	
+				<div id="listaVendasMercado" class="lista-negocios hidden">
+					Coming soon ...
+				</div>
+	
+				<div id="listaVendasUsuario" class="lista-negocios hidden">
+					Coming soon ...
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-12 jumbotron ng-hide" data-ng-show="pedidosCotacaoRecebidos">
+			Você vende produtos de madeira? <br>
+			Nossa plataforma tem XXX pedidos de cotação que podem lhe interessar.<br> 
+			<a href="http://localhost:9080/madeira/negocio/negocio/lista.do">Clique aqui</a> para indicar seus produtos e as espécies de madeira com que trabalha<br>
+			e receba ofertas compatíveis com o seu perfil.
+		</div>
+
+		
+	</div></section>
+
+		<!-- 
+		  -- Footer 
+		  -->
+		<footer class="footer-home" style="position: relative; bottom: 0px;">
+			<div class="container-fluid screen-setting">
+				
+				<div class="col-xs-2" id="footer-left">
+					<div class="text-footer-copyright text-left">
+						<span>©2012-2016 BVRio</span>
+					</div>
+					<div id="redes_sociais-container">
+						<a href="https://www.facebook.com/InfoBVRio" target="_blank" class="sprite redes_sociais facebook"></a>
+						<a href="https://twitter.com/BVRio" target="_blank" class="sprite redes_sociais twitter"></a>
+						<a href="https://www.youtube.com/user/canalbvrio" target="_blank" class="sprite redes_sociais youtube"></a>
+					</div>
+				</div>
+					
+				<div class="col-xs-8" id="footer-middle">
+					<div class="row">
+						
+							
+								
+									<div class="col-xs-6">
+										<a href="http://localhost:9080/florestal/cra/plataforma/prepara.do" class="text-description-list footer-link">
+											Forest Legal Reserve
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://localhost:9080/florestal/car/plataforma/prepara.do" class="text-description-list footer-link">
+											CAR
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://localhost:9080/madeira/negocio/negocio/lista.do" class="text-description-list footer-link">
+											Timber Exchange
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://localhost:9080/pneu/plataforma/prepara.do" class="text-description-list footer-link">
+											Tire Recycling Credits
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://localhost:9080/embalagem/plataforma/prepara.do" class="text-description-list footer-link">
+											Reverse Logistics Credits
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://localhost:9080/embalagem/venda/relatorioFisico.do" class="text-description-list footer-link">
+											Recyclable Materials index
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://localhost:9080/contribuicoes/plataforma/prepara.do" class="text-description-list footer-link">
+											VCCs
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://localhost:9080/carbono/plataforma/prepara.do" class="text-description-list footer-link">
+											Carbon Emissions Trading simulation
+										</a>
+									</div>
+								
+							
+							
+							<div class="col-xs-6">
+								<a href="mailto:info@bvrio.org" class="text-description-list">
+								Contact us
+								</a>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="col-xs-2" id="footer-right">
+					<div class="text-footer-privacidade">
+						<span>
+							<a href="http://www.bvrio.org/" class="text-description-list footer-link">
+								About iBVRio
+							</a>
+						</span>
+					</div>
+					<div class="text-footer-privacidade">
+						<span>
+							<a href="http://localhost:9080/login/privacidade.do" class="text-description-list footer-link">
+								Privacy policy
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+
+
+<!-- 
+  -- Scripts importados
+  -->
+<script type="text/javascript" src="./BVRio_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/jquery-ui.min.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/jquery.maskedinput.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/simplemvc.modaldialog.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/simplemvc.paneldialog.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/simplemvc.i18n.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/forms.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/bootstrap.min.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/template.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/jquery.growl.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/js.cookie.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/jquery.alerts.js.download"></script>
+
+   
+<!--
+  -- SETUP DO TEMPLATE 
+  -->
+<script type="text/javascript">
+var templatePanel = null;
+
+$(document).ready(function() {
+	templatePanel = new TemplatePanel();
+	templatePanel.init();
+});
+
+function showProcessingSign() {
+	$("#globalpreload").show();
+}
+
+function hideProcessingSign() {
+	$("#globalpreload").hide();
+}
+
+function showClock() {
+	$("#news-container").removeClass("hidden");
+}
+
+function showTutorialEmbalagem() {
+	templatePanel.apresentaTutorial("vyP2kuQFVPw");
+}
+
+var atualizaPosicaoRodape = function () {
+	templatePanel.atualizaPosicaoRodape();
+}
+</script>
+
+<script type="text/javascript">
+function highlightLoginBox() {
+	window.scrollTo(0, 0);
+	$("#divLoginBox .left").removeClass("highlight");
+	$("#divLoginBox .left").css("background-color", "orange");
+	$("#divLoginBox .left").addClass("highlight");	
+	
+    setTimeout(function() {
+    	$("#divLoginBox .left").removeClass("highlight");
+    	$("#divLoginBox .left").css("background-color", "white");
+    	$("#divLoginBox .left").addClass("highlight");	
+    }, 3000);
+}
+
+var bvCookies = Cookies.noConflict();
+
+$(".languageButton").on("click", function (ev) {
+	var language = $(this).attr("data-language");
+	bvCookies.set("language", language, { expires: 1460 });
+	window.location.reload();
+});
+</script>
+
+
+<link type="text/css" rel="stylesheet" href="./BVRio_files/simplemvc.css">
+<link type="text/css" rel="stylesheet" href="./BVRio_files/mercado.css">
+<link type="text/css" rel="stylesheet" href="./BVRio_files/ng-table.css">
+<link type="text/css" rel="stylesheet" href="./BVRio_files/select2.css">
+<link type="text/css" rel="stylesheet" href="./BVRio_files/select.css">
+
+<script type="text/javascript" src="./BVRio_files/simplemvc.iosswitch.js.download"></script>
+
+<script src="./BVRio_files/js.cookie.js.download"></script>
+<script src="./BVRio_files/select2.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/angular.js.download"></script>
+<script src="./BVRio_files/angular-sanitize.js.download"></script>
+<script src="./BVRio_files/select.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/ng-table.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/lista.js.download"></script>
+<script type="text/javascript" src="./BVRio_files/lista.dataService.js.download"></script>
+
+<style>
+.menu {
+	margin-bottom: 20px;
+}
+
+.sinal {
+	height: 1.2em;
+}
+
+.btn-menu {
+	width: 180px;
+	height: 48px;
+	background-image: none !important;
+	line-height: 1.3em;
+}
+
+.botao-ativo {
+	background: #bdbdbd !important;
+	color: white !important;
+}
+
+.borda-esquerda {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.borda-direita {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.sem-borda {
+	border-radius: 0;
+}
+
+.apresentar-pedidos {
+	margin-top: 16px;
+	font-size: 13px;
+    font-weight: normal;
+}
+
+.col-sm-4.text-right > a > .btn > span {
+	display: block;
+	font-size: 10px;
+	color: lightgray;
+}
+
+.jumbotron {
+	background: #fff;
+	border: 1px solid #cbcbcb;
+	text-align: center;
+}
+
+#mercadoenegociacao {
+	font-size: 0.8em;
+}
+
+#negociar {
+	font-size: 0.8em;
+}
+
+.status:before {
+}
+
+.tooltip-inner {
+	max-width: 350px;
+}
+
+.hidden-before-angular {
+	display: none;
+}
+
+.idCV {
+	text-align: center;
+	color: #000;
+	font-weight: bolder;
+}
+
+table .compra {
+	background-color: green;
+	color: white;
+}
+
+table .venda {
+	background-color: #2266CC;
+	color: white;
+}
+
+.helper {
+	cursor: help;
+}
+
+.helper:before {
+	content: "?";
+}
+
+#filtros {
+	margin-left: 1px; margin-right: 1px; background-color: #DDD; padding-top: 0.4em; padding-bottom: 0.4em;
+}
+
+#filtros .form-control {
+	height: auto !important;
+	padding: 3px 12px;
+}
+
+#colNegociacao { width: 3em; }
+#colId { width: 4em; }
+#colData { width: 7em; }
+#colProduto { width: 20em; }
+#colEspecie { width: auto; }
+#colPais { width: 8em; }
+#colRisco { width: 4em; }
+#colVolume { width: 7em; }
+#colFrequencia { width: 8em; }
+#colPreco { width: 12em; }
+#colAcao { width: 7em; }
+
+</style>
+
+<div id="localMenu">
+	
+	
+	
+</div>
+
+<div id="content"> 
+	
+	
+	
+</div>
+
+<script type="text/javascript">
+var primeiroAcesso = false; // ;
+var isLogado = false; // ;
+var modalRegistroPrimeiroAcesso = null;
+
+$(function () {
+	prepareTranslation(["/jsp/madeira/negocio/lista/lista.properties"], "en", function () {
+		
+		$("[data-toggle=tooltip]").tooltip();
+		
+		// Cria breadcrumbs
+		addNavigation("Madeira", "/madeira/negocio/negocio/lista.do");
+		
+		// Inicializa configuracoes
+		$(".hidden-before-angular").removeClass("hidden-before-angular");
+	
+		// Inicializa angular
+		angular.bootstrap($("body"), ["listaDemandas"]);
+		atualizaPosicaoRodape();
+	});
+});
+</script></body></html>

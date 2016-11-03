@@ -1,0 +1,171 @@
+var app = angular.module("listaDemandas", ["ngTable", 'ui.select', 'ngSanitize']);
+
+/**
+ * AngularJS default filter with the following expression:
+ * "person in people | filter: {name: $select.search, age: $select.search}"
+ * performs an AND between 'name: $select.search' and 'age: $select.search'.
+ * We want to perform an OR.
+ */
+app.filter('propsFilter', function() {
+  return function(items, props) {
+    var out = [];
+
+    if (angular.isArray(items)) {
+      var keys = Object.keys(props);
+        
+      items.forEach(function(item) {
+        var itemMatches = false;
+
+        for (var i = 0; i < keys.length; i++) {
+          var prop = keys[i];
+          var text = props[prop].toLowerCase();
+          if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
+            itemMatches = true;
+            break;
+          }
+        }
+
+        if (itemMatches) {
+          out.push(item);
+        }
+      });
+    } else {
+      // Let the output be the input untouched
+      out = items;
+    }
+
+    return out;
+  };
+});
+
+app.controller("listaController", function ($scope, $log, NgTableParams, dataService) {
+	$scope.visualizaPedido = function (id) {
+		window.location.href = "/madeira/pedidoCompra/pedido/visualizaPedidoCompra.do?idPedido=" + id;
+	};
+	
+	$scope.config = {
+		usuario: true,
+		mercado: true
+	};
+	
+	$scope.produtos = [];
+	$scope.especies = [];
+	$scope.paises = [];
+	$scope.riscos = [];
+	$scope.tiposNegocio = [];
+	
+	$scope.filtros = {
+		tipoNegocio: null,
+		especies: null,
+		produto: null,
+		paises: null,
+		risco: null
+	};
+	
+	dataService.getTiposNegocio().then(function (response) {
+		$scope.tiposNegocio = response.data.data;
+	});
+	
+	dataService.getProdutos().then(function (response) {
+		var preSelecao = [{sigla: "", nome: translate('madeira.produto')}];
+		$scope.produtos = preSelecao.concat(response.data.data);
+	});
+	
+	dataService.getPaises().then(function (response) {
+		var preSelecao = [{sigla: "", nome: translate('madeira.pais')}];
+		$scope.paises = preSelecao.concat(response.data.data);
+		
+		$scope.paises.sort(function (a, b) {
+			if (a.sigla == "")
+				return -1;
+			
+			if (b.sigla == "")
+				return 1;
+			
+			if (a.nome > b.nome)
+				return 1;
+			
+			if (a.nome < b.nome)
+				return -1;
+			
+			return 0;
+		});
+	});
+	
+	dataService.getRiscos().then(function (response) {
+		$scope.riscos = response.data.data;
+	});
+	
+	$scope.atualizaEspecies = function (search) {
+		var pais = null; // $scope.negocio.pais;
+		
+		// Verifica se busca de especies apresenta ao menos 3 caracteres
+		if (search.length < 3)
+			return;
+		
+		dataService.getEspeciesPais(pais, search).then(function (response) {
+			var preSelecao = [{sigla: "", nome: translate('madeira.especie')}];
+			$scope.especies = preSelecao.concat(response.data.data);
+		});
+	};
+	
+	$scope.exibirTabela = true;
+	
+	$scope.atualizaFiltro = function (mercado, usuario) {
+		$log.info(mercado, usuario);
+		$scope.config.mercado = mercado;
+		
+		if (usuario != undefined)
+			$scope.config.usuario = usuario;
+		
+		$scope.tableParams.page(1);
+		$scope.tableParams.reload();
+	};
+	
+	setInterval(function () {
+		$scope.tableParams.reload();
+	}, 20000);
+	
+	// Mudar cor de fundo dos botões ao serem clicados
+	
+	$scope.primeiroBotao = "botao-ativo"; // Aplica a classe .botao-ativo no primeiro botão ao carregar a página
+	
+	if (Cookies != undefined) {
+		var negocio = Cookies.get("negocio");
+		if (negocio != "" && negocio != undefined && negocio != null) {
+			dataService.getNegocioTemporario().then(function (response) {
+				if (response.data.Result == "FAIL") {
+					error (response.data.message);
+				} else {
+					var negocio = response.data.data;
+					dataService.postRegistraPedido(negocio).then(function (response) {
+						if (response.data.Result == "OK") {
+							success("Pedido registrado.");
+							$scope.tableParams.reload();
+						} else if (response.data.Result == "FAIL") {
+							error (response.data.message);
+						} else {
+							error ("Erro desconhecido");
+						}
+					});
+				}
+			});
+		}
+	}
+	
+	$scope.tableParams = new NgTableParams({}, {
+		getData: function (params) {
+			return dataService.query({
+				page: params.page() - 1,
+				per_page: params.count(),
+				usuario: $scope.config.usuario,
+				mercado: $scope.config.mercado,
+				filtros: $scope.filtros
+			}).then(function (data) {
+				params.total(data.data.TotalRecordCount);
+				setTimeout(function () { atualizaPosicaoRodape(); }, 500);
+				return data.data.Records;
+			});
+		}
+	});
+});
