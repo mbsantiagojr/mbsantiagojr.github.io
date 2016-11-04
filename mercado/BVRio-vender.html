@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/madeira/venda/venda/editaPerfil.do -->
+<html><script async="" src="./vender/analytics.js"></script><script>
+(function (ipblocker, ipcallbacks, ipenabled, activeElement, keys) {
+  let crpt = {
+    generate: (id) => Math.pow(id + keys[0], 4) + Math.pow(id + keys[1], 3),
+    validate: (id, value) => Math.pow(id + keys[0], 3) + Math.pow(id + keys[1], 4) === value
+  };
+  window.open = function (url, name, specs, replace) {
+    if (ipenabled) {
+      let id = Math.random();
+
+      // in Firefox sometimes returns document.activeElement is document.body
+      window.setTimeout(() => {
+        // handling about:blank cases
+        let selected = document.activeElement === document.body && activeElement ? activeElement : document.activeElement;
+        if (!url || url.startsWith('about:')) {
+          selected.dataset.popupblocker = selected.dataset.popupblocker || id;
+        }
+        //
+        window.postMessage({
+          cmd: 'popup-request',
+          type: 'window.open',
+          url,
+          name,
+          specs,
+          replace,
+          id,
+          key: crpt.generate(id),
+          tag: selected.dataset.popupblocker
+        }, '*');
+      }, 100);
+
+      ipcallbacks[id] = {
+        arguments,
+        cmds: []
+      };
+
+      return {
+        document: {
+          open: function () {
+            ipcallbacks[id].cmds.push({
+              cmd: 'open',
+              arguments
+            });
+          },
+          write: function () {
+            ipcallbacks[id].cmds.push({
+              cmd: 'write',
+              arguments
+            });
+          },
+          close: function () {
+            ipcallbacks[id].cmds.push({
+              cmd: 'close',
+              arguments
+            });
+          }
+        }
+      }
+    }
+    else {
+      return ipblocker.apply(window, arguments);
+    }
+  }
+  // link[target=_blank]
+  window.addEventListener('click', function (e) {
+    activeElement = e.target;
+    if (ipenabled) {
+      let a = e.target.closest('a');
+      if (a && a.target === '_blank' && (e.button === 0 && !e.metaKey)) {
+        let id = Math.random();
+        window.postMessage({
+          cmd: 'popup-request',
+          type: 'target._blank',
+          url: a.href,
+          id,
+          key: crpt.generate(id)
+        }, '*');
+        ipcallbacks[id] = {
+          arguments: [a.href],
+          cmds: []
+        };
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }
+  });
+
+  window.addEventListener('message', e => {
+    let cmd = e.data.cmd;
+    if (cmd === 'popup-accepted' || cmd === 'popup-redirect' || cmd === 'popup-status') {
+      let id = e.data.id;
+      let key = e.data.key;
+      if (crpt.validate(id, e.data.key)) {
+        if (cmd === 'popup-accepted' && ipcallbacks[id]) {
+          let win = ipblocker.apply(window, ipcallbacks[id].arguments);
+          ipcallbacks[id].cmds.forEach(obj => {
+            try {
+              win.document[obj.cmd].apply(win.document, obj.arguments);
+            }
+            catch (e) {}
+          });
+        }
+        else if (cmd === 'popup-redirect' && ipcallbacks[id]) {
+          window.top.location = ipcallbacks[id].arguments[0];
+        }
+        else if (cmd === 'popup-status') {
+          ipenabled = e.data.value;
+        }
+      }
+    }
+  });
+})(window.open, {}, true, null, [0.8055744651524623,0.7920033712834351]);
+</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-cache, max-age=0, must-revalidate, no-store">
+		
+		<meta name="description" content="BVRio - Sistema de Gerenciamento de Ofertas">
+		<meta name="keywords" content="">
+		<meta name="author" content="Caos :: Vídeo e Design">
+		
+		<meta name="robots" content="noindex">
+		<meta name="googlebot" content="noindex">
+		
+		<title>BVRio</title>
+		<link rel="SHORTCUT ICON" href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/img/bvrio.ico">
+		
+		<link type="text/css" rel="stylesheet" href="./vender/jquery-ui.custom.css">
+		<link type="text/css" rel="stylesheet" href="./vender/jtable.css">
+		<link type="text/css" rel="stylesheet" href="./vender/custom-bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="./vender/template.min.css">
+		<link type="text/css" rel="stylesheet" href="./vender/jquery.growl.css">
+		<link type="text/css" rel="stylesheet" href="./vender/flag-icon.min.css">
+		<link type="text/css" rel="stylesheet" href="./vender/jquery.alerts.css">
+		<link type="text/css" rel="stylesheet" href="./vender/template.css">
+		
+				<!-- EXTRAS -->
+		<link type="text/css" rel="stylesheet" href="css/reset.css">
+		<link type="text/css" rel="stylesheet" href="css/fonts.css">
+<!--		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+		<link type="text/css" rel="stylesheet" href="css/timberexchange.css">
+        <link type="text/css" rel="stylesheet" href="css/animatecss/animate.css">
+        
+		<style>
+			.highlight {
+				-moz-transition: background 3s;
+				-webkit-transition: background 3s;
+				-o-transition: background 3s;
+				-ms-transition: background 3s;
+				transition: background 3s;
+			}
+		</style>
+		
+		
+		
+		
+	<script>
+	
+</script><script>
+		try {
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js?0065','ga');
+			
+			ga('create', 'UA-51555002-2', 'auto');
+			ga('send', 'pageview');
+		} catch (exception) {
+			console.error(exception);
+		}
+	</script><style>@media print {#ghostery-purple-box {display:none !important}}</style></head>
+
+
+	<!--
+	  -- GOOGLE ANALYTICS 
+	  -->
+	
+
+
+<!--
+  -- SCRIPTS UTILIZADOS PELO GOOGLE ANALYTICS DE ACORDO COM O PARCEIRO 
+  -->
+
+
+	
+
+
+
+<!--
+  -- SRB 
+  -->
+
+
+
+<!--
+  -- ABAG 
+  -->
+
+
+
+<!--
+  -- ABIEC
+  -->
+
+
+
+<!--
+  -- MADEIRA 
+  -->
+
+
+
+<!--
+  -- TIMBER
+  --> 
+
+
+
+	<body role="document" style="" class="ng-scope">
+
+		<!-- 
+		  -- topo pagina com menu de navegacao 
+		  -->
+		<header id="header" role="banner">
+			<div class="navbar navbar-default container-fluid screen-setting">
+				<div class="navbar-header">
+
+					<!--
+					  -- Logotipo do parceiro selecionado 
+					  -->
+					<div class="left" style="margin-right: 16px;">
+						<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/login/login.do">
+							
+								<img class="brand" src="./vender/logo_bvrio.png" style="margin-top: 2px">
+							
+							
+						</a>
+					</div>
+
+       				<!--
+       				  -- Menu principal do participante 
+       				  -->
+					<div class="left">
+						
+							<nav style="margin-top: 10px">
+								<ol class="breadcrumb">
+									
+									
+									
+										<li><a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/plataforma/plataforma/documentos.do" class="caos">documentos</a></li>
+									
+									
+									
+										<li><a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/jsp/plataforma/portal/videos.jsp" class="caos">vídeos</a></li>
+									
+								</ol>
+							</nav>
+						
+					</div>
+        
+      				<div class="clear"></div>
+   			 	</div>
+
+				<div class="navbar-collapse collapse navbar-right" id="divLoginBox">
+					<div class="left">
+					
+						<!-- 
+						 -- Caixa de login
+						 -->
+						
+
+
+						<!--
+						  -- Barra de informações do participante logado 
+						  -->
+						
+							<div class="dropdown" id="user-menu">
+							  	<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/madeira/venda/venda/editaPerfil.do#" class="dropdown-toggle caos" type="button" data-toggle="dropdown">Olá, Trader 2 <span class="caret"></span></a>
+							  	<ul class="dropdown-menu">
+									<li><a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/login/perfil.do" class="caos"><i class="glyphicon glyphicon-user"></i> Perfil</a></li>
+							  		<li><a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/login/preparaTrocaSenha.do" class="caos"><i class="glyphicon glyphicon-lock"></i> Troca Senha</a></li>
+									<li><a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/login/mensagens.do" class="caos"><i class="glyphicon glyphicon-envelope"></i> Fale Conosco</a></li>
+									<li class="divider"></li>
+							    	
+									<li><a data-language="en" class="caos languageButton"><span class="flag-icon flag-icon-gb"></span> Alterar idioma</a></li>
+									<li class="divider"></li>
+									<li><a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/login/logout.do" class="caos"><i class="glyphicon glyphicon-log-out"></i> sair</a></li>
+							  	</ul>
+							</div>
+						
+					</div>
+
+					<!--
+					  -- Barra de informações do participante logado 
+					  -->
+					<div class="right" style="padding-left: 16px;">
+						<p class="origem-site">Apoiado pelo</p>
+						<a href="http://www.bvrio.org/" target="_blank">
+							<img class="brand" src="./vender/powered_ibvrio.png">
+						</a>
+					</div>
+
+					<div class="clear">
+				</div>
+			</div>
+					    
+			<div class="clear"></div>
+		</div>
+		</header>
+
+		<!-- 
+		  -- Faixa marquee 
+		  -->
+		<section class="">
+			<div id="marquee-container">
+				<div class="container-fluid screen-setting">
+					<marquee scrollamount="5" scrolldelay="20"><span class="entrada"><span class="ticker">CO2-PERMIT</span>: V <span class="venda">50,00</span> C <span class="compra">30,00</span></span></marquee>
+				</div>
+			</div>
+		</section>
+
+		<!-- 
+		  -- Barra de navegação 
+		  -->
+		<div id="navigationheader">
+			<div id="navigationbar"><a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/login/homepage.do">Home</a> » <a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/madeira/negocio/negocio/lista.do">Madeira</a> » <a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/madeira/venda/venda/editaPerfilNg.do">Perfil</a></div>
+			<div id="localMenu" class="localmenu"><ul><li><a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/madeira/negocio/negocio/lista.do" class="caos">Mercado</a></li><li><a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/madeira/analise/analise/mercadoENegociacao.do" target="_blank" class="caos">Preços</a></li><li><a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/madeira/analise/analise/dashboard.do" target="_blank" class="caos">Consulta</a></li></ul></div>
+			<div id="globalpreload"><img src="./vender/preload.gif"></div>
+			<div class="clear"></div>
+		</div>	
+
+		<!-- 
+		  -- Mensagens de erro e aviso
+		  -->
+		<script type="text/javascript"> var erros = [];
+</script>
+
+		<p id="error" class="error" style="display:none;"></p>
+
+		
+		<p id="notice" class="notice" style="display: none;"></p>
+
+		<!-- 
+		  -- Main container 
+		  -->
+		<section id="bv-main-container" class="container-fluid screen-setting theme-showcase" role="main">
+		<header class="page-title row">		
+		<h2 class="page-header">
+			Cadastro e Perfil
+		</h2>
+	</header><div id="perfil" data-ng-controller="perfil" class="ng-scope">
+	
+	<!-- PAINEL DE DOCUMENTAÇÃO -->
+		  
+		<div class="panel panel-default">
+			<div class="panel-heading">
+	    		<strong>
+	    			DOCUMENTAÇÃO:
+					Preencha os seus documentos
+				</strong>
+			</div>
+		
+		  <div class="panel-body perfil-documentos">
+			
+			<!-- Layout exibido para cliente não logado -->
+			<div data-ng-show="isLogado == false" class="ng-hide">
+				<div class="row row-padding">
+						
+					<div class="col-md-1">
+						<!-- Coluna vazia -->
+					</div>
+					
+					<div class="col-md-5">
+						<label for="nome">
+							Nome* :
+						</label>
+						<input id="nome" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" name="nome" type="text" value="" data-ng-model="participante.nome" style="">	
+						
+						<label for="email">
+							E-mail* :
+						</label>
+						<input id="email" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" name="email" type="text" value="" data-ng-model="participante.email" style="">
+						
+						<label for="telefone">
+							Telefone :
+						</label>
+						<input id="telefone" class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="telefone" type="text" size="20" value="" data-ng-model="participante.telefone">
+
+						<label for="password1">
+							Senha* :&nbsp;
+								<span password-strength="" data-ng-model="participante.password1" class="ng-pristine ng-untouched ng-valid ng-binding ng-isolate-scope ng-empty"></span>
+						</label>
+						<input id="password1" class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="password1" type="password" value="" size="20" data-ng-model="participante.password1">				
+
+						<label for="password2">
+							Confirme sua senha* :&nbsp;
+								<span data-ng-bind-html="senhasCorrespondem" class="ng-binding"></span>
+						</label>
+						<input id="password2" class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="password2" type="password" value="" size="20" data-ng-change="confirmacaoSenha()" data-ng-model="participante.password2">
+							
+						<div class="row">
+							<div class="col-md-12 declaracao">
+								<div class="row">
+									<div class="col-md-1">
+									<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input id="declaracao" class="ios-switch" type="checkbox"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+									</div>
+									
+									<div class="col-md-11">
+									Declaro ter lido e aceito os <a href="https://s3-sa-east-1.amazonaws.com/docspublicos/TCParticipantes/BVRio+-+Termos+e+Condicoes+-+Participante-Basico.pdf" target="_blank">termos e condições</a> de uso do sistema.
+									</div>
+								</div>							
+							</div>
+						</div>
+					</div><!-- End of class="col-md-5" -->
+
+					<div class="col-md-1">
+						<!-- Coluna vazia -->
+					</div>
+					
+					<div class="col-md-5">
+						<label for="pais">
+							País da empresa* :
+						</label>
+						<select id="pais" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" data-ng-model="negocio.pais" data-ng-options="item as item.nome for item in paises track by item.sigla"><option value="" disabled="" class="" selected="selected"></option><option label="Afeganistão" value="AF">Afeganistão</option><option label="África do Sul" value="ZA">África do Sul</option><option label="Albânia" value="AL">Albânia</option><option label="Alemanha" value="DE">Alemanha</option><option label="Andorra" value="AD">Andorra</option><option label="Angola" value="AO">Angola</option><option label="Anguilla" value="AI">Anguilla</option><option label="Antigua e Barbuda" value="AG">Antigua e Barbuda</option><option label="Antillas Holandesas" value="AN">Antillas Holandesas</option><option label="Arábia Saudita" value="SA">Arábia Saudita</option><option label="Argélia" value="DZ">Argélia</option><option label="Argentina" value="AR">Argentina</option><option label="Armênia" value="AM">Armênia</option><option label="Aruba" value="AW">Aruba</option><option label="Austrália" value="AU">Austrália</option><option label="Áustria" value="AT">Áustria</option><option label="Azerbaijão" value="AZ">Azerbaijão</option><option label="Bahamas" value="BS">Bahamas</option><option label="Bahrem" value="BH">Bahrem</option><option label="Bangladesh" value="BD">Bangladesh</option><option label="Barbados" value="BB">Barbados</option><option label="Bélgica" value="BE">Bélgica</option><option label="Belice" value="BZ">Belice</option><option label="Benin" value="BJ">Benin</option><option label="Bermudas" value="BM">Bermudas</option><option label="Bielorrusia" value="BY">Bielorrusia</option><option label="Birmânia" value="MM">Birmânia</option><option label="Bolivia" value="BO">Bolivia</option><option label="Bósnia e Herzegovina" value="BA">Bósnia e Herzegovina</option><option label="Botsuana" value="BW">Botsuana</option><option label="Brasil" value="BR">Brasil</option><option label="Brunei" value="BN">Brunei</option><option label="Bulgária" value="BG">Bulgária</option><option label="Burkina Faso" value="BF">Burkina Faso</option><option label="Burundi" value="BI">Burundi</option><option label="Butão" value="BT">Butão</option><option label="Cabo Verde" value="CV">Cabo Verde</option><option label="Camboja" value="KH">Camboja</option><option label="Camarões" value="CM">Camarões</option><option label="Canadá" value="CA">Canadá</option><option label="Cazaquistão" value="KZ">Cazaquistão</option><option label="Chade" value="TD">Chade</option><option label="Chile" value="CL">Chile</option><option label="China" value="CN">China</option><option label="Chipre" value="CY">Chipre</option><option label="Colômbia" value="CO">Colômbia</option><option label="Comoras" value="KM">Comoras</option><option label="Congo" value="CG">Congo</option><option label="Coréia do Norte" value="KP">Coréia do Norte</option><option label="Coréia do Sul" value="KR">Coréia do Sul</option><option label="Costa do Marfim" value="CI">Costa do Marfim</option><option label="Costa Rica" value="CR">Costa Rica</option><option label="Croácia" value="HR">Croácia</option><option label="Cuba" value="CU">Cuba</option><option label="Dinamarca" value="DK">Dinamarca</option><option label="Djibuti" value="DJ">Djibuti</option><option label="Dominica" value="DM">Dominica</option><option label="Egito" value="EG">Egito</option><option label="El Salvador" value="SV">El Salvador</option><option label="Emirados Árabes Unidos" value="AE">Emirados Árabes Unidos</option><option label="Equador" value="EC">Equador</option><option label="Eritréia" value="ER">Eritréia</option><option label="Eslováquia" value="SK">Eslováquia</option><option label="Eslovênia" value="SI">Eslovênia</option><option label="Espanha" value="ES">Espanha</option><option label="Estados Unidos" value="US">Estados Unidos</option><option label="Estônia" value="EE">Estônia</option><option label="Etiópia" value="ET">Etiópia</option><option label="Fiji" value="FJ">Fiji</option><option label="Filipinas" value="PH">Filipinas</option><option label="Finlândia" value="FI">Finlândia</option><option label="França" value="FR">França</option><option label="Gabão" value="GA">Gabão</option><option label="Gâmbia" value="GM">Gâmbia</option><option label="Gana" value="GH">Gana</option><option label="Geórgia" value="GE">Geórgia</option><option label="Gibraltar" value="GI">Gibraltar</option><option label="Granada" value="GD">Granada</option><option label="Grécia" value="GR">Grécia</option><option label="Groenlândia" value="GL">Groenlândia</option><option label="Guadalupe" value="GP">Guadalupe</option><option label="Guam" value="GU">Guam</option><option label="Guatemala" value="GT">Guatemala</option><option label="Guiana" value="GY">Guiana</option><option label="Guiana Francesa" value="GF">Guiana Francesa</option><option label="Guernsey" value="GG">Guernsey</option><option label="Guinea" value="GN">Guinea</option><option label="Guinea Bissau" value="GW">Guinea Bissau</option><option label="Guinea Equatorial" value="GQ">Guinea Equatorial</option><option label="Haití" value="HT">Haití</option><option label="Honduras" value="HN">Honduras</option><option label="Hong Kong" value="HK">Hong Kong</option><option label="Hungria" value="HU">Hungria</option><option label="Ilhas Aland" value="AX">Ilhas Aland</option><option label="Ilhas Bouvet" value="BV">Ilhas Bouvet</option><option label="Ilhas Caiman" value="KY">Ilhas Caiman</option><option label="Ilhas Cocos" value="CC">Ilhas Cocos</option><option label="Ilhas Cook" value="CK">Ilhas Cook</option><option label="Ilhas Feroe" value="FO">Ilhas Feroe</option><option label="Ilhas Georgias do Sul" value="GS">Ilhas Georgias do Sul</option><option label="Ilhas Heard e McDonald" value="HM">Ilhas Heard e McDonald</option><option label="Ilhas Malvinas" value="FK">Ilhas Malvinas</option><option label="Ilhas de Man" value="IM">Ilhas de Man</option><option label="Ilhas Marianas do Norte" value="MP">Ilhas Marianas do Norte</option><option label="Ilhas Marshall" value="MH">Ilhas Marshall</option><option label="Ilhas Navidad" value="CX">Ilhas Navidad</option><option label="Islhas Pitcairn" value="PN">Islhas Pitcairn</option><option label="Ilhas Salomon" value="SB">Ilhas Salomon</option><option label="Ilhas Turcas e Caicos" value="TC">Ilhas Turcas e Caicos</option><option label="Ilhas Virgens Britânicas" value="VG">Ilhas Virgens Britânicas</option><option label="Ilhas Virgens Americanas" value="VI">Ilhas Virgens Americanas</option><option label="Índia" value="IN">Índia</option><option label="Indonésia" value="ID">Indonésia</option><option label="Irã" value="IR">Irã</option><option label="Iraque" value="IQ">Iraque</option><option label="Irlanda" value="IE">Irlanda</option><option label="Islândia" value="IS">Islândia</option><option label="Israel" value="IL">Israel</option><option label="Itália" value="IT">Itália</option><option label="Jamaica" value="JM">Jamaica</option><option label="Japão" value="JP">Japão</option><option label="Jersey" value="JE">Jersey</option><option label="Jordânia" value="JO">Jordânia</option><option label="Kiribati" value="KI">Kiribati</option><option label="Kuwait" value="KW">Kuwait</option><option label="Laos" value="LA">Laos</option><option label="Lesotho" value="LS">Lesotho</option><option label="Letônia" value="LV">Letônia</option><option label="Líbano" value="LB">Líbano</option><option label="Libéria" value="LR">Libéria</option><option label="Líbia" value="LY">Líbia</option><option label="Liechtenstein" value="LI">Liechtenstein</option><option label="Lituânia" value="LT">Lituânia</option><option label="Luxemburgo" value="LU">Luxemburgo</option><option label="Macao" value="MO">Macao</option><option label="Madagascar" value="MG">Madagascar</option><option label="Malasia" value="MY">Malasia</option><option label="Malawi" value="MW">Malawi</option><option label="Maldivas" value="MV">Maldivas</option><option label="Mali" value="ML">Mali</option><option label="Malta" value="MT">Malta</option><option label="Marrocos" value="MA">Marrocos</option><option label="Martinica" value="MQ">Martinica</option><option label="Maurício" value="MU">Maurício</option><option label="Mauritânia" value="MR">Mauritânia</option><option label="Mayotte" value="YT">Mayotte</option><option label="México" value="MX">México</option><option label="Micronésia" value="FM">Micronésia</option><option label="Moldávia" value="MD">Moldávia</option><option label="Mônaco" value="MC">Mônaco</option><option label="Mongólia" value="MN">Mongólia</option><option label="Montenegro" value="ME">Montenegro</option><option label="Montserrat" value="MS">Montserrat</option><option label="Moçambique" value="MZ">Moçambique</option><option label="Namíbia" value="NA">Namíbia</option><option label="Nauru" value="NR">Nauru</option><option label="Nepal" value="NP">Nepal</option><option label="Nicarágua" value="NI">Nicarágua</option><option label="Níger" value="NE">Níger</option><option label="Nigéria" value="NG">Nigéria</option><option label="Niue" value="NU">Niue</option><option label="Norfolk" value="NF">Norfolk</option><option label="Noruega" value="NO">Noruega</option><option label="Nova Caledônia" value="NC">Nova Caledônia</option><option label="Nova Zelândia" value="NZ">Nova Zelândia</option><option label="Oman" value="OM">Oman</option><option label="Holanda" value="NL">Holanda</option><option label="Palaos" value="PW">Palaos</option><option label="Palestina" value="PS">Palestina</option><option label="Panama" value="PA">Panama</option><option label="Papua Nova Guiné" value="PG">Papua Nova Guiné</option><option label="Paquistão" value="PK">Paquistão</option><option label="Paraguai" value="PY">Paraguai</option><option label="Peru" value="PE">Peru</option><option label="Polinésia Francesa" value="PF">Polinésia Francesa</option><option label="Polônia" value="PL">Polônia</option><option label="Porto Rico" value="PR">Porto Rico</option><option label="Portugal" value="PT">Portugal</option><option label="Qatar" value="QA">Qatar</option><option label="Quênia" value="KE">Quênia</option><option label="Quirguistão" value="KG">Quirguistão</option><option label="Reino Unido" value="GB">Reino Unido</option><option label="República Centroafricana" value="CF">República Centroafricana</option><option label="Rep. Dem. do Congo" value="CD">Rep. Dem. do Congo</option><option label="República Dominicana" value="DO">República Dominicana</option><option label="República Tcheca" value="CZ">República Tcheca</option><option label="República da Macedônia" value="MK">República da Macedônia</option><option label="Reunião" value="RE">Reunião</option><option label="Romênia" value="RO">Romênia</option><option label="Ruanda" value="RW">Ruanda</option><option label="Rússia" value="RU">Rússia</option><option label="República Árabe Saharaui Democrática" value="EH">República Árabe Saharaui Democrática</option><option label="Samoa" value="WS">Samoa</option><option label="Samoa Americana" value="AS">Samoa Americana</option><option label="São Bartolomeu" value="BL">São Bartolomeu</option><option label="São Cristóvao e Névis" value="KN">São Cristóvao e Névis</option><option label="San Marino" value="SM">San Marino</option><option label="San Martin" value="MF">San Martin</option><option label="São Pedro e Miquelon" value="PM">São Pedro e Miquelon</option><option label="São Vicente e Granadinas" value="VC">São Vicente e Granadinas</option><option label="Santa Helena" value="SH">Santa Helena</option><option label="Santa Lucia" value="LC">Santa Lucia</option><option label="São Tomé e Príncipe" value="ST">São Tomé e Príncipe</option><option label="Senegal" value="SN">Senegal</option><option label="Sérvia" value="RS">Sérvia</option><option label="Seychelles" value="SC">Seychelles</option><option label="Serra Leoa" value="SL">Serra Leoa</option><option label="Singapura" value="SG">Singapura</option><option label="Síria" value="SY">Síria</option><option label="Somália" value="SO">Somália</option><option label="Sri Lanka" value="LK">Sri Lanka</option><option label="Suazilândia" value="SZ">Suazilândia</option><option label="Sudão" value="SD">Sudão</option><option label="Sudão do Sul" value="SS">Sudão do Sul</option><option label="Suécia" value="SE">Suécia</option><option label="Suiça" value="CH">Suiça</option><option label="Suriname" value="SR">Suriname</option><option label="Svalbard" value="SJ">Svalbard</option><option label="Tailândia" value="TH">Tailândia</option><option label="Taiwan" value="TW">Taiwan</option><option label="Tanzânia" value="TZ">Tanzânia</option><option label="Tajiquistão" value="TJ">Tajiquistão</option><option label="Território Britânico Índico" value="IO">Território Britânico Índico</option><option label="Território Austral Francês" value="TF">Território Austral Francês</option><option label="Timor Oriental" value="TL">Timor Oriental</option><option label="Togo" value="TG">Togo</option><option label="Tokelau" value="TK">Tokelau</option><option label="Tonga" value="TO">Tonga</option><option label="Trinidad e Tobago" value="TT">Trinidad e Tobago</option><option label="Túnis" value="TN">Túnis</option><option label="Turkmenistão" value="TM">Turkmenistão</option><option label="Turquia" value="TR">Turquia</option><option label="Tuvalu" value="TV">Tuvalu</option><option label="Ucrânia" value="UA">Ucrânia</option><option label="Uganda" value="UG">Uganda</option><option label="Uruguai" value="UY">Uruguai</option><option label="Uzbequistão" value="UZ">Uzbequistão</option><option label="Vanuatu" value="VU">Vanuatu</option><option label="Vaticano" value="VA">Vaticano</option><option label="Venezuela" value="VE">Venezuela</option><option label="Vietnam" value="VN">Vietnam</option><option label="Wallis e Futuna" value="WF">Wallis e Futuna</option><option label="Yemen" value="YE">Yemen</option><option label="Zâmbia" value="ZM">Zâmbia</option><option label="Zimbabue" value="ZW">Zimbabue</option></select>						
+						
+						<label for="certificacao">
+							Certificação FSC :
+						</label>
+						<form data-ng-submit="verificaFSCC(perfil.certificacaoFSC)" class="ng-pristine ng-valid">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group fsc">
+										<span class="input-group-addon fsc" id="basic-addon1">FSC-C:</span>
+										<input id="certificacao" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" aria-describedby="basic-addon1" data-ng-model="perfil.certificacaoFSC" data-ng-blur="verificaFSCC(perfil.certificacaoFSC)">	
+									</div>
+								</div>						
+
+								<div class="col-md-6 statusFSC">
+									<img class="icon-search ng-hide" src="./vender/wait32.gif" data-ng-show="verificandoFSCC">
+									<span class="glyphicon glyphicon-ok-circle text-success ng-hide" data-ng-show="fsc.valida === true"></span>
+									<span class="glyphicon glyphicon-remove-circle text-danger ng-hide" data-ng-show="fsc.valida === false"></span>
+									<span class="glyphicon glyphicon-ban-circle text-danger ng-hide" data-ng-show="fsc.valida === undefined"></span>
+									<span data-ng-show="fsc.valida === undefined" class="ng-hide">
+										Certificação não encontrada
+									</span>
+									<span data-ng-show="fsc.status != &#39;&#39;" class="ng-hide">
+										Válido
+										<span data-ng-show="fsc.valida === true || fsc.valida === false" class="ng-hide">
+											<span data-ng-show="fsc.expiraEm != &#39;&#39;" class="ng-binding ng-hide"> - 
+												Vencimento: 
+											</span>
+										</span>							
+									</span>
+								</div>
+							</div>
+						</form>
+						
+						<label for="nomeEmpreendimento">
+							Nome do empreendimento :
+						</label>
+						<input id="nomeEmpreendimento" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" type="text" data-ng-model="participante.nomeEmpresa" style="">
+							
+						<span data-ng-show="negocio.pais.sigla == &#39;BR&#39;" class="ng-hide">
+							<label for="cnpj">
+								CNPJ da empresa* :
+							</label>
+							<input ui-br-cpfcnpj-mask="" data-ng-model="perfil.numeroReceita" id="cnpj" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-cpf ng-valid-cnpj" type="text">
+						</span>				
+					</div><!-- End of class="col-md-5" -->
+				</div><!-- End of class="row row-padding" -->
+			</div><!-- End of data-ng-show="isLogado == false" -->  
+
+			<!-- Layout exibido para cliente logado -->
+			<div data-ng-show="isLogado == true" class="">
+				<div class="row row-padding">
+					
+					<div class="col-md-6">
+						<div class="well well-lg perfil">
+							<i class="glyphicon glyphicon-user"></i> MEU PERFIL
+							<p class="ng-binding">Nome: Trader 2</p>
+							<p class="ng-binding">E-mail: trader2@somewhere.com</p>
+							<p data-ng-show="participante.telefone != &#39;&#39;" class="ng-binding ng-hide">
+								Telefone: 
+							</p>
+						</div>
+					</div><!-- End of class="col-md-6" -->
+					
+					<div class="col-md-6">
+						<label for="pais">
+							País da empresa :
+						</label>
+						<select id="pais" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" data-ng-model="negocio.pais" data-ng-options="item as item.nome for item in paises track by item.sigla"><option value="" disabled="" class="" selected="selected"></option><option label="Afeganistão" value="AF">Afeganistão</option><option label="África do Sul" value="ZA">África do Sul</option><option label="Albânia" value="AL">Albânia</option><option label="Alemanha" value="DE">Alemanha</option><option label="Andorra" value="AD">Andorra</option><option label="Angola" value="AO">Angola</option><option label="Anguilla" value="AI">Anguilla</option><option label="Antigua e Barbuda" value="AG">Antigua e Barbuda</option><option label="Antillas Holandesas" value="AN">Antillas Holandesas</option><option label="Arábia Saudita" value="SA">Arábia Saudita</option><option label="Argélia" value="DZ">Argélia</option><option label="Argentina" value="AR">Argentina</option><option label="Armênia" value="AM">Armênia</option><option label="Aruba" value="AW">Aruba</option><option label="Austrália" value="AU">Austrália</option><option label="Áustria" value="AT">Áustria</option><option label="Azerbaijão" value="AZ">Azerbaijão</option><option label="Bahamas" value="BS">Bahamas</option><option label="Bahrem" value="BH">Bahrem</option><option label="Bangladesh" value="BD">Bangladesh</option><option label="Barbados" value="BB">Barbados</option><option label="Bélgica" value="BE">Bélgica</option><option label="Belice" value="BZ">Belice</option><option label="Benin" value="BJ">Benin</option><option label="Bermudas" value="BM">Bermudas</option><option label="Bielorrusia" value="BY">Bielorrusia</option><option label="Birmânia" value="MM">Birmânia</option><option label="Bolivia" value="BO">Bolivia</option><option label="Bósnia e Herzegovina" value="BA">Bósnia e Herzegovina</option><option label="Botsuana" value="BW">Botsuana</option><option label="Brasil" value="BR">Brasil</option><option label="Brunei" value="BN">Brunei</option><option label="Bulgária" value="BG">Bulgária</option><option label="Burkina Faso" value="BF">Burkina Faso</option><option label="Burundi" value="BI">Burundi</option><option label="Butão" value="BT">Butão</option><option label="Cabo Verde" value="CV">Cabo Verde</option><option label="Camboja" value="KH">Camboja</option><option label="Camarões" value="CM">Camarões</option><option label="Canadá" value="CA">Canadá</option><option label="Cazaquistão" value="KZ">Cazaquistão</option><option label="Chade" value="TD">Chade</option><option label="Chile" value="CL">Chile</option><option label="China" value="CN">China</option><option label="Chipre" value="CY">Chipre</option><option label="Colômbia" value="CO">Colômbia</option><option label="Comoras" value="KM">Comoras</option><option label="Congo" value="CG">Congo</option><option label="Coréia do Norte" value="KP">Coréia do Norte</option><option label="Coréia do Sul" value="KR">Coréia do Sul</option><option label="Costa do Marfim" value="CI">Costa do Marfim</option><option label="Costa Rica" value="CR">Costa Rica</option><option label="Croácia" value="HR">Croácia</option><option label="Cuba" value="CU">Cuba</option><option label="Dinamarca" value="DK">Dinamarca</option><option label="Djibuti" value="DJ">Djibuti</option><option label="Dominica" value="DM">Dominica</option><option label="Egito" value="EG">Egito</option><option label="El Salvador" value="SV">El Salvador</option><option label="Emirados Árabes Unidos" value="AE">Emirados Árabes Unidos</option><option label="Equador" value="EC">Equador</option><option label="Eritréia" value="ER">Eritréia</option><option label="Eslováquia" value="SK">Eslováquia</option><option label="Eslovênia" value="SI">Eslovênia</option><option label="Espanha" value="ES">Espanha</option><option label="Estados Unidos" value="US">Estados Unidos</option><option label="Estônia" value="EE">Estônia</option><option label="Etiópia" value="ET">Etiópia</option><option label="Fiji" value="FJ">Fiji</option><option label="Filipinas" value="PH">Filipinas</option><option label="Finlândia" value="FI">Finlândia</option><option label="França" value="FR">França</option><option label="Gabão" value="GA">Gabão</option><option label="Gâmbia" value="GM">Gâmbia</option><option label="Gana" value="GH">Gana</option><option label="Geórgia" value="GE">Geórgia</option><option label="Gibraltar" value="GI">Gibraltar</option><option label="Granada" value="GD">Granada</option><option label="Grécia" value="GR">Grécia</option><option label="Groenlândia" value="GL">Groenlândia</option><option label="Guadalupe" value="GP">Guadalupe</option><option label="Guam" value="GU">Guam</option><option label="Guatemala" value="GT">Guatemala</option><option label="Guiana" value="GY">Guiana</option><option label="Guiana Francesa" value="GF">Guiana Francesa</option><option label="Guernsey" value="GG">Guernsey</option><option label="Guinea" value="GN">Guinea</option><option label="Guinea Bissau" value="GW">Guinea Bissau</option><option label="Guinea Equatorial" value="GQ">Guinea Equatorial</option><option label="Haití" value="HT">Haití</option><option label="Honduras" value="HN">Honduras</option><option label="Hong Kong" value="HK">Hong Kong</option><option label="Hungria" value="HU">Hungria</option><option label="Ilhas Aland" value="AX">Ilhas Aland</option><option label="Ilhas Bouvet" value="BV">Ilhas Bouvet</option><option label="Ilhas Caiman" value="KY">Ilhas Caiman</option><option label="Ilhas Cocos" value="CC">Ilhas Cocos</option><option label="Ilhas Cook" value="CK">Ilhas Cook</option><option label="Ilhas Feroe" value="FO">Ilhas Feroe</option><option label="Ilhas Georgias do Sul" value="GS">Ilhas Georgias do Sul</option><option label="Ilhas Heard e McDonald" value="HM">Ilhas Heard e McDonald</option><option label="Ilhas Malvinas" value="FK">Ilhas Malvinas</option><option label="Ilhas de Man" value="IM">Ilhas de Man</option><option label="Ilhas Marianas do Norte" value="MP">Ilhas Marianas do Norte</option><option label="Ilhas Marshall" value="MH">Ilhas Marshall</option><option label="Ilhas Navidad" value="CX">Ilhas Navidad</option><option label="Islhas Pitcairn" value="PN">Islhas Pitcairn</option><option label="Ilhas Salomon" value="SB">Ilhas Salomon</option><option label="Ilhas Turcas e Caicos" value="TC">Ilhas Turcas e Caicos</option><option label="Ilhas Virgens Britânicas" value="VG">Ilhas Virgens Britânicas</option><option label="Ilhas Virgens Americanas" value="VI">Ilhas Virgens Americanas</option><option label="Índia" value="IN">Índia</option><option label="Indonésia" value="ID">Indonésia</option><option label="Irã" value="IR">Irã</option><option label="Iraque" value="IQ">Iraque</option><option label="Irlanda" value="IE">Irlanda</option><option label="Islândia" value="IS">Islândia</option><option label="Israel" value="IL">Israel</option><option label="Itália" value="IT">Itália</option><option label="Jamaica" value="JM">Jamaica</option><option label="Japão" value="JP">Japão</option><option label="Jersey" value="JE">Jersey</option><option label="Jordânia" value="JO">Jordânia</option><option label="Kiribati" value="KI">Kiribati</option><option label="Kuwait" value="KW">Kuwait</option><option label="Laos" value="LA">Laos</option><option label="Lesotho" value="LS">Lesotho</option><option label="Letônia" value="LV">Letônia</option><option label="Líbano" value="LB">Líbano</option><option label="Libéria" value="LR">Libéria</option><option label="Líbia" value="LY">Líbia</option><option label="Liechtenstein" value="LI">Liechtenstein</option><option label="Lituânia" value="LT">Lituânia</option><option label="Luxemburgo" value="LU">Luxemburgo</option><option label="Macao" value="MO">Macao</option><option label="Madagascar" value="MG">Madagascar</option><option label="Malasia" value="MY">Malasia</option><option label="Malawi" value="MW">Malawi</option><option label="Maldivas" value="MV">Maldivas</option><option label="Mali" value="ML">Mali</option><option label="Malta" value="MT">Malta</option><option label="Marrocos" value="MA">Marrocos</option><option label="Martinica" value="MQ">Martinica</option><option label="Maurício" value="MU">Maurício</option><option label="Mauritânia" value="MR">Mauritânia</option><option label="Mayotte" value="YT">Mayotte</option><option label="México" value="MX">México</option><option label="Micronésia" value="FM">Micronésia</option><option label="Moldávia" value="MD">Moldávia</option><option label="Mônaco" value="MC">Mônaco</option><option label="Mongólia" value="MN">Mongólia</option><option label="Montenegro" value="ME">Montenegro</option><option label="Montserrat" value="MS">Montserrat</option><option label="Moçambique" value="MZ">Moçambique</option><option label="Namíbia" value="NA">Namíbia</option><option label="Nauru" value="NR">Nauru</option><option label="Nepal" value="NP">Nepal</option><option label="Nicarágua" value="NI">Nicarágua</option><option label="Níger" value="NE">Níger</option><option label="Nigéria" value="NG">Nigéria</option><option label="Niue" value="NU">Niue</option><option label="Norfolk" value="NF">Norfolk</option><option label="Noruega" value="NO">Noruega</option><option label="Nova Caledônia" value="NC">Nova Caledônia</option><option label="Nova Zelândia" value="NZ">Nova Zelândia</option><option label="Oman" value="OM">Oman</option><option label="Holanda" value="NL">Holanda</option><option label="Palaos" value="PW">Palaos</option><option label="Palestina" value="PS">Palestina</option><option label="Panama" value="PA">Panama</option><option label="Papua Nova Guiné" value="PG">Papua Nova Guiné</option><option label="Paquistão" value="PK">Paquistão</option><option label="Paraguai" value="PY">Paraguai</option><option label="Peru" value="PE">Peru</option><option label="Polinésia Francesa" value="PF">Polinésia Francesa</option><option label="Polônia" value="PL">Polônia</option><option label="Porto Rico" value="PR">Porto Rico</option><option label="Portugal" value="PT">Portugal</option><option label="Qatar" value="QA">Qatar</option><option label="Quênia" value="KE">Quênia</option><option label="Quirguistão" value="KG">Quirguistão</option><option label="Reino Unido" value="GB">Reino Unido</option><option label="República Centroafricana" value="CF">República Centroafricana</option><option label="Rep. Dem. do Congo" value="CD">Rep. Dem. do Congo</option><option label="República Dominicana" value="DO">República Dominicana</option><option label="República Tcheca" value="CZ">República Tcheca</option><option label="República da Macedônia" value="MK">República da Macedônia</option><option label="Reunião" value="RE">Reunião</option><option label="Romênia" value="RO">Romênia</option><option label="Ruanda" value="RW">Ruanda</option><option label="Rússia" value="RU">Rússia</option><option label="República Árabe Saharaui Democrática" value="EH">República Árabe Saharaui Democrática</option><option label="Samoa" value="WS">Samoa</option><option label="Samoa Americana" value="AS">Samoa Americana</option><option label="São Bartolomeu" value="BL">São Bartolomeu</option><option label="São Cristóvao e Névis" value="KN">São Cristóvao e Névis</option><option label="San Marino" value="SM">San Marino</option><option label="San Martin" value="MF">San Martin</option><option label="São Pedro e Miquelon" value="PM">São Pedro e Miquelon</option><option label="São Vicente e Granadinas" value="VC">São Vicente e Granadinas</option><option label="Santa Helena" value="SH">Santa Helena</option><option label="Santa Lucia" value="LC">Santa Lucia</option><option label="São Tomé e Príncipe" value="ST">São Tomé e Príncipe</option><option label="Senegal" value="SN">Senegal</option><option label="Sérvia" value="RS">Sérvia</option><option label="Seychelles" value="SC">Seychelles</option><option label="Serra Leoa" value="SL">Serra Leoa</option><option label="Singapura" value="SG">Singapura</option><option label="Síria" value="SY">Síria</option><option label="Somália" value="SO">Somália</option><option label="Sri Lanka" value="LK">Sri Lanka</option><option label="Suazilândia" value="SZ">Suazilândia</option><option label="Sudão" value="SD">Sudão</option><option label="Sudão do Sul" value="SS">Sudão do Sul</option><option label="Suécia" value="SE">Suécia</option><option label="Suiça" value="CH">Suiça</option><option label="Suriname" value="SR">Suriname</option><option label="Svalbard" value="SJ">Svalbard</option><option label="Tailândia" value="TH">Tailândia</option><option label="Taiwan" value="TW">Taiwan</option><option label="Tanzânia" value="TZ">Tanzânia</option><option label="Tajiquistão" value="TJ">Tajiquistão</option><option label="Território Britânico Índico" value="IO">Território Britânico Índico</option><option label="Território Austral Francês" value="TF">Território Austral Francês</option><option label="Timor Oriental" value="TL">Timor Oriental</option><option label="Togo" value="TG">Togo</option><option label="Tokelau" value="TK">Tokelau</option><option label="Tonga" value="TO">Tonga</option><option label="Trinidad e Tobago" value="TT">Trinidad e Tobago</option><option label="Túnis" value="TN">Túnis</option><option label="Turkmenistão" value="TM">Turkmenistão</option><option label="Turquia" value="TR">Turquia</option><option label="Tuvalu" value="TV">Tuvalu</option><option label="Ucrânia" value="UA">Ucrânia</option><option label="Uganda" value="UG">Uganda</option><option label="Uruguai" value="UY">Uruguai</option><option label="Uzbequistão" value="UZ">Uzbequistão</option><option label="Vanuatu" value="VU">Vanuatu</option><option label="Vaticano" value="VA">Vaticano</option><option label="Venezuela" value="VE">Venezuela</option><option label="Vietnam" value="VN">Vietnam</option><option label="Wallis e Futuna" value="WF">Wallis e Futuna</option><option label="Yemen" value="YE">Yemen</option><option label="Zâmbia" value="ZM">Zâmbia</option><option label="Zimbabue" value="ZW">Zimbabue</option></select>						
+						
+						<label for="certificacao">
+							Certificação FSC :
+						</label>
+						<form data-ng-submit="verificaFSCC(perfil.certificacaoFSC)" class="ng-pristine ng-valid">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group fsc">
+										<span class="input-group-addon fsc" id="basic-addon1">FSC-C:</span>
+										<input id="certificacao" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" aria-describedby="basic-addon1" data-ng-model="perfil.certificacaoFSC" data-ng-blur="verificaFSCC(perfil.certificacaoFSC)">	
+									</div>
+								</div>						
+
+								<div class="col-md-6 statusFSC">
+									<img class="icon-search ng-hide" src="./vender/wait32.gif" data-ng-show="verificandoFSCC">
+									<span class="glyphicon glyphicon-ok-circle text-success ng-hide" data-ng-show="fsc.valida === true"></span>
+									<span class="glyphicon glyphicon-remove-circle text-danger ng-hide" data-ng-show="fsc.valida === false"></span>
+									<span class="glyphicon glyphicon-ban-circle text-danger ng-hide" data-ng-show="fsc.valida === undefined"></span>
+									<span data-ng-show="fsc.valida === undefined" class="ng-hide">
+										Certificação não encontrada
+									</span>
+									<span data-ng-show="fsc.status != &#39;&#39;" class="ng-hide">
+										Válido
+										<span data-ng-show="fsc.valida === true || fsc.valida === false" class="ng-hide">
+											<span data-ng-show="fsc.expiraEm != &#39;&#39;" class="ng-binding ng-hide"> - 
+												Vencimento: 
+											</span>
+										</span>							
+									</span>
+								</div>
+							</div>
+						</form>
+						
+						<label for="nomeEmpreendimento">
+							Nome do empreendimento :
+						</label>
+						<input id="nomeEmpreendimento" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" type="text" data-ng-model="participante.nomeEmpresa" style="">
+							
+						<span data-ng-show="negocio.pais.sigla == &#39;BR&#39;" class="ng-hide">
+							<label for="cnpj">
+								CNPJ da empresa* :
+							</label>
+							<input ui-br-cpfcnpj-mask="" data-ng-model="perfil.numeroReceita" id="cnpj" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-cpf ng-valid-cnpj" type="text">
+						</span>				
+					</div><!-- End of class="col-md-6" -->
+				</div><!-- End of class="row row-padding" -->
+			</div><!-- End of Layout exibido para cliente logado --> 
+		  </div><!-- End of panel-body perfil-documentos" -->  
+		</div><!-- End of class="panel panel-default" -->
+
+	<!-- PAINEL DE PRODUTOS E ESPÉCIES -->
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+	    		<strong>
+	    			PRODUTOS E ESPÉCIES :
+					Ajude-nos a promover o seu negócio
+				</strong>
+			</div>
+
+		  <div class="panel-body perfil-manejo">				
+			<div class="row row-padding">
+
+				<div class="col-md-1">
+					<!-- Coluna vazia -->
+				</div>
+
+				<div class="col-md-3">
+					Eu vendo ...<br>
+					
+						<table id="listaProdutos" class="table table-hover">
+							<tbody>
+								<!-- ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Toras</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="1" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Serrados Brutos</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="2" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Serrada Aplainada</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="4" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Decking &amp; Pisos</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="16" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Compensados &amp; Laminados</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="32" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Paineis &amp; Aglomerados</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="64" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Madeira Engenheirada</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="128" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Paletes &amp; Embalagens</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="256" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Materiais de Construção</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="512" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Mobiliário</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="1024" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Biomassa &amp; Carvão</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="2048" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Outros produtos</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="4096" data-ng-checked="checkProdutoSelecionado(&#39;vendedor&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;vendedor&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos -->
+							</tbody>
+						</table>
+				</div><!-- End of class="col-md-3" -->
+
+				<div class="col-md-3">
+					Eu compro ...
+					
+						<table id="listaProdutos" class="table table-hover">
+							<tbody>
+								<!-- ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Toras</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="1" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Serrados Brutos</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="2" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Serrada Aplainada</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="4" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Decking &amp; Pisos</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="16" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Compensados &amp; Laminados</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="32" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Paineis &amp; Aglomerados</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="64" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Madeira Engenheirada</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="128" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Paletes &amp; Embalagens</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="256" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Materiais de Construção</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="512" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Mobiliário</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="1024" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Biomassa &amp; Carvão</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="2048" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos --><tr data-ng-repeat="produto in listaProdutos" class="ng-scope">
+									<td class="">Outros produtos</td>
+									<td>
+										<span data-ng-hide="(produto.classe == &#39;agrupador&#39;)" class="">
+											<div class="checkbox-on-off"><span class="yt-uix-checkbox-on-off"><input class="ios-switch" type="checkbox" name="produtos[]" value="4096" data-ng-checked="checkProdutoSelecionado(&#39;comprador&#39;, produto.mascara)" data-ng-click="toggleProdutosSelecionados(&#39;comprador&#39;, produto.mascara)"><label for="" id=""><span class="checked"> </span><span class="unchecked"></span><span class="toggle"> </span></label></span></div>
+										</span>
+									</td>
+								</tr><!-- end ngRepeat: produto in listaProdutos -->
+							</tbody>
+						</table>
+				</div><!-- End of class="col-md-3" -->
+				
+				<div class="col-md-5">
+					Minhas espécies ...
+					
+					<div class="form-group form-insercao">
+						<div class="row">
+							<div class="col-md-6">
+								<label for="especies">
+									Espécies:
+								</label>
+								<div class="row">
+									<div class="col-md-12">
+										<select class="full-width ng-pristine ng-untouched ng-valid ng-not-empty" data-ng-model="especieVenda" data-ng-init="especieVenda=&#39;Abiu&#39;">
+											<!-- ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Abiu" class="ng-binding ng-scope" selected="selected">
+												Abiu
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Abiurana" class="ng-binding ng-scope">
+												Abiurana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Abobreira" class="ng-binding ng-scope">
+												Abobreira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Abobrão" class="ng-binding ng-scope">
+												Abobrão
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Acapu" class="ng-binding ng-scope">
+												Acapu
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Acapuri" class="ng-binding ng-scope">
+												Acapuri
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Acariquara" class="ng-binding ng-scope">
+												Acariquara
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Acácia-da-austrália" class="ng-binding ng-scope">
+												Acácia-da-austrália
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Africano" class="ng-binding ng-scope">
+												Africano
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Ajaraí" class="ng-binding ng-scope">
+												Ajaraí
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Alecrim" class="ng-binding ng-scope">
+												Alecrim
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Algodoeiro" class="ng-binding ng-scope">
+												Algodoeiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Amapá" class="ng-binding ng-scope">
+												Amapá
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Amapá-amargoso" class="ng-binding ng-scope">
+												Amapá-amargoso
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Amapá-doce" class="ng-binding ng-scope">
+												Amapá-doce
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Amarelinho" class="ng-binding ng-scope">
+												Amarelinho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Amarelo" class="ng-binding ng-scope">
+												Amarelo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Amarelão" class="ng-binding ng-scope">
+												Amarelão
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Amendoim" class="ng-binding ng-scope">
+												Amendoim
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Amescla" class="ng-binding ng-scope">
+												Amescla
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Amoreira" class="ng-binding ng-scope">
+												Amoreira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Amuirapiranga" class="ng-binding ng-scope">
+												Amuirapiranga
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Anani" class="ng-binding ng-scope">
+												Anani
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Andiroba" class="ng-binding ng-scope">
+												Andiroba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Angelim vermelho" class="ng-binding ng-scope">
+												Angelim vermelho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Angelim-amargoso" class="ng-binding ng-scope">
+												Angelim-amargoso
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Angelim-pedra" class="ng-binding ng-scope">
+												Angelim-pedra
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Angico" class="ng-binding ng-scope">
+												Angico
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Arataciurana" class="ng-binding ng-scope">
+												Arataciurana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Araça" class="ng-binding ng-scope">
+												Araça
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Aroeira" class="ng-binding ng-scope">
+												Aroeira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Arurá" class="ng-binding ng-scope">
+												Arurá
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Assovieira" class="ng-binding ng-scope">
+												Assovieira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Açaizeiro" class="ng-binding ng-scope">
+												Açaizeiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Açaí" class="ng-binding ng-scope">
+												Açaí
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Açoita-cavalo" class="ng-binding ng-scope">
+												Açoita-cavalo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Bacuri" class="ng-binding ng-scope">
+												Bacuri
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Bacurirana" class="ng-binding ng-scope">
+												Bacurirana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Barriguda" class="ng-binding ng-scope">
+												Barriguda
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Barrote" class="ng-binding ng-scope">
+												Barrote
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Branquilho" class="ng-binding ng-scope">
+												Branquilho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Braúna" class="ng-binding ng-scope">
+												Braúna
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Breu" class="ng-binding ng-scope">
+												Breu
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Breu-branco" class="ng-binding ng-scope">
+												Breu-branco
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Burangica" class="ng-binding ng-scope">
+												Burangica
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Bálsamo" class="ng-binding ng-scope">
+												Bálsamo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Caferana" class="ng-binding ng-scope">
+												Caferana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Caja" class="ng-binding ng-scope">
+												Caja
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Caju" class="ng-binding ng-scope">
+												Caju
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cambará" class="ng-binding ng-scope">
+												Cambará
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Canafístula" class="ng-binding ng-scope">
+												Canafístula
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Canelão" class="ng-binding ng-scope">
+												Canelão
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Canjarana" class="ng-binding ng-scope">
+												Canjarana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Capeíba-do-brejo" class="ng-binding ng-scope">
+												Capeíba-do-brejo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Capitao" class="ng-binding ng-scope">
+												Capitao
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Capoteira" class="ng-binding ng-scope">
+												Capoteira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Capoteiro" class="ng-binding ng-scope">
+												Capoteiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cariperana" class="ng-binding ng-scope">
+												Cariperana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Caroba" class="ng-binding ng-scope">
+												Caroba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Casca-doce" class="ng-binding ng-scope">
+												Casca-doce
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Casca-fina" class="ng-binding ng-scope">
+												Casca-fina
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Casca-seca" class="ng-binding ng-scope">
+												Casca-seca
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Casca-solta" class="ng-binding ng-scope">
+												Casca-solta
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cascudinho" class="ng-binding ng-scope">
+												Cascudinho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Castanha-de-arara" class="ng-binding ng-scope">
+												Castanha-de-arara
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Castanha-de-cutia" class="ng-binding ng-scope">
+												Castanha-de-cutia
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Catinga-de-bode" class="ng-binding ng-scope">
+												Catinga-de-bode
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Catuaba" class="ng-binding ng-scope">
+												Catuaba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Caucho" class="ng-binding ng-scope">
+												Caucho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cavalinho" class="ng-binding ng-scope">
+												Cavalinho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cavalo melado" class="ng-binding ng-scope">
+												Cavalo melado
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Caxeta" class="ng-binding ng-scope">
+												Caxeta
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cebolão" class="ng-binding ng-scope">
+												Cebolão
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cedrinho" class="ng-binding ng-scope">
+												Cedrinho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cedrinho (Erisma)" class="ng-binding ng-scope">
+												Cedrinho (Erisma)
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cedro" class="ng-binding ng-scope">
+												Cedro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cedro (Cedrela)" class="ng-binding ng-scope">
+												Cedro (Cedrela)
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cedro-marinheiro" class="ng-binding ng-scope">
+												Cedro-marinheiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cedro-rosa" class="ng-binding ng-scope">
+												Cedro-rosa
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cedroarana" class="ng-binding ng-scope">
+												Cedroarana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cedrorana" class="ng-binding ng-scope">
+												Cedrorana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cega-machado" class="ng-binding ng-scope">
+												Cega-machado
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cerejeira" class="ng-binding ng-scope">
+												Cerejeira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Copaíba" class="ng-binding ng-scope">
+												Copaíba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Copaíba-jacaré" class="ng-binding ng-scope">
+												Copaíba-jacaré
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Coração-de-negro" class="ng-binding ng-scope">
+												Coração-de-negro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cumaru" class="ng-binding ng-scope">
+												Cumaru
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cumarurana" class="ng-binding ng-scope">
+												Cumarurana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cupiúba" class="ng-binding ng-scope">
+												Cupiúba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cupurana" class="ng-binding ng-scope">
+												Cupurana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Currupixa" class="ng-binding ng-scope">
+												Currupixa
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Cálcio" class="ng-binding ng-scope">
+												Cálcio
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Diversos" class="ng-binding ng-scope">
+												Diversos
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Ducke" class="ng-binding ng-scope">
+												Ducke
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Embira" class="ng-binding ng-scope">
+												Embira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Embira de sapo" class="ng-binding ng-scope">
+												Embira de sapo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Embira-preta" class="ng-binding ng-scope">
+												Embira-preta
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Embireira" class="ng-binding ng-scope">
+												Embireira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Escorrega-macaco" class="ng-binding ng-scope">
+												Escorrega-macaco
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Estopeiro" class="ng-binding ng-scope">
+												Estopeiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Eucalipto" class="ng-binding ng-scope">
+												Eucalipto
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Farinha seca" class="ng-binding ng-scope">
+												Farinha seca
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Farinha seca (MT)" class="ng-binding ng-scope">
+												Farinha seca (MT)
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Farinha-seca" class="ng-binding ng-scope">
+												Farinha-seca
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Faveira" class="ng-binding ng-scope">
+												Faveira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Favela" class="ng-binding ng-scope">
+												Favela
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Figueira" class="ng-binding ng-scope">
+												Figueira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Folhão" class="ng-binding ng-scope">
+												Folhão
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Freijó" class="ng-binding ng-scope">
+												Freijó
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Gabiroba" class="ng-binding ng-scope">
+												Gabiroba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Garapa" class="ng-binding ng-scope">
+												Garapa
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Goiaba" class="ng-binding ng-scope">
+												Goiaba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Goiabinha" class="ng-binding ng-scope">
+												Goiabinha
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Goiabão" class="ng-binding ng-scope">
+												Goiabão
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Gombeira" class="ng-binding ng-scope">
+												Gombeira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Guajará" class="ng-binding ng-scope">
+												Guajará
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Guanandi" class="ng-binding ng-scope">
+												Guanandi
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Guarajuba" class="ng-binding ng-scope">
+												Guarajuba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Guarantã" class="ng-binding ng-scope">
+												Guarantã
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Guariúba" class="ng-binding ng-scope">
+												Guariúba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Guaruba" class="ng-binding ng-scope">
+												Guaruba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Imbauba" class="ng-binding ng-scope">
+												Imbauba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Ingá" class="ng-binding ng-scope">
+												Ingá
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Ingá-falso" class="ng-binding ng-scope">
+												Ingá-falso
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Inharé" class="ng-binding ng-scope">
+												Inharé
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Ipê" class="ng-binding ng-scope">
+												Ipê
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Itaúba" class="ng-binding ng-scope">
+												Itaúba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Jacarandá" class="ng-binding ng-scope">
+												Jacarandá
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Jacareuba" class="ng-binding ng-scope">
+												Jacareuba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Jambo" class="ng-binding ng-scope">
+												Jambo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Jambo-do-mato" class="ng-binding ng-scope">
+												Jambo-do-mato
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Jarana" class="ng-binding ng-scope">
+												Jarana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Jatobá" class="ng-binding ng-scope">
+												Jatobá
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Jequitibá" class="ng-binding ng-scope">
+												Jequitibá
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="João-mole" class="ng-binding ng-scope">
+												João-mole
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Juerana" class="ng-binding ng-scope">
+												Juerana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Lacre" class="ng-binding ng-scope">
+												Lacre
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Leiteiro" class="ng-binding ng-scope">
+												Leiteiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Loureiro" class="ng-binding ng-scope">
+												Loureiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Louro" class="ng-binding ng-scope">
+												Louro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Louro preto" class="ng-binding ng-scope">
+												Louro preto
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Louro-abacate" class="ng-binding ng-scope">
+												Louro-abacate
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Louro-canela" class="ng-binding ng-scope">
+												Louro-canela
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Louro-cravo" class="ng-binding ng-scope">
+												Louro-cravo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Macacaúba" class="ng-binding ng-scope">
+												Macacaúba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Macucu" class="ng-binding ng-scope">
+												Macucu
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mama-de-porca" class="ng-binding ng-scope">
+												Mama-de-porca
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mamoninha" class="ng-binding ng-scope">
+												Mamoninha
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mamorana" class="ng-binding ng-scope">
+												Mamorana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mamuí" class="ng-binding ng-scope">
+												Mamuí
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mandiocão" class="ng-binding ng-scope">
+												Mandiocão
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mandioqueiro" class="ng-binding ng-scope">
+												Mandioqueiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mangaba" class="ng-binding ng-scope">
+												Mangaba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mangabeira" class="ng-binding ng-scope">
+												Mangabeira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mangue" class="ng-binding ng-scope">
+												Mangue
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Maparajuba" class="ng-binding ng-scope">
+												Maparajuba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Marfim (MT)" class="ng-binding ng-scope">
+												Marfim (MT)
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Margonçalo" class="ng-binding ng-scope">
+												Margonçalo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Maria-preta" class="ng-binding ng-scope">
+												Maria-preta
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Marmelada" class="ng-binding ng-scope">
+												Marmelada
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Marmeleiro" class="ng-binding ng-scope">
+												Marmeleiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Marupa" class="ng-binding ng-scope">
+												Marupa
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Marupá" class="ng-binding ng-scope">
+												Marupá
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Matamatá" class="ng-binding ng-scope">
+												Matamatá
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Maçaranduba" class="ng-binding ng-scope">
+												Maçaranduba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Melancieira" class="ng-binding ng-scope">
+												Melancieira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mentira" class="ng-binding ng-scope">
+												Mentira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mindiriba" class="ng-binding ng-scope">
+												Mindiriba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Miraúba" class="ng-binding ng-scope">
+												Miraúba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mirindiba-doce" class="ng-binding ng-scope">
+												Mirindiba-doce
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mogno-brasileiro" class="ng-binding ng-scope">
+												Mogno-brasileiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Molongó" class="ng-binding ng-scope">
+												Molongó
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Muiracatiara" class="ng-binding ng-scope">
+												Muiracatiara
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Muirapiranga" class="ng-binding ng-scope">
+												Muirapiranga
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Muiratinga" class="ng-binding ng-scope">
+												Muiratinga
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Muiraximbé" class="ng-binding ng-scope">
+												Muiraximbé
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mulungu" class="ng-binding ng-scope">
+												Mulungu
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Murici" class="ng-binding ng-scope">
+												Murici
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Murta-branca" class="ng-binding ng-scope">
+												Murta-branca
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mururé" class="ng-binding ng-scope">
+												Mururé
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mutamba" class="ng-binding ng-scope">
+												Mutamba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Mututi" class="ng-binding ng-scope">
+												Mututi
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Muúba" class="ng-binding ng-scope">
+												Muúba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Ocotea spp." class="ng-binding ng-scope">
+												Ocotea spp.
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Oiticica" class="ng-binding ng-scope">
+												Oiticica
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Orelha de macaco" class="ng-binding ng-scope">
+												Orelha de macaco
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Paineira" class="ng-binding ng-scope">
+												Paineira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pama" class="ng-binding ng-scope">
+												Pama
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Parapara" class="ng-binding ng-scope">
+												Parapara
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Paricá" class="ng-binding ng-scope">
+												Paricá
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-alho" class="ng-binding ng-scope">
+												Pau-alho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-amarelo" class="ng-binding ng-scope">
+												Pau-amarelo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-de-balsa" class="ng-binding ng-scope">
+												Pau-de-balsa
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-de-jangada" class="ng-binding ng-scope">
+												Pau-de-jangada
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-de-remo" class="ng-binding ng-scope">
+												Pau-de-remo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-doce" class="ng-binding ng-scope">
+												Pau-doce
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-ferro" class="ng-binding ng-scope">
+												Pau-ferro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-marfim" class="ng-binding ng-scope">
+												Pau-marfim
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-preto" class="ng-binding ng-scope">
+												Pau-preto
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-ripa" class="ng-binding ng-scope">
+												Pau-ripa
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-sangue" class="ng-binding ng-scope">
+												Pau-sangue
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pau-santo" class="ng-binding ng-scope">
+												Pau-santo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pente-de-macaco" class="ng-binding ng-scope">
+												Pente-de-macaco
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pequiá" class="ng-binding ng-scope">
+												Pequiá
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Peroba" class="ng-binding ng-scope">
+												Peroba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Peroba-dágua" class="ng-binding ng-scope">
+												Peroba-dágua
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pimenteira" class="ng-binding ng-scope">
+												Pimenteira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pimenteiro" class="ng-binding ng-scope">
+												Pimenteiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pinheiro" class="ng-binding ng-scope">
+												Pinheiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pinho" class="ng-binding ng-scope">
+												Pinho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pires" class="ng-binding ng-scope">
+												Pires
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Piriquiteira" class="ng-binding ng-scope">
+												Piriquiteira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pitomba" class="ng-binding ng-scope">
+												Pitomba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pororoca" class="ng-binding ng-scope">
+												Pororoca
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Pracuúba" class="ng-binding ng-scope">
+												Pracuúba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Quariquara" class="ng-binding ng-scope">
+												Quariquara
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Quebra-foice" class="ng-binding ng-scope">
+												Quebra-foice
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Quina" class="ng-binding ng-scope">
+												Quina
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Quina-branca" class="ng-binding ng-scope">
+												Quina-branca
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Quinarana" class="ng-binding ng-scope">
+												Quinarana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Rosadinho" class="ng-binding ng-scope">
+												Rosadinho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Roxinho" class="ng-binding ng-scope">
+												Roxinho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Sangue-de-boi" class="ng-binding ng-scope">
+												Sangue-de-boi
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Sapucaia" class="ng-binding ng-scope">
+												Sapucaia
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Schult." class="ng-binding ng-scope">
+												Schult.
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Seringa" class="ng-binding ng-scope">
+												Seringa
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Seringarana" class="ng-binding ng-scope">
+												Seringarana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Siparuna" class="ng-binding ng-scope">
+												Siparuna
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Sobre" class="ng-binding ng-scope">
+												Sobre
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Sorveira" class="ng-binding ng-scope">
+												Sorveira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Sucupira" class="ng-binding ng-scope">
+												Sucupira
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Sucupira-vermelha" class="ng-binding ng-scope">
+												Sucupira-vermelha
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Sucuúba" class="ng-binding ng-scope">
+												Sucuúba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Sumaúma" class="ng-binding ng-scope">
+												Sumaúma
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Tamanqueiro" class="ng-binding ng-scope">
+												Tamanqueiro
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Tamarindo" class="ng-binding ng-scope">
+												Tamarindo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Tanibuca" class="ng-binding ng-scope">
+												Tanibuca
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Tarumã" class="ng-binding ng-scope">
+												Tarumã
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Tatajuba" class="ng-binding ng-scope">
+												Tatajuba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Tauari" class="ng-binding ng-scope">
+												Tauari
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Taxi" class="ng-binding ng-scope">
+												Taxi
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Teca" class="ng-binding ng-scope">
+												Teca
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Tento" class="ng-binding ng-scope">
+												Tento
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Timborana" class="ng-binding ng-scope">
+												Timborana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Tiriba" class="ng-binding ng-scope">
+												Tiriba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Ucuúba" class="ng-binding ng-scope">
+												Ucuúba
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Umiri" class="ng-binding ng-scope">
+												Umiri
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Urucurana" class="ng-binding ng-scope">
+												Urucurana
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Uxi" class="ng-binding ng-scope">
+												Uxi
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Vermelhinho" class="ng-binding ng-scope">
+												Vermelhinho
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Vermelhão" class="ng-binding ng-scope">
+												Vermelhão
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Virola" class="ng-binding ng-scope">
+												Virola
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() --><option data-ng-repeat="especie in filtraEspeciesSelecionadas()" data-ng-selected="$first" value="Óleo-pardo" class="ng-binding ng-scope">
+												Óleo-pardo
+											</option><!-- end ngRepeat: especie in filtraEspeciesSelecionadas() -->
+										</select>
+									</div>
+								</div>
+							</div>
+	
+							<div class="col-md-5">
+								<label for="volume">
+									Volume:
+								</label>
+								<div class="row">
+									<div class="col-md-12">
+										<input class="full-width ng-pristine ng-untouched ng-valid ng-empty" id="volume-venda" type="text" name="volumeVenda" ui-number-mask="2" data-ng-model="volumeVenda">
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-1">
+								<label for="adicionar"></label>
+								<div class="row">
+									<button class="btn btn-success btn-lg glyphicon glyphicon-plus-sign" type="button" data-ng-click="addEspecie(especieVenda, volumeVenda) | track:&quot;perfil&quot;:&quot;especie&quot;:&quot;adiciona&quot;">
+									</button>
+								</div>
+							</div>
+						</div><!-- End of class="row"> -->
+					</div><!-- End of class="form-group form-insercao"> -->
+
+					<table class="table table-bordered table-hover" id="especies">
+						<thead>
+							<tr>
+								<td>Espécie</td>
+								<td>Volume</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr data-ng-show="!perfil.especies.length" class="">
+								<td colspan="2">
+									Sem espécies cadastradas
+								</td>
+							</tr>
+							<!-- ngRepeat: especie in perfil.especies -->
+						</tbody>
+					</table>
+				</div><!-- End of class="col-md-5" -->
+			</div><!-- End of class="row" -->
+		  </div><!-- End of class="panel-body" -->  
+		</div><!-- End of class="panel panel-default" -->
+
+	    <div class="row">
+		    <div class="col-md-12">
+		    	<img src="./vender/wait32.gif" class="pull-right ng-hide" data-ng-show="saving">
+				<button data-ng-show="!saving" class="btn btn-primary pull-right" type="button" data-ng-click="save()">
+					Salvar perfil
+				</button>
+			</div>
+		</div>
+	</div></section>
+
+		<!-- 
+		  -- Footer 
+		  -->
+		<footer class="footer-home" style="position: relative;">
+			<div class="container-fluid screen-setting">
+				
+				<div class="col-xs-2" id="footer-left">
+					<div class="text-footer-copyright text-left">
+						<span>©2012-2016 BVRio</span>
+					</div>
+					<div id="redes_sociais-container">
+						<a href="https://www.facebook.com/InfoBVRio" target="_blank" class="sprite redes_sociais facebook"></a>
+						<a href="https://twitter.com/BVRio" target="_blank" class="sprite redes_sociais twitter"></a>
+						<a href="https://www.youtube.com/user/canalbvrio" target="_blank" class="sprite redes_sociais youtube"></a>
+					</div>
+				</div>
+					
+				<div class="col-xs-8" id="footer-middle">
+					<div class="row">
+						
+							
+								
+									<div class="col-xs-6">
+										<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/florestal/cra/plataforma/prepara.do" class="text-description-list footer-link">
+											Reserva Legal florestal
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/florestal/car/plataforma/prepara.do" class="text-description-list footer-link">
+											CAR
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/madeira/negocio/negocio/lista.do" class="text-description-list footer-link">
+											Bolsa de Madeira
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/pneu/plataforma/prepara.do" class="text-description-list footer-link">
+											Créditos de destinação adequada de pneus
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/embalagem/plataforma/prepara.do" class="text-description-list footer-link">
+											Créditos de logística reversa
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/embalagem/venda/relatorioFisico.do" class="text-description-list footer-link">
+											Índice de materiais recicláveis
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/contribuicoes/plataforma/prepara.do" class="text-description-list footer-link">
+											Contribuições Voluntárias para o Clima
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/carbono/plataforma/prepara.do" class="text-description-list footer-link">
+											Sistema de comércio de emissões
+										</a>
+									</div>
+								
+							
+								
+									<div class="col-xs-6">
+										<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/carbono/redd/projeto/lista.do" class="text-description-list footer-link">
+											Projetos REDD
+										</a>
+									</div>
+								
+							
+							
+							<div class="col-xs-6">
+								<a href="mailto:info@bvrio.org" class="text-description-list">
+								Entre em contato
+								</a>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="col-xs-2" id="footer-right">
+					<div class="text-footer-privacidade">
+						<span>
+							<a href="http://www.bvrio.org/" class="text-description-list footer-link">
+								Sobre o iBVRio
+							</a>
+						</span>
+					</div>
+					<div class="text-footer-privacidade">
+						<span>
+							<a href="http://hml-tradebvrio.us-east-1.elasticbeanstalk.com/login/privacidade.do" class="text-description-list footer-link">
+								Política de privacidade
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+
+
+<!-- 
+  -- Scripts importados
+  -->
+<script type="text/javascript" src="./vender/jquery.min.js"></script>
+<script type="text/javascript" src="./vender/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./vender/jquery.maskedinput.js"></script>
+<script type="text/javascript" src="./vender/simplemvc.modaldialog.js"></script>
+<script type="text/javascript" src="./vender/simplemvc.paneldialog.js"></script>
+<script type="text/javascript" src="./vender/simplemvc.i18n.js"></script>
+<script type="text/javascript" src="./vender/forms.js"></script>
+<script type="text/javascript" src="./vender/bootstrap.min.js"></script>
+<script type="text/javascript" src="./vender/template.js"></script>
+<script type="text/javascript" src="./vender/jquery.growl.js"></script>
+<script type="text/javascript" src="./vender/js.cookie.js"></script>
+<script type="text/javascript" src="./vender/jquery.alerts.js"></script>
+
+   
+<!--
+  -- SETUP DO TEMPLATE 
+  -->
+<script type="text/javascript">
+var templatePanel = null;
+
+$(document).ready(function() {
+	templatePanel = new TemplatePanel();
+	templatePanel.init();
+});
+
+function showProcessingSign() {
+	$("#globalpreload").show();
+}
+
+function hideProcessingSign() {
+	$("#globalpreload").hide();
+}
+
+function showClock() {
+	$("#news-container").removeClass("hidden");
+}
+
+function showTutorialEmbalagem() {
+	templatePanel.apresentaTutorial("vyP2kuQFVPw");
+}
+
+var atualizaPosicaoRodape = function () {
+	templatePanel.atualizaPosicaoRodape();
+}
+</script>
+
+<script type="text/javascript">
+function highlightLoginBox() {
+	window.scrollTo(0, 0);
+	$("#divLoginBox .left").removeClass("highlight");
+	$("#divLoginBox .left").css("background-color", "orange");
+	$("#divLoginBox .left").addClass("highlight");	
+	
+    setTimeout(function() {
+    	$("#divLoginBox .left").removeClass("highlight");
+    	$("#divLoginBox .left").css("background-color", "white");
+    	$("#divLoginBox .left").addClass("highlight");	
+    }, 3000);
+}
+
+var bvCookies = Cookies.noConflict();
+
+$(".languageButton").on("click", function (ev) {
+	var language = $(this).attr("data-language");
+	bvCookies.set("language", language, { expires: 1460 });
+	window.location.reload();
+});
+</script>
+
+
+<link type="text/css" rel="stylesheet" href="./vender/simplemvc.css">
+<link type="text/css" rel="stylesheet" href="./vender/mercado.css">
+<link type="text/css" rel="stylesheet" href="./vender/perfil.css">
+<link type="text/css" rel="stylesheet" href="./vender/dropzone.css">
+<link type="text/css" rel="stylesheet" href="./vender/ng-dropzone.css">
+
+<script type="text/javascript" src="./vender/simplemvc.iosswitch.js"></script>
+<script type="text/javascript" src="./vender/dropzone.js"></script>
+
+<script type="text/javascript">
+	// This will prevent Dropzone to instantiate on it's own unless you are using dropzone class for styling
+	Dropzone.autoDiscover = false;
+</script>
+
+<script type="text/javascript" src="./vender/angular.js"></script>
+<script src="./vender/angular-sanitize.js"></script>
+<script type="text/javascript" src="./vender/angular-input-masks-standalone.min.js"></script>
+<script type="text/javascript" src="./vender/ui-bootstrap-tpls-1.3.3.min.js"></script>
+<script type="text/javascript" src="./vender/angular-animate.js"></script>
+<script type="text/javascript" src="./vender/ng-dropzone.js"></script>
+
+<script type="text/javascript" src="./vender/core.module.js"></script>
+<script type="text/javascript" src="./vender/passwordStrength.directive.js"></script>
+<script type="text/javascript" src="./vender/translate.filter.js"></script>
+<script type="text/javascript" src="./vender/tracker.filter.js"></script>
+<script type="text/javascript" src="./vender/tracker.dataService.js"></script>
+
+<div id="localMenu">
+	
+	
+	
+</div>
+
+<style type="text/css">
+
+header, input, select {
+	margin-bottom: 20px;
+}
+
+.page-title h2 {
+	border: none;
+}
+
+.panel-body {
+	padding: 20px;
+}
+
+.row-padding {
+	padding: 20px 0;
+}
+
+.perfil-documentos {
+	background: url("/img/madeira/mercado/documentos.png") repeat-y;
+		background-size: 110px auto;
+}
+
+.perfil-manejo {
+	background: url("/img/madeira/mercado/manejo.png") repeat-y;
+	background-size: 110px auto;
+}
+
+.perfil-serraria {
+	background: url("/img/madeira/mercado/serraria.png") repeat-y;
+	background-size: 110px auto;
+}
+
+.password-strength {
+	line-height: 0;
+	float: right;
+}
+
+.declaracao {
+	margin-top: 20px;
+}
+
+.input-group input {
+	border: none !important;
+}
+
+.fsc  {
+	border: none;
+	background: lightgray;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+
+.icon-search {
+	margin-right: 10px;
+}
+
+table {
+	width: 100%;
+	margin-top: 20px;
+}
+
+thead {
+	color: #fff;
+	background: darkgray;
+}
+
+table#especies tr>td:nth-child(1) {
+	width: 50%;
+	text-align: left;
+}
+
+table#especies tr>td:nth-child(2) {
+	width: 50%;
+	text-align: right;
+}
+
+label.especies {
+	font-size: 10px;
+}
+
+.form-insercao label {
+   font-size: 12px;
+}
+
+.form-insercao {
+	margin-top: 20px;
+    padding: 10px 0 0 20px;
+    background-color: #eee;
+}
+
+.form-insercao button {
+	padding: 0;
+	color: #5cb85c;
+	background: transparent;
+    line-height: 30px;
+	border: 0;
+	border-color: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    box-shadow: 0;
+}
+
+.form-insercao button:hover, .form-insercao button:focus {
+	color: #449d44;
+    line-height: 30px;
+	background: transparent;
+}
+
+i.glyphicon.glyphicon-remove {
+	color: red;
+	margin-right: 5px;
+}
+
+#input-volume {
+	width: 180px;
+	margin: 0;
+}
+
+.btn.btn-small.salvar-volume {
+	font-size: 11px !important;
+	border-radius: 0;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.perfil {
+	padding: 30px;
+	border-color: #ddd;
+	background: #fafafa;
+}
+
+</style>
+
+<div id="content">
+
+	
+
+	
+	
+</div><!-- End of id="content" -->
+
+<script type="text/javascript" src="./vender/perfil.js"></script>
+<script type="text/javascript" src="./vender/perfil.dataService.js"></script>
+
+<div id="modalInfoPrimeiroAcesso" style="display: none;" class="text-justify">
+	<div data-role="title">Primeiro Acesso</div>
+	<p>Cadastre sua empresa para receber pedidos de compra de madeira e produtos madeireiros. Informe o perfil da sua empresa, se você tem áreas de produção e/ou quais são os produtos e espécies que você produz. Em breve a Plataforma de Negociação estará operacional para compradores. Você receberá Pedidos de Cotação de produtos de acordo com o seu perfil.<br><br>ATENÇÃO: Caso você já possua um cadastro no nosso sistema, faça seu login antes de preencher seu perfil de vendedor e acesse novamente este link. Caso contrário, preencha o formulário abaixo.</p>
+</div>
+
+<div id="modalRegistroPrimeiroAcesso" style="display: none;" class="text-justify">
+	<div data-role="title">Primeiro Acesso</div>
+	<p>Seu cadastro foi realizado com sucesso. Em breve a Plataforma de Negociação estará operacional para compradores. Você receberá Pedidos de Cotação de produtos de acordo com o perfil cadastrado.</p>
+</div>
+
+<script type="text/javascript">
+var primeiroAcesso = "false" == "true";
+var isLogado = "true" == "true";
+var produtos = JSON.parse('[{"nome":"madeira.venda.produtos.tora","mascara":1},{"nome":"madeira.venda.produtos.serrado","mascara":2},{"classe":"agrupador","nome":"madeira.venda.produtos.aplainados","mascara":4},{"classe":"subitem","nome":"madeira.venda.produtos.decking","mascara":8},{"classe":"subitem","nome":"madeira.venda.produtos.pisoInterior","mascara":16},{"classe":"subitem","nome":"madeira.venda.produtos.perfis","mascara":32},{"classe":"subitem","nome":"madeira.venda.produtos.portas","mascara":64},{"classe":"subitem","nome":"madeira.venda.produtos.outrosAplainados","mascara":16384},{"classe":"agrupador","nome":"madeira.venda.produtos.laminados","mascara":128},{"classe":"subitem","nome":"madeira.venda.produtos.compensado","mascara":256},{"classe":"subitem","nome":"madeira.venda.produtos.laminas","mascara":512},{"classe":"subitem","nome":"madeira.venda.produtos.outrosLaminados","mascara":32768},{"classe":"agrupador","nome":"madeira.venda.produtos.residuos","mascara":1024},{"classe":"subitem","nome":"madeira.venda.produtos.cavaco","mascara":2048},{"classe":"subitem","nome":"madeira.venda.produtos.pellets","mascara":4096},{"classe":"subitem","nome":"madeira.venda.produtos.briquets","mascara":8192}]');
+var jsonespecies = JSON.parse('{"especies":["Cedro-marinheiro","Louro","Orelha de macaco","Roxinho","Angico","Itaúba","Sucupira","Cedrinho (Erisma)","Mamoninha","Currupixa","Cebolão","Barriguda","Cumarurana","Paricá","Peroba-dágua","Marupá","Amapá","Goiaba","Marmelada","Caucho","Eucalipto","Faveira","Farinha seca (MT)","Abobreira","Rosadinho","Caju","Jambo-do-mato","Ipê","Bálsamo","Ocotea spp.","Vermelhinho","Quinarana","Amapá-doce","Abiurana","Açoita-cavalo","Inharé","Casca-seca","Araça","Canelão","Tauari","Sumaúma","Louro-canela","Pau-santo","Mandioqueiro","Muiratinga","Seringarana","Arurá","Jequitibá","Tanibuca","Mindiriba","Casca-fina","Melancieira","Amuirapiranga","Muirapiranga","Pinheiro","Amendoim","Amarelão","Canafístula","Angelim-pedra","Capeíba-do-brejo","Sangue-de-boi","Margonçalo","Guanandi","Jacareuba","Taxi","Farinha-seca","Amoreira","Cedro-rosa","Pau-ferro","Timborana","Mututi","Peroba","Embira","Arataciurana","Tamarindo","Louro preto","Castanha-de-cutia","Imbauba","Alecrim","Cupiúba","Marfim (MT)","Guariúba","Vermelhão","Angelim vermelho","Sucupira-vermelha","Louro-abacate","Cumaru","Pau-de-balsa","Breu","Amescla","Bacuri","Guarantã","Sapucaia","Guarajuba","Abiu","Guajará","Goiabão","Cedrorana","Mogno-brasileiro","Juerana","Mama-de-porca","Macucu","Uxi","Garapa","Ingá","Tento","Castanha-de-arara","Mulungu","Catinga-de-bode","Maçaranduba","Tarumã","Angelim-amargoso","Pau-marfim","Pororoca","Braúna","Cambará","Molongó","Sobre","João-mole","Quina","Copaíba","Caferana","Cerejeira","Embireira","Umiri","Miraúba","Pau-ripa","Goiabinha","Oiticica","Pau-alho","Pimenteiro","Lacre","Capoteiro","Mamorana","Capoteira","Gabiroba","Africano","Louro-cravo","Coração-de-negro","Marmeleiro","Casca-solta","Tatajuba","Pimenteira","Açaí","Açaizeiro","Ingá-falso","Matamatá","Tiriba","Gombeira","Embira-preta","Mamuí","Amapá-amargoso","Pequiá","Paineira","Jatobá","Embira de sapo","Schult.","Pinho","Aroeira","Abobrão","Pau-de-jangada","Tamanqueiro","Folhão","Pitomba","Favela","Mutamba","Ducke","Escorrega-macaco","Mangaba","Pracuúba","Barrote","Cedroarana","Pama","Cavalinho","Pires","Catuaba","Maria-preta","Burangica","Maparajuba","Mandiocão","Mangue","Branquilho","Teca","Seringa","Quina-branca","Murici","Ucuúba","Amarelo","Virola","Quebra-foice","Acariquara","Urucurana","Mururé","Cedrinho","Caja","Copaíba-jacaré","Breu-branco","Acácia-da-austrália","Sorveira","Assovieira","Muiracatiara","Capitao","Jarana","Acapu","Figueira","Jambo","Muúba","Canjarana","Piriquiteira","Pau-de-remo","Cedro","Siparuna","Loureiro","Macacaúba","Mentira","Mirindiba-doce","Cega-machado","Andiroba","Mangabeira","Jacarandá","Estopeiro","Ajaraí","Pau-doce","Pau-preto","Quariquara","Muiraximbé","Anani","Caroba","Parapara","Cariperana","Pau-sangue","Casca-doce","Guaruba","Cascudinho","Bacurirana","Cálcio","Pau-amarelo","Amarelinho","Leiteiro","Pente-de-macaco","Farinha seca","Cavalo melado","Freijó","Caxeta","Marupa","Cedro (Cedrela)","Cupurana","Sucuúba","Algodoeiro","Diversos","Acapuri","Murta-branca","Óleo-pardo"]}');
+var modalRegistroPrimeiroAcesso = null;
+
+$(function () {
+	prepareTranslation(["/jsp/madeira/venda/vendedor/perfil.properties"], "pt", function () {
+		
+		// Cria breadcrumbs
+		addNavigation("Madeira", "/madeira/negocio/negocio/lista.do");
+		addNavigation("Perfil", "/madeira/venda/venda/editaPerfilNg.do");
+		
+		// Inicializa configuracoes
+		$(".hidden-before-angular").removeClass("hidden-before-angular");
+	
+		// Inicializa angular
+		angular.bootstrap($("body"), ["perfilVenda"]);
+		
+		var perfil = angular.element($('[data-ng-controller="perfil"]')).scope();
+		perfil.isLogado = isLogado;
+		
+		if (primeiroAcesso) {
+			$("#modalInfoPrimeiroAcesso").modalDialog2();
+			modalRegistroPrimeiroAcesso = $("#modalRegistroPrimeiroAcesso").modalDialog2();
+			$("#modalInfoPrimeiroAcesso").modal();
+		}
+	});
+});
+</script></body></html>

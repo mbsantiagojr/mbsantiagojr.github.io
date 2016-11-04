@@ -4,8 +4,7 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     font-family: "myriad", sans-serif;
-    color: rgb(81, 89,91);
-    letter-spacing: 2;
+    color: rgb(81, 89, 91);
     font-size: 16px;
 }
 
@@ -24,34 +23,39 @@ body {
     padding: 0 20px;
 }
 
-button, a {
+button,
+a {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
-
 #header {
     padding: 0;
     background: none;
     border-width: 0;
+    margin: 0;
 }
 
 #header *:not(input) {
-    color: rgb(81, 89,91);
+    color: rgb(81, 89, 91);
 }
 
+#user-menu {
+    padding: 15px 5px;
+    margin: 0;
+}
 
 #user-menu > ul * {
-    color: rgb(81, 89,91);
+    color: rgb(81, 89, 91);
 }
 
 .navbar {
     display: block;
     width: 100%;
     height: 70px;
-    padding: 15px;
+    padding: 10px 0px;
     background: none;
 }
 
@@ -62,19 +66,23 @@ button, a {
     margin: 0 20px 0 0;
 }
 
+.container-fluid > .navbar-header {
+    padding: 6px 0;
+}
+
 .origem-site {
     text-align: right;
     margin-bottom: 2px;
 }
 
 #header > div > div.navbar-header > div:nth-child(2) > nav > ol > li > a {
-    color: rgb(81, 89,91)!important;
+    color: rgb(81, 89, 91)!important;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    
 }
+
 #header > div > div.navbar-header > div:nth-child(2) > nav > ol > li > a:hover {
     text-decoration: underline;
 }
@@ -85,7 +93,7 @@ button, a {
     width: 100%;
     display: block;
     background-color: #e6e7e8;
-    color: rgb(81, 89,91);
+    color: rgb(81, 89, 91);
     position: absolute;
     z-index: 900;
     left: 0;
@@ -117,20 +125,32 @@ button, a {
 }
 
 #navigationheader * {
-    color: rgb(81, 89,91);
+    color: rgb(81, 89, 91);
 }
 
 #divLoginBox > div.left {
-    padding: 7px 15px 5px 15px;
+    /*    padding: 7px 15px 5px 15px;*/
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     text-align: center;
-    margin: 0 15px 0 0;
+    /*    margin: 0 15px 0 0;*/
 }
 
-#user-menu {
-    margin: 0;
+#divLoginBox > div.left form {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+#divLoginBox > div.left form td {
+    text-align: initial;
+}
+
+#divLoginBox div.right {
+    vertical-align: middle;
+    padding: 10px 0 10px 15px;
+    display: inline-block;
 }
 
 #navigationheader {
@@ -156,7 +176,7 @@ button, a {
 }
 
 .navbar-collapse.collapse.navbar-right {
-    padding: 0;
+    padding: 5px 0;
 }
 
 #navigationbar a {
@@ -176,7 +196,7 @@ button, a {
 }
 
 #navigationbar a:last-child {
-    color: rgb(81, 89,91)!important;
+    color: rgb(81, 89, 91)!important;
     margin-right: 0;
     font-family: "myriad-bold", sans-serif;
 }
@@ -187,7 +207,7 @@ button, a {
 }
 
 #localMenu * {
-    color: rgb(81, 89,91)!important;
+    color: rgb(81, 89, 91)!important;
     text-transform: uppercase;
 }
 
@@ -195,8 +215,8 @@ button, a {
     display: block;
     width: 475px;
     height: 40px;
-    
 }
+
 
 #localMenu li {
     width: 33.33%;
@@ -204,7 +224,6 @@ button, a {
     display: inline-block;
     vertical-align: top;
     float: left;
-    
     text-align: center;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -213,59 +232,69 @@ button, a {
     border: 5px solid transparent;
 }
 
+#localMenu li:before {
+    display: none;
+}
+
 #localMenu li a {
     display: block;
     width: 100%;
     height: 100%;
     height: inherit;
     padding: 6px;
-
 }
 
 #localMenu li:nth-child(n+1) {
     border-bottom: 0px solid transparent;
     background: none;
-    border: 5px solid rgb(255,203,5);
+    border: 5px solid rgb(255, 203, 5);
     margin-left: 11px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
+
 #localMenu li a:hover {
     color: white!important;
 }
-#localMenu li:hover {
 
-    background: rgb(255,203,5);
-        outline: 0;
-    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18) ,0 4px 15px 0 rgba(0,0,0,0.15);
+#localMenu li:hover {
+    background: rgb(255, 203, 5);
+    outline: 0;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-
-#localMenu li:nth-child(3) {
+#localMenu li.semcaixa:nth-child(3) {
     width: 23%;
     border: 5px solid transparent;
     background: none;
     margin-left: 11px;
     border: 0;
-    border-bottom: 1px solid rgb(255,203,5);
-            -webkit-border-radius: 0px;
+    border-bottom: 1px solid rgb(255, 203, 5);
+    -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
 }
 
-#localMenu li:nth-child(3)  {
-                outline: 0;
-        box-shadow: none;
-}
-#localMenu li:nth-child(3) a:hover {
-        color: rgb(255,203,5)!important;
+#localMenu li.semcaixa:nth-child(3) {
+    outline: 0;
+    box-shadow: none;
 }
 
+#localMenu li.semcaixa:nth-child(3) a:hover {
+    color: rgb(255, 203, 5)!important;
+}
+
+.localmenu li {
+    width: 30.33%!important;
+}
 
 
-
-
+.btn-caos-login {
+    line-height: 22px;
+    padding: 2px 15px;
+    border-radius: 4px;
+}
 
 
 /**************************************************/
@@ -278,6 +307,11 @@ button, a {
 .page-title.row {
     text-align: left;
     height: auto;
+    padding: 0 0 20px 0;
+    margin: 0;
+}
+
+.page-title.row.timberexchange {
     padding: 0 0 50px 0;
 }
 
@@ -301,7 +335,7 @@ button, a {
     margin: 0px;
     border-bottom: none;
     font-size: 2.5em;
-    color: rgb(81, 89,91);
+    color: rgb(81, 89, 91);
 }
 
 .page-title > div {
@@ -310,7 +344,7 @@ button, a {
 
 .page-title > div > p {
     font-size: 1.5em;
-    color: rgb(81, 89,91);
+    color: rgb(81, 89, 91);
     margin: 0;
     display: none;
 }
@@ -329,14 +363,17 @@ button, a {
     color: #757575;
     text-transform: uppercase;
     display: inline-block;
-    margin: 47px 0px 7px 7px;
+    margin: 47px 0px 7px 10px;
     font-weight: bold;
     font-size: 1em;
     padding: 10px 12px 4px 12px;
     height: 42px;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
-#bv-main-container > div > div.row.menu > div.col-sm-6 > div > button:hover, #bv-main-container > div > div.row.menu > div.col-sm-6 > div > button:focus, #bv-main-container > div > div.row.menu > div.col-sm-6 > div > button:active {
+
+#bv-main-container > div > div.row.menu > div.col-sm-6 > div > button:hover,
+#bv-main-container > div > div.row.menu > div.col-sm-6 > div > button:focus,
+#bv-main-container > div > div.row.menu > div.col-sm-6 > div > button:active {
     background: #aaa;
     color: white;
 }
@@ -346,7 +383,7 @@ button, a {
     min-width: 220px;
     border: none;
     font-size: 1em;
-    background: rgb(166,206,57);
+    background: rgb(166, 206, 57);
     display: inline-block;
     margin: 0 5px;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -354,7 +391,7 @@ button, a {
 
 #bv-main-container > div > div.row.menu > div.col-sm-4.text-right > a > button:hover {
     outline: 0;
-    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18) ,0 4px 15px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
 #bv-main-container > div > div.row.menu > div.col-sm-4.text-right {
@@ -394,8 +431,8 @@ button, a {
     border: 0;
 }
 
-#bv-main-container table.table * {
-    color: rgb(81, 89,91)!important;
+#bv-main-container table.table *:not(input[type"checkbox"]) {
+    color: rgb(81, 89, 91)!important;
     border: none!important;
     font-size: 1em;
 }
@@ -407,7 +444,7 @@ button, a {
 
 #bv-main-container table.table > tbody >tr > td {
     padding: 10px!important;
-    color: rgb(81, 89,91);
+    color: rgb(81, 89, 91);
     background: none!important;
     height: auto!important;
     -webkit-border-radius: 0px!important;
@@ -450,6 +487,7 @@ button, a {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
+
 #bv-main-container table > tbody > tr > td:nth-child(12) {
     border: none;
     border-radius: 4px!important;
@@ -460,7 +498,7 @@ button, a {
     vertical-align: middle;
     outline: 0;
     color: #fff!important;
-    background-color: rgb(166,206,57)!important;
+    background-color: rgb(166, 206, 57)!important;
     transition: .2s ease-out;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -469,7 +507,6 @@ button, a {
     width: 90%;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
-
 
 #filtros * {
     text-transform: uppercase!important;
@@ -498,20 +535,26 @@ button, a {
 .pagination > li > a {
     background: transparent!important;
     border: transparent!important;
-        -webkit-border-radius: 5px;
+    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    color: rgb(81, 89,91)!important;
+    color: rgb(81, 89, 91)!important;
     font-family: "myriad-bold", sans-serif;
 }
 
-.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
-        background-color: rgb(166,206,57)!important;
-        color: white!important;
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+    background-color: rgb(166, 206, 57)!important;
+    color: white!important;
 }
 
-.pagination > li > a:hover, .pagination>.active>span:hover {
-        background-color: rgb(166,206,57)!important;
+.pagination > li > a:hover,
+.pagination>.active>span:hover {
+    background-color: rgb(166, 206, 57)!important;
     color: white!important;
 }
 
@@ -519,16 +562,23 @@ div.ng-table-counts button {
     background: none;
     border: none;
 }
+
 div.ng-table-counts button.active {
-    background: rgb(166,206,57);
+    background: rgb(166, 206, 57);
     color: white;
 }
 
-.btn-group>.btn:hover, .btn-group-vertical>.btn:hover, .btn-group>.btn:focus, .btn-group-vertical>.btn:focus, .btn-group>.btn:active, .btn-group-vertical>.btn:active, .btn-group>.btn.active, .btn-group-vertical>.btn.active {
-    background: rgb(166,206,57);
+.btn-group>.btn:hover,
+.btn-group-vertical>.btn:hover,
+.btn-group>.btn:focus,
+.btn-group-vertical>.btn:focus,
+.btn-group>.btn:active,
+.btn-group-vertical>.btn:active,
+.btn-group>.btn.active,
+.btn-group-vertical>.btn.active {
+    background: rgb(166, 206, 57);
     color: white;
 }
-
 
 footer {
     position: relative;
@@ -536,3 +586,58 @@ footer {
     border-top: 1px solid #c0c0c0;
     padding: 15px 0;
 }
+
+
+/**********************************************************/
+
+
+#perfil strong {
+    font-family: "myriad-bold";    
+}
+
+#perfil .panel-body > div:nth-child(2) {
+     margin-left: initial !important; 
+}
+
+#perfil .perfil {
+    padding: 40px 30px;
+}
+
+#perfil > div:nth-child(2) > div.panel-body.perfil-manejo > div > div.col-md-1 {
+    display: none;
+}
+
+#perfil > div:nth-child(2) > div.panel-body.perfil-manejo > div > div.col-md-3 {
+    width: 29%;
+}
+
+.yt-uix-checkbox-on-off label {
+    border: 1px solid transparent!important;
+}
+
+#bv-main-container table#especies.table tbody tr td:last-child {
+        text-align: initial;
+    color: #757575!important;
+}
+
+#perfil > div.row > div > button {
+    padding: 10px 30px 8px 30px;
+    min-width: auto;
+    border: none;
+    font-size: 1em;
+    background: rgb(166, 206, 57);
+    display: inline-block;
+    margin: 0 0px 20px 0;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);    
+    text-transform: uppercase;
+}
+#perfil > div.row > div > button:hover {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#perfil select, #volume-venda {
+        height: 35px !important;
+    padding: 10px 15px 7px 15px!important;
+    border: 0!important;
+
+}
+
