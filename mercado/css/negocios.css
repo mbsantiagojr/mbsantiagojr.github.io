@@ -1,0 +1,63 @@
+
+
+tr[data-ng-show*="showRow"] td {
+    padding: 10px 0!important;
+    border: 0!important;
+}
+
+tabela-respostas {
+    display:block;
+}
+
+
+tabela-respostas table {
+    border: 0!important;
+    box-shadow: none!important;
+    height: auto!important;
+}
+
+
+tabela-respostas table tr {
+    border-top: none!important;
+}
+
+
+tabela-respostas > tbody > tr > td {
+    padding: 10px 0!important;
+}
+tabela-respostas table td {
+    border: 0!important;
+}
+
+#main > div:nth-child(3) > div:nth-child(1) > table > tbody > tr:nth-child(2) > td > tabela-respostas > table > tbody:nth-child(even) > tr {
+    border: 0!important;
+    background: #f0f0f0!important;
+} 
+
+
+#main > div:nth-child(3) > div:nth-child(1) > table > tbody > tr:nth-child(2) > td > tabela-respostas > table > tbody:nth-child(even) > tr > td {
+    border: 1px solid red!important;
+    background: #f0f0f0!important;
+    padding: 5px!important;
+} 
+
+.colId.resposta {
+    width: 5em!important;
+}
+.colResp.resposta {
+    width: 13em!important;
+}
+
+.colSpecs.resposta {
+    width: 15em!important;
+}
+
+.colMsgs.resposta {
+    width: 14em!important;
+}
+
+
+.colPreco.resposta {
+    width: 8em!important;
+}
+
