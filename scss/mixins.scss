@@ -1,0 +1,136 @@
+@mixin centraliza {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    color: $cor-texto;
+}
+
+@mixin centraliza {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+@mixin transicao($tempo) {
+    
+    -webkit-transition: all $tempo ease;
+    -moz-transition: all $tempo ease;
+    -o-transition: all $tempo ease;
+    transition: all $tempo ease;
+    
+} 
+
+@mixin sombra($tamanho) {
+    
+    -webkit-box-shadow: 0px 0px $tamanho #000000;
+    -moz-box-shadow: 0px 0px $tamanho #000000;
+    box-shadow: 0px 0px $tamanho #000000;
+    
+}
+
+@mixin borda-redonda($espessura) {
+    -webkit-border-radius: $espessura;
+    -moz-border-radius: $espessura;
+    border-radius: $espessura;
+}
+
+
+@mixin centralizador($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+
+@mixin centraliza-tudo {
+	@include centralizador(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	position: absolute;
+}
+
+
+@mixin gradiente-radial($interior, $exterior) {
+	background: -webkit-gradient(radial, center center, 0, center center, 460, from($interior), to($exterior));
+	background: -webkit-radial-gradient(circle, $interior, $exterior);
+	background: -moz-radial-gradient(circle, $interior, $exterior);
+	background: -o-radial-gradient(circle, $interior, $exterior);
+	background: -ms-radial-gradient(circle, $interior, $exterior);
+	background: radial-gradient(circle, $interior, $exterior);
+	background-color: $exterior;	
+}
+
+@mixin push--auto {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+
+
+
+@mixin font-source-sans($size: false, $colour: false, $weight: false,  $lh: false) {
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
