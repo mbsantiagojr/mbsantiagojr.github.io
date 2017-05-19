@@ -1,9 +1,9 @@
-@mixin centraliza {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-    color: $cor-texto;
-}
+$cor-texto: rgba(102, 102, 102, 1);
+$cor-texto-negativo: rgba(255, 255, 255, 0.9);
+$fundo-texto-negativo: rgba(0, 0, 0, 0.85);
+$cor-titulos: rgba(255, 153, 0, 0.9);
+$cor-titulos-alternativa: rgba(255, 204, 0, 0.9);
+
 
 @mixin centraliza {
     display: block;
@@ -20,11 +20,11 @@
     
 } 
 
-@mixin sombra($tamanho) {
+@mixin sombra($tamanho, $corsombra) {
     
-    -webkit-box-shadow: 0px 0px $tamanho #000000;
-    -moz-box-shadow: 0px 0px $tamanho #000000;
-    box-shadow: 0px 0px $tamanho #000000;
+    -webkit-box-shadow: 0px 0px $tamanho $corsombra;
+    -moz-box-shadow: 0px 0px $tamanho $corsombra;
+    box-shadow: 0px 0px $tamanho $corsombra;
     
 }
 
@@ -58,7 +58,16 @@
 	background: -o-radial-gradient(circle, $interior, $exterior);
 	background: -ms-radial-gradient(circle, $interior, $exterior);
 	background: radial-gradient(circle, $interior, $exterior);
-	background-color: $exterior;	
+}
+
+
+@mixin gradiente-linear($interior, $exterior) {
+    background: -webkit-gradient(linear, left top, right top, from($interior), to($exterior));
+    background: -webkit-linear-gradient(top, $interior, $exterior);
+    background: -moz-linear-gradient(top, $interior, $exterior);
+    background: -o-linear-gradient(top, $interior, $exterior);
+    background: -ms-linear-gradient(top, $interior, $exterior);
+    background: linear-gradient(top, $interior, $exterior);
 }
 
 @mixin push--auto {

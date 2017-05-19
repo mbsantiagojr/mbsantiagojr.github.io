@@ -1,14 +1,13 @@
 /*************** ARQUIVOS DE SCSS **************/
 
-@import 'base';
 @import 'mixins';
-@import 'cabecalho';
-@import 'conteudo';
-@import 'internas';
-@import 'rodape';
-@import 'contatos';
+@import 'base';
+@import 'cabecalho'; 
+@import 'home';
+@import 'pessoal';
+@import 'profissional';
+@import 'qualificacoes';
+@import 'portifolio'; 
+@import 'contato';
 
 /***********************************************/
-
-
-

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -7,1006 +5,761 @@
 
   <!--
   /*************************************************************/
-   * Data           : 01 /2015                      		 
-   * Layout         : MB Santiago Jr.  
-   * Development    : MB Santiago Jr.  
-   * Módulo         : Site / Sistema   	    	    		 
+   * Data           : 06/2017                      		 
+   * Layout         : MB Santiago jnr  
+   * Development    : MB Santiago jnr  
+   * Módulo         : Site / Sistema / Versão 2017   	    	    		 
    *************************************************************/
   -->
-
 
   <meta charset="UTF-8" />
   <meta name="dc.title" content="MB Santiago Jr" />
   <meta name="dc.creator" content="MB Santiago Jr" /> 
   <meta name="language" content="pt-br">
   <meta name="description" content="Portifólio">
-  <meta name="keywords" content="Portifólio + Design + HTML + CSS + CV">
+  <meta name="keywords" content="Portifólio + Design + HTML + CSS + CV + jQuery + AngularJS">
   <meta name="robots" content="index,follow">
   <meta name="author" content="MB Santiago Jr">
   <meta name="contact" content="mbsantiagojr@gmail.com">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-
   <link rel="shortcut icon" href="favicon.ico" />
   <title>MB Santiago Jr | HTML, CSS, JS, Flash Y Otras Cositas Más...</title>
   
-  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+   <!--  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>-->
+<!--   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
   
-  <link href="css/font-face.css?Wednesday 13th of May 2015 06:08:29 PM" rel="stylesheet" />    
-  <link href="css/reset.css?Wednesday 13th of May 2015 06:08:29 PM" rel="stylesheet" />
-  <link href="css/estilos.css?Wednesday 13th of May 2015 06:08:29 PM" rel="stylesheet" />
-  <link href="css/media-queries.css?Wednesday 13th of May 2015 06:08:29 PM" rel="stylesheet" />
-  <link href="css/animate.css?Wednesday 13th of May 2015 06:08:29 PM" rel="stylesheet" />
+  <link href="css/font-face.css" rel="stylesheet" />    
+  <link href="css/reset.css" rel="stylesheet" />
+  <link href="css/estilos.css" rel="stylesheet" />
+  <link href="css/animate.css" rel="stylesheet" />
+  <link href="css/media-queries.css" rel="stylesheet" />
   
-
 </head>
 
-
 <body>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://npmcdn.com/flickity@2.0/dist/flickity.css" media="screen">
+    <script src="https://npmcdn.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
+   
+    <header>
 
-<header class="transicao">
+      <section id="cabecalho">
 
-  <section id="cabecalho" class="cabecalho">
+        <nav role="navigation">
 
-    <nav class="menu-principal" role="navigation">
+            <a id="botaohome" href="" name="home">
+                <h1>home</h1>
+            </a>
 
-      <a id="botaohome" href=""><h1 class="transicao">home</h1></a>
+            <ul>
+                <li><a href="" name="pessoal">pessoal</a></li>
+                <li><a href="" name="profissional">profissional</a></li>
+                <li><a href="" name="portifólio">portifólio</a></li>
+                <li><a href="" name="contato">contato</a></li>
+            </ul>
 
-      <ul>
-        <li><a class="transicao" href="">pessoal</a></li>
-        <li><a class="transicao" href="">profissional</a></li>
-        <li><a class="transicao" href="">portifolio</a></li>
-        <li><a class="transicao" href="">contato</a></li>
-      </ul>
+        </nav>   
 
-    </nav>   
+      </section>
 
-  </section>
-
-
-</header>
-
-
-
-
-
-
-   <!-- jQuery library (served from Google) -->
-<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
-
-<!-- bxSlider Javascript file -->
-<script src="js/jquery.bxslider.min.js"></script>
-<!-- bxSlider CSS file -->
-<link href="lib/jquery.bxslider.css" rel="stylesheet" />
-
-
-<main class="internas" role="content">
+    </header>
     
     
-    <section class="home fundo-parallax" role="content" data-speed="15">
+    <main>
+       
+        <section class="home" role="content" name="home">
 
-        <div class="home-conteudo centralizar move-devagar">
-            <img src="img/mbs-logo.png" alt=""> <br>
-            <small>HTML5, CSS3, jQuery, Flash y otras cositas más...</small>
-
-        </div>
-
-        <a id="pessoal" href="" class="ff">></a>
-
-    </section>
-    
-    
-        <section class="pessoal fundo-parallax" data-speed="10">
-
-        <div class="centralizado">
-            <div class="section-cabecalho">
-                <h2>Pessoal</h2>
+            <div>
+                <img src="img/icones/mbs-logo.jpg" alt="">
+                <small>HTML5, CSS3, jQuery, Flash y otras cositas más...</small>
             </div>
 
-            <p>
-                <strong>Designer</strong> por Profissão. <strong>Front-End</strong> Entusiasta.
-                <strong>Ciclista</strong> Amador.
-                <br>Fotógrafo de celular. Blogueiro quando entediado. Foodie. Internacionalista.
-            </p>
+            <a id="pessoal" href="" class="ff"><i class="material-icons">keyboard_arrow_down</i></a>
 
-            <p>
-                <strong>Carioca</strong> na Diáspora. Em <strong>São Paulo</strong> Há 8 Anos.
-            </p>
+        </section>
+        
+        <section class="pessoal" name="pessoal">
 
-            <p>
-                Todo mundo precisa de um objetivo na vida, então o meu, por enquanto,
-                <br>é consolidar uma carreira como <strong>Webdesigner</strong> e
-                <strong>Desenvolvedor Front-End</strong>.
-            </p>
+            <div>
+                <h2>Pessoal</h2> 
+                
+                <p> 
+                   <strong>Designer</strong> por Profissão. <strong>Front-End</strong> Entusiasta. <strong>Ciclista</strong> Amador.
+                    <br>Fotógrafo de celular. Blogueiro quando entediado. Foodie. Internacionalista. 
+                </p>
+                    
+                <p> 
+                    <strong>Carioca</strong> na Diáspora. Em <strong>São Paulo</strong> Há 8 Anos. 
+                </p>
+                
+                <p> 
+                   Todo mundo precisa de um objetivo na vida, então o meu, por enquanto,
+                    <br>é consolidar uma carreira como <strong>Webdesigner</strong> e <strong>Desenvolvedor Front-End</strong>. 
+                </p>
+                    
+                <ul>
+                    <li><a href="//www.linkedin.com/in/mbsantiagojnr/" target="_blank">Linkedin</a> </li>
+                    <li><a href="//www.facebook.com/MBSantiagoJnr" target="_blank">Facebook</a> </li>
+                    <li><a href="//twitter.com/MBSantiagojnr" target="_blank">Twitter</a> </li>
+                    <li><a href="//instagram.com/mb.santiago.jr" target="_blank">Instagram</a> </li>
+                    <li><a href="//www.pinterest.com/mbsantiagojr" target="_blank">Pinterest</a> </li>
+                </ul>
+                
+            </div>
 
-            <ul class="redes-sociais">
-                <li><a href="//www.linkedin.com/in/mbsantiagojnr/" target="_blank">Linkedin</a>
+            <a id="profissional" href="" class="ff ff-negativado"><i class="material-icons">keyboard_arrow_down</i></a>
+
+        </section>
+        
+        <section class="profissional" name="profissional">
+            
+            <h2 class="negativo">Profissional
+                <small>Um Pouco Rodado Por Ai. Mas Quem Não É?</small>
+            </h2>
+
+            <ul class="empresas">
+
+                <li>
+                    <p><strong>Front-End Dev</strong> @ <span>B2U Sistemas Ltda.</span>
+                    </p>
+                    <p>Responsável pelo Design e Front-End de diversos aplicativos da empresa - <strong>ATUAL</strong>
+                    </p>
+                    <p>Casa Verde, São Paulo</p>
                 </li>
-                <li><a href="//www.facebook.com/MBSantiagoJnr" target="_blank">Facebook</a>
+
+                <li>
+                    <p><strong>Webdesigner Pl</strong> @ <span>ContactoNET Ltda.</span>
+                    </p>
+                    <p>Atuando na elaboração do layout e desenvolvimento do front-end de todos os clientes da empresa - <strong>2013/2014</strong>
+                    </p>
+                    <p>Vila Mariana, São Paulo</p>
                 </li>
-                <li><a href="//twitter.com/MBSantiagojnr" target="_blank">Twitter</a>
+
+                <li>
+                    <p><strong>Webdesigner Pl</strong> @ <span>MidiasPrint Ltda.</span>
+                    </p>
+                    <p>Responsável pela criação e manutenção do site institucional e reelaboração do código de seus sites de e-comm -
+                        <strong>2009/2013</strong>
+                    </p>
+                    <p>Lapa, São Paulo</p>
                 </li>
-                <li><a href="//instagram.com/mb.santiago.jr" target="_blank">Instagram</a>
+
+                <li>
+                    <p><strong>Designer</strong> @ <span>Terra Networks</span>
+                    </p>
+                    <p>Contrato temporário na equipe de manutenção da nova identidade visual do Terra e tratamento de telas - <strong>2009</strong>
+                    </p>
+                    <p>Brooklin, São Paulo</p>
                 </li>
-                <li><a href="//www.pinterest.com/mbsantiagojr" target="_blank">Pinterest</a>
+
+                <li>
+                    <p><strong>Webdesigner Pl</strong> @ <span>Interface-TI Ltda.</span>
+                    </p>
+                    <p>Responsável pela criação e manutenção do site institucional e reelaboração do código de seus sites de e-comm -
+                        <strong>2005/2009</strong>
+                    </p>
+                    <p>Flamengo/Gávea, Rio de Janeiro</p>
+                </li>
+
+                <li>
+                    <p><strong>Webdesigner Jr</strong>. @ <span>Meu Provedor Ltda.</span>
+                    </p>
+                    <p>Responsável pela reformulação do portal da empresa, entre outros clientes -
+                        <strong>2003</strong>
+                    </p>
+                    <p>Centro, Rio de Janeiro</p>
+                </li>
+
+            </ul>
+            
+            <div class="habilidades"> 
+               <small>Habilidades (em %)</small>
+                <ul class="grafico">
+                    <li>html</li>
+                    <li>css</li>
+                    <li>js</li>
+                    <li>ux | ui</li>
+                    <li>ps</li>
+                    <li>php</li>
+                </ul>
+                <ul class="legenda">
+                    <li>html</li>
+                    <li>css</li>
+                    <li>js</li>
+                    <li>ux | ui</li>
+                    <li>ps</li>
+                    <li>php</li>
+                </ul>
+            </div>
+
+            <a id="portifolio" href="" class="ff ff-negativado"><i class="material-icons">keyboard_arrow_down</i></a>
+        </section>
+        
+        <section class="qualificacoes" name="qualificações">
+           
+            <ul>
+                <li>
+                    <h3>Cursos e Especializações</h3>
+                    <p> <small>Formação Front-End @ Caelum</small> - Desenvolvimento Web com HTML, CSS e JavaScript
+                        <br>- Programação front-end com JavaScript e jQuery </p>
+                    <p> <small>WebDeveloper @ People Computers</small> - HTML, XHTML, JavaScript
+                        <br>- ASP, VBScript, PHP / MySQL </p>
+                    <p> <small>Graduação em WebDesign @ UNESA</small> - Incompleto - 2001 </p>
+                </li>
+                <li>
+                    <h3>Outras Habilidades</h3>
+                    <p> <small>Conhecimento em Outras Ferramentas</small> - Sublime Text e Dreamweaver
+                        <br>- Photoshop e Fireworks
+                        <br>- Flash e CorelDRAW
+                        <br>- SASS, Bootstrap e Grunt
+                        <br> </p>
+                    <p> <small>Idiomas</small> - Inglês (Avançado/Fluente)
+                        <br>- Alemão (Básico/Iniciante) </p>
                 </li>
             </ul>
-        </div>
+            
+            <a id="portifolio" href="" class="ff ff-negativado"><i class="material-icons">keyboard_arrow_down</i></a>
+            
+        </section>
+        
+        <section class="portifolio" name="portifólio">
+            
+            <h2 class="negativo">Portifólio
+                <small>Vamos Ao Que Interessa, Não é Mesmo?</small>
+            </h2>
+            
+            <div class="carousel" data-flickity data-flickity-options='{ "cellAlign": "left", "pageDots": false, "pauseAutoPlayOnHover": false }'>
+               
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-b2u-001.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> B2U Sistemas </h4>
+                                <p><strong>SOBRE O QUE:</strong> Software House</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Layout + Front-End </p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery </p>
 
-        <a id="profissional" href="" class="ff seta-laranja">></a>
+
+                                <p><strong>Website:</strong> <a href="http://b2usistemas.com.br">b2usistemas.com.br</a></p> 
+
+                                <p>Renovação do site institucional, utilizando 
+                                    conceitos mais modernos de HTML5 e CSS e retirando do WordPress.
+                                </p>
+                           </div>
+                        </div>
+                </div>               
+                 
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-16b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Marina Di Vietri </h4>
+                                <p><strong>SOBRE O QUE:</strong> Restaurante Italiano</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Layout + Front-End </p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery </p>
 
 
-    </section>    
-        <section class="profissional fundo-parallax" data-speed="15">
+                                <p><strong>Website:</strong> <a href="http://marinadivietri.com.br/">marinadivietri.com.br</a></p> 
 
-        <div class="section-cabecalho section-cabecalho__comfundo">
-            <h2>Profissional</h2>
-            <small>Um <strong>Pouco Rodado Por Ai</strong>. Mas <strong>Quem</strong> Não É?</small>
-        </div>
+                                <p>
+                                   O cliente possuía um site em Flash cujos originais já havia perdido. Precisava, então, de uma numa roupagem que pudesse ser também vista em em dispositivos móveis.
+                                </p>
+                           </div>
+                        </div>
+                </div>                  
+                
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-2b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> ContactoNET</h4>
+                                <p><strong>SOBRE O QUE:</strong> Agência Web</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Layout + Front-End</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery </p>
 
-        <ul class="empresas">
 
-            <li>
-                <p><strong>Front-End Dev</strong> @ <span class="firma">B2U Sistemas Ltda.</span>
-                </p>
-                <p>Responsável pelo Design e Front-End de diversos aplicativos da empresa - <strong>ATUAL</strong>
-                </p>
-                <p>Casa Verde, São Paulo</p>
-            </li>
+                                <p><strong>Website:</strong> <a href="http://contactonet.com.br/">contactonet.com.br</a></p> 
 
-            <li>
-                <p><strong>Webdesigner Pl</strong> @ <span class="firma">ContactoNET Ltda.</span>
-                </p>
-                <p>Atuando na elaboração do layout e desenvolvimento do front-end de todos os clientes da empresa - <strong>2013/2014</strong>
-                </p>
-                <p>Vila Mariana, São Paulo</p>
-            </li>
+                                <p>
+                                   Reformulação do site atual, valorizando mais o portifólio e os cases da empresa, além de implantção de visual diferenciado do tradicional aplicado. No momento aplicando responsividade para que fique coerente com o tipo de excelência no atendimento prestado.
+                                </p>
+                           </div>
+                        </div>
+                </div>                   
+                
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-3b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Potential Ltda.</h4>
+                                <p><strong>SOBRE O QUE:</strong> Consultoria e Coaching</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Layout + Front-End</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery + Schema</p>
 
-            <li>
-                <p><strong>Webdesigner Pl</strong> @ <span class="firma">MidiasPrint Ltda.</span>
-                </p>
-                <p>Responsável pela criação e manutenção do site institucional e reelaboração do código de seus sites de e-comm -
-                    <strong>2009/2013</strong>
-                </p>
-                <p>Lapa, São Paulo</p>
-            </li>
 
-            <li>
-                <p><strong>Designer</strong> @ <span class="firma">Terra Networks</span>
-                </p>
-                <p>Contrato temporário na equipe de manutenção da nova identidade visual do Terra e tratamento de telas - <strong>2009</strong>
-                </p>
-                <p>Brooklin, São Paulo</p>
-            </li>
+                                <p><strong>Website:</strong> <a href="http://potential.com.br/">potential.com.br</a></p> 
 
-            <li>
-                <p><strong>Webdesigner Pl</strong> @ <span class="firma">Interface-TI Ltda.</span>
-                </p>
-                <p>Responsável pela criação e manutenção do site institucional e reelaboração do código de seus sites de e-comm -
-                    <strong>2005/2009</strong>
-                </p>
-                <p>Flamengo/Gávea, Rio de Janeiro</p>
-            </li>
+                                <p>
+                                   Como o cliente era muito antigo a empresa ofereceu como brinde a redesign completo, incluindo novas telas de sistema internio, retirando as animações em Flash e deixando apenas web standards. Foi aplicado, também, microdatas na área de livros.
+                                </p>
+                           </div>
+                        </div>
+                </div>                   
+                
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-17b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Célia Brandão</h4>
+                                <p><strong>SOBRE O QUE:</strong> Psicologia</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Layout + Front-End</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery </p>
 
-            <li>
-                <p><strong>Webdesigner Jr</strong>. @ <span class="firma">Meu Provedor Ltda.</span>
-                </p>
-                <p>Responsável pela reformulação do portal da empresa, entre outros clientes -
-                    <strong>2003</strong>
-                </p>
-                <p>Centro, Rio de Janeiro</p>
-            </li>
 
+                                <p><strong>Website:</strong> <a href="http://celiabrandao.com/">celiabrandao.com</a></p> 
+
+                                <p>
+                                   Site pessoal da Psicóloga Célia Brandão em substituição ao seu velho modelo do Blogspot. Sua instalação foi feita em Wordpress para maior flexibilidade da cliente.
+                                </p>
+                           </div>
+                        </div>
+                </div>                      
+                
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-1b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Motel Cachoeiras </h4>
+                                <p><strong>SOBRE O QUE:</strong> Rede de Motéis</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Atendimento + Layout + Front-End</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery </p>
+
+
+                                <p><strong>Website:</strong> <a href="http://motelcachoeiras.com.br/">motelcachoeiras.com.br</a></p> 
+
+                                <p>
+                                   O cliente pediu total reformulação do site e a eliminação das partes em Flash. Como bônus, estruturei responsividade tornando o site adaptável a tablets e outros dispositivos móveis.
+                                </p>
+                           </div>
+                        </div>
+                </div>           
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-4b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Globatech Services</h4>
+                                <p><strong>SOBRE O QUE:</strong> Empresa de Engenharia</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Atendimento + Design + Front-End.</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery + SASS</p>
+
+
+                                <p><strong>Website:</strong> <a href="http://globatechservices.com/">globatechservices.com</a></p> 
+
+                                <p>
+                                   O cliente, de naturalidade alemã, precisava de um site para seu novo empreendimento no Brasil em três línguas. Com a versão em inglês e em alemão prontas o site já foi ao ar. Versão em Português em construção.
+                                </p>
+                           </div>
+                        </div>
+                </div>            
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-5b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Sara Biava</h4>
+                                <p><strong>SOBRE O QUE:</strong> Consultoria e Gestão</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Atendimento + Design</p>
+                                <p><strong>EU USEI:</strong> Fireworks</p>
+
+
+                                <p><strong>Website:</strong> <a href="http://biava.com.br/">biava.com.br</a></p> 
+
+                                <p>
+                                   A cliente precisava de um site simples e limpo para captar clientes em setores coligados a instituições religiosas. Foi oferecido, como cortesia, versões para dispositivos móveis. Posteriormente, outros websites como o mesmo padrão foram construídos.
+                                </p>
+                           </div>
+                        </div>
+                </div>        
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-6b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> RELP Consultoria</h4>
+                                <p><strong>SOBRE O QUE:</strong> Empresa de Consultoria</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Atendimento + Design + Front-End</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery</p>
+
+
+                                <p><strong>Website:</strong> <a href="http://relpconsultoria.com.br/">relpconsultoria.com.br</a></p> 
+
+                                <p>
+                                   Assumi a parte de design e, logo após, a de desenvolvimento. As ilustrações foram feitas à parte e a pedido do cliente foram inseridas em diversas partes do texto. A primeira versão foi construída utilizando SASS porém refiz sem utilizar a ferramenta.
+                                </p>
+                           </div>
+                        </div>
+                </div>  
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-13b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> STH Plast</h4>
+                                <p><strong>SOBRE O QUE:</strong> Comércio de Imóveis</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Atendimento + Layout + Front-End</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery + Mobile</p>
+
+
+                                <p><strong>Website:</strong> <a href="http://sthplast.com.br/">sthplast.com.br</a></p> 
+
+                                <p>
+                                   Reformulação do site, com foco em imagens. A cliente também quis versões para tablets e smartphones.
+                                </p>
+                           </div>
+                        </div>
+                </div>  
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-14b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Recanto das Perdizes</h4>
+                                <p><strong>SOBRE O QUE:</strong> Hotel</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Atendimento + Layout + Front-End</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery + Mobile</p>
+
+
+                                <p><strong>Website:</strong> <a href="http://recantodasperdizes.com.br/">recantodasperdizes.com.br</a></p> 
+
+                                <p>
+                                   Construção de novo site. Foram criadas também versões para dispositvos móveis.
+                                </p>
+                           </div>
+                        </div>
+                </div> 
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-15b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Panelli</h4>
+                                <p><strong>SOBRE O QUE:</strong> Comércio de Metalurgia</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Atendimento + Layout + Front-End</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS3 + JQuery + Mobile</p>
+
+
+                                <p><strong>Website:</strong> <a href="http://www.panelli.com.br/">panelli.com.br</a></p> 
+
+                                <p>
+                                   Construção de site para WordPress. Foram criadas também versões para dispositvos móveis.
+                                </p>
+                           </div>
+                        </div>
+                </div>  
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-7b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Balanças Apollo</h4>
+                                <p><strong>SOBRE O QUE:</strong> Balanças Industriais</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Design</p>
+                                <p><strong>EU USEI:</strong> Fireworks</p>
+
+
+                                <p><strong>Website:</strong> <a href="http://balancasapollo.com.br/">balancasapollo.com.br</a></p> 
+
+                                <p>
+                                   Aqui o cliente possuia um site deveras antigo que foi modernizado e implantado no WordPress pela equipe de desenvolvimento. Site sem responsividade.
+                                </p>
+                           </div>
+                        </div>
+                </div>  
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-8b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Ortopedia Pedro de Toledo</h4>
+                                <p><strong>SOBRE O QUE:</strong> Clínica Ortopédica</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Design + Front-End</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS + jQuery</p>
+
+
+                                <p><strong>Website:</strong> <a href="http://ortopediapedrodetoledo.com.br/">ortopediapedrodetoledo.com.br</a></p> 
+
+                                <p>
+                                   Meu primeiro site na fronteira que cruzei do WebDesign para as técnicas atuais de Desenvolvimento. Ponto seminal onde abandonei de vez o Dreamweaver (usando somente Sublime ou Brackets agora) e início do meu interesse em jQuery.
+                                </p>
+                           </div>
+                        </div>
+                </div>  
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-19b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Janahina Morena</h4>
+                                <p><strong>SOBRE O QUE:</strong> Loja de Calçados</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Layout + Front-End</p>
+                                <p><strong>EU USEI:</strong> HTML + CSS + Plugins jQuery</p>
+
+
+                                <p><strong>Website:</strong> <a href="http://janahinamorena.com.br/">janahinamorena.com.br</a></p> 
+
+                                <p>
+                                   Minha participação no projeto foi redesign da home, tratamento e alocação das imagens necessárias. Coleção muda frequentemente.
+                                </p>
+                           </div>
+                        </div>
+                </div>  
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-10b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Travel Ace</h4>
+                                <p><strong>SOBRE O QUE:</strong> Empresa do Ramo de Turismo</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Design da Engine</p>
+
+                                <p>
+                                   Jogo da Memória utilizado em Eventos , que pode ser individual ou em modo de competição cujo código básico está pronto. A fácil personalização torna a migração para quase todas as necessidades dos clientes.
+                                </p>
+                           </div>
+                        </div>
+                </div>  
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-11b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> São Judas</h4>
+                                <p><strong>SOBRE O QUE:</strong> Universidade</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Design da Engine</p>
+
+                                <p>
+                                   Quiz utilizado em Eventos, que pode ser individual ou em modo de competição cujo código básico está pronto. A fácil personalização torna a migração para quase todas as necessidades dos clientes.
+                                </p>
+                           </div>
+                        </div>
+                </div>  
+                      
+                <div class="carousel-cell"> 
+                        <div class="itens">
+                            <img src="img/portifolio/carrossel/mbs-portifa-12b.png" alt="">  
+                           <div>
+                                <h4><strong>PARA QUEM:</strong> Zenvia</h4>
+                                <p><strong>SOBRE O QUE:</strong> Serviços Móveis</p> 
+                                <p><strong>O QUE EU FIZ:</strong> Design + Refinamento da Engine</p>
+                                <p><strong>EU USEI:</strong>  Adobe Flash CS4</p>
+
+                                <p>
+                                   Jogo de Roleta utilizado em Eventos rodando em Flash cujos ajustes em ActionScript não representam grandes desafios. Entretanto, a personalização é capciosa.
+                                </p>
+                           </div>
+                        </div>
+                </div>  
+                               
+                                     
+                                                 
+                                
+            </div>
+            
+            
+            
+            
+            <ul>
+
+                <li>
+                    <a href="" id="0"> <img class="transicao" src="img/portifolio/mbs-portifa-b2u-001b.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>B2U Sistemas</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" id="1"> <img class="transicao" src="img/portifolio/mbs-portifa-16.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Marina DiVietri</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" id="2"> <img class="transicao" src="img/portifolio/mbs-portifa-5.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>ContactoNET</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-2.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Potential</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-17.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Célia Brandão</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-1.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Motel Cachoeiras</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-6.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Globatech</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-4.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Sara Biava</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-3.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Relp Consultoria</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-13.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>STH Plast</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-14.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Recanto das Perdizes</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-15.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Samsung | Fortraining</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-7.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Balanças Apollo</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-8.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Ortopedia Pedro de Toledo</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-19.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>JANAHINA MORENA</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-18.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Artemobília</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-9.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Travel Ace</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-10.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>São Judas</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href=""> <img class="transicao" src="img/portifolio/mbs-portifa-11.jpg" alt="">
+                        <div class="capa transicao">
+                            <p>Zenvia</p>
+                            <i class="material-icons">link</i>
+                        </div>
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <a id="contato" href="" class="ff ff-negativado"><i class="material-icons">keyboard_arrow_down</i></a>
+            
+        </section>
+        
+        <section class="contato" name="contato">
+            
+            <div>
+                <h2>Contato</h2>
+                <small>Bate Um Fio. Manda Um WhatsApp. Talvez Eu Possa Ajudar.</small>
+
+                <address>
+                    +55 (11) 9 7972-7575 <br>
+                    <a href="mailto:mbsantiagojr@outlook.com">mbsantiagojr@outlook.com</a>
+                </address> 
+            </div>
+            
+            <a id="topo" href="" name="home"><i class="material-icons">keyboard_arrow_up</i></a>
+            
+        </section>
+       
+        
+    </main>
+    
 <!--
-            <li>
-                <p><strong>Operador</strong> @ <span class="firma">Cleian Publicidade</span>
-                </p>
-                <p>Atuando como Programador Visual, tratando e executando artes publicitárias do portal de imóveis da empresa - <strong>2003</strong>
-                </p>
-                <p>Centro, Rio de Janeiro</p>
-            </li>
+    <footer>
+        <p class="cprght">Copyright © 2017 <strong>MB Santiago Jr.</strong> - Todos os direitos reservados</p>						
+    </footer>
 -->
 
-        </ul>
+    <script src="js/scripts.js"></script>
 
-        <div class="empresas-habilidades">
-            <small class="sombra">Habilidades (em %)</small>
-
-            <ul class="grafico grafico-fechado">
-                <li>html</li>
-                <li>css</li>
-                <li>js</li>
-                <li>ps</li>
-                <li>php</li>
-            </ul>
-
-            <ul class="grafico-legenda">
-                <li>html</li>
-                <li>css</li>
-                <li>js</li>
-                <li>ps</li>
-                <li>php</li>
-            </ul>
-
-
-        </div>
-
-        <ul class="outras">
-
-            <li>
-                <h3>Cursos e Especializações</h3>
-
-                <p>
-                    <small>Formação Front-End @ Caelum</small>
-                    - Desenvolvimento Web com HTML, CSS e JavaScript
-                    <br>- Programação front-end com JavaScript e jQuery
-                </p>
-
-                <p>
-                    <small>WebDeveloper @ People Computers</small>
-                    - HTML, XHTML, JavaScript
-                    <br>- ASP, VBScript, PHP / MySQL
-                </p>
-
-                <p>
-                    <small>Graduação em WebDesign @ UNESA</small>
-                    - Incompleto - 2001
-                </p>
-
-
-            </li>
-
-
-            <li>
-                <h3>Outras Habilidades</h3>
-                <p>
-                    <small>Conhecimento em Outras Ferramentas</small>
-                    - Sublime Text e Dreamweaver
-                    <br>- Photoshop e Fireworks
-                    <br>- Flash e CorelDRAW
-                    <br>- SASS, Bootstrap e Grunt
-                    <br>
-                </p>
-
-                <p>
-                    <small>Idiomas</small>
-                    - Inglês (Avançado/Fluente)
-                    <br>- Alemão (Básico/Iniciante)
-                </p>
-
-            </li>
-
-        </ul>
-
-        <a id="portifolio" href="" class="ff seta-laranja">></a>
-
-
-    </section>    
-        <section class="portifolio fundo-parallax" data-speed="10">
-
-        <div class="section-cabecalho section-cabecalho__comfundo">
-            <h2>Portifólio</h2>
-            <small>Vamos Ao Que Interessa, Não é Mesmo?</small>
-        </div>
-
-
-
-        <div class="jim-carrey transicao">
-            <ul class="bxslider jobs-abertos transicao" style="height: 100%;">
-
-                <li>
-                    <img src="img/portifolio/mbs-portifa-b2u-001.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>B2U Sistemas</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Software House
-                        <br>
-                        <small>O QUE EU FIZ:</small> Layout + Front-End
-                        <br>
-                        <small>EU USEI:</small>  HTML + CSS3 + JQuery
-                        <br>
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//b2usistemas.com.br" target="_blank">b2usistemas.com.br</a>
-                        <br>
-                        <br>Renovação do site institucional, utilizando conceitos mais modernos de HTML5 e CSS e retirando do WordPress. 
-                    </p>
-                </li>
-
-                <li>
-                    <img src="img/portifolio/mbs-portifa-16b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Marina Di Vietri</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Restaurante Italiano
-                        <br>
-                        <small>O QUE EU FIZ:</small> Layout + Front-End
-                        <br>
-                        <small>EU USEI:</small>  HTML + CSS3 + JQuery
-                        <br>
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//marinadivietri.com.br" target="_blank">marinadivietri.com.br</a>
-                        <br>
-                        <br>O cliente possuía um site em Flash cujos originais já havia perdido. Precisava, então, de uma numa roupagem que pudesse ser também vista em em dispositivos móveis.
-                    </p>
-                </li>
-
-                <li>
-                    <img src="img/portifolio/mbs-portifa-2b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>ContactoNET</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Agência Web
-                        <br>
-                        <small>O QUE EU FIZ:</small> Layout + Front-End
-                        <br>
-                        <small>EU USEI:</small>  HTML + CSS3 + JQuery
-                        <br>
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//contactonet.com.br" target="_blank">contactonet.com.br</a>
-                        <br>
-                        <br>Reformulação do site atual, valorizando mais o portifólio e os cases da empresa, além de implantção de visual diferenciado do tradicional aplicado. No momento aplicando responsividade para que fique coerente com o tipo de excelência no atendimento prestado.
-                    </p>
-                </li>
-
-                <li>
-                    <img src="img/portifolio/mbs-portifa-3b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Potential Ltda. </strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Consultoria e Coaching
-                        <br>
-                        <small>O QUE EU FIZ:</small> Layout + Front-End
-                        <br>
-                        <small>EU USEI:</small>  HTML + CSS3 + JQuery + Schema                       
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//potential.com.br/" target="_blank">potential.com.br</a>
-                        <br>
-                        <br>Como o cliente era muito antigo a empresa ofereceu como brinde
-                        a redesign completo, incluindo novas telas de sistema internio, retirando
-                        as animações em Flash e deixando apenas web standards. Foi aplicado, 
-                        também, microdatas na área de livros.
-                    </p>
-                </li>
-
-                <li>
-                    <img src="img/portifolio/mbs-portifa-17b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Célia Brandão</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Psicologia
-                        <br>
-                        <small>O QUE EU FIZ:</small> Layout + Front-End
-                        <br>
-                        <small>EU USEI:</small>  HTML + CSS3 + JQuery                       
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//celiabrandao.com/" target="_blank">celiabrandao.com</a>
-                        <br>
-                        <br>Site pessoal da Psicóloga Célia Brandão em substituição ao seu velho modelo do Blogspot. Sua instalação foi feita em Wordpress para maior flexibilidade da cliente.
-                    </p>
-                </li>
-                
-                
-                <li>
-                    <img src="img/portifolio/mbs-portifa-1b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Motel Cachoeiras </strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Rede de Motéis
-                        <br>
-                        <small>O QUE EU FIZ:</small> Atendimento + Layout + Front-End
-                        <br>
-                        <small>EU USEI:</small> HTML + CSS3 + JQuery
-                        <br>
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//motelcachoeiras.com.br" target="_blank">motelcachoeiras.com.br</a>
-                        <br>
-                        <br>O cliente pediu total reformulação do site e a eliminação das partes em Flash. Como bônus, estruturei responsividade tornando o site adaptável a tablets e outros dispositivos móveis.
-                    </p>
-                </li>
-                
-                                                
-                <li>
-                    <img src="img/portifolio/mbs-portifa-4b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Globatech Services</strong> 
-                        <br>
-                        <small>SOBRE O QUE:</small> Empresa de Engenharia
-                        <br>
-                        <small>O QUE EU FIZ:</small> Atendimento + Design + Front-End.
-                        <br>
-                        <small>EU USEI:</small>  HTML + CSS3 + JQuery + SASS
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//globatechservices.com/" target="_blank">globatechservices.com</a>
-                        <br>
-                        <br>O cliente, de naturalidade alemã, precisava de um site para 
-                        seu novo empreendimento no Brasil em três línguas. Com a versão em inglês
-                        e em alemão prontas o site já foi ao ar. Versão em Português em construção.
-                    </p>
-                </li>
-
-                <li>
-                    <img src="img/portifolio/mbs-portifa-5b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Sara Biava</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Consultoria e Gestão
-                        <br>
-                        <small>O QUE EU FIZ:</small> Atendimento + Design
-                        <br>
-                        <small>EU USEI:</small> Apenas Fireworks   
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//www.biava.com.br/" target="_blank">biava.com.br</a>
-                        <br>
-                        <br>A cliente precisava de um site simples e limpo para captar
-                        clientes em setores coligados a instituições religiosas. Foi oferecido, 
-                        como cortesia, versões para dispositivos móveis. Posteriormente, outros 
-                        websites como o mesmo padrão foram construídos.
-                    </p>
-                </li>
-                <li>
-                    <img src="img/portifolio/mbs-portifa-6b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>RELP Consultoria</strong> 
-                        <br>
-                        <small>SOBRE O QUE:</small> Empresa de Consultoria
-                        <br>
-                        <small>O QUE EU FIZ:</small> Atendimento + Design + Front-End
-                        <br>
-                        <small>EU USEI:</small>  HTML + CSS3 + JQuery   
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//www.relpconsultoria.com.br" target="_blank">relpconsultoria.com.br</a>
-                        <br>
-                        <br>Assumi a parte de design e, logo após, a de desenvolvimento. 
-                        As ilustrações foram feitas à parte e a pedido do cliente foram
-                        inseridas em diversas partes do texto. A primeira versão foi construída 
-                        utilizando SASS porém refiz sem utilizar a ferramenta.
-                    </p>
-                </li>
-                
-                
-                
-                
-                <li>
-                    <img src="img/portifolio/mbs-portifa-13b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>STH Plast</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Comércio de Imóveis
-                        <br>
-                        <small>O QUE EU FIZ:</small> Atendimento + Layout + Front-End
-                        <br>
-                        <small>EU USEI:</small> HTML + CSS3 + JQuery + Mobile
-                        <br>
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//sthplast.com.br/" target="_blank">sthplast.com.br</a>
-                        <br>
-                        <br>Reformulação do site, com foco em imagens. A cliente também quis versões para tablets e smartphones.
-                    </p>
-                </li>                
-                <li>
-                    <img src="img/portifolio/mbs-portifa-14b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Recanto das Perdizes</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Hotel 
-                        <br>
-                        <small>O QUE EU FIZ:</small> Atendimento + Layout + Front-End
-                        <br>
-                        <small>EU USEI:</small> HTML + CSS3 + JQuery + Mobile
-                        <br>
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//recantodasperdizes.com.br" target="_blank">recantodasperdizes.com.br</a>
-                        <br>
-                        <br>Construção de novo site. Foram criadas também versões para dispositvos móveis.
-                    </p>
-                </li>                
-                <li>
-                    <img src="img/portifolio/mbs-portifa-15b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Panelli</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Comércio de Metalurgia 
-                        <br>
-                        <small>O QUE EU FIZ:</small> Atendimento + Layout + Front-End
-                        <br>
-                        <small>EU USEI:</small> HTML + CSS3 + JQuery + Mobile
-                        <br>
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//panelli.com.br/teste" target="_blank">panelli.com.br</a>
-                        <br>
-                        <br>Construção de site para WordPress. Foram criadas também versões para dispositvos móveis.
-                    </p>
-                </li>
-            
-                <li>
-                    <img src="img/portifolio/mbs-portifa-7b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Balanças Apollo</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Balanças Industriais
-                        <br>
-                        <small>O QUE EU FIZ:</small> Design
-                        <br>
-                        <small>EU USEI:</small> Apenas Fireworks 
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//www.balancasapollo.com.br/" target="_blank">balancasapollo.com.br</a>
-                        <br>
-                        <br>Aqui o cliente possuia um site deveras antigo que
-                            foi modernizado e implantado no WordPress pela equipe
-                            de desenvolvimento. Site sem responsividade.
-                    </p>
-                </li>
-                <li>
-                    <img src="img/portifolio/mbs-portifa-8b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Ortopedia Pedro de Toledo</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Clínica Ortopédica
-                        <br>
-                        <small>O QUE EU FIZ:</small> Design + Front-End
-                        <br>
-                        <small>EU USEI:</small> HTML + CSS + jQuery 
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//www.ortopediapedrodetoledo.com.br/" target="_blank">ortopediapedrodetoledo.com.br</a>
-                        <br>
-                        <br>Meu primeiro site na fronteira que cruzei do WebDesign
-                            para as técnicas atuais de Desenvolvimento. Ponto seminal
-                            onde abandonei de vez o Dreamweaver (usando somente Sublime
-                            ou Brackets agora) e início do meu interesse em jQuery.
-                    </p>
-                </li>
-
-                <li>
-                    <img src="img/portifolio/mbs-portifa-19b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Janahina Morena</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Loja de Calçados
-                        <br>
-                        <small>O QUE EU FIZ:</small> Layout + Front-End.
-                        <br>
-                        <small>EU USEI:</small> HTML + CSS + Plugins jQuery
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//www.janahinamorena.com.br/" target="_blank">janahinamorena.com.br/</a>
-                        <br>
-                        <br>Minha participação no projeto foi redesign da home, tratamento
-							e alocação das imagens necessárias. Coleção muda frequentemente.
-                    </p>
-                </li><!--
-                <li>
-                    <img src="img/portifolio/mbs-portifa-9b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>FREEMB Ltda. </strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Loja de Freios e Embreagens
-                        <br>
-                        <small>O QUE EU FIZ:</small> Layout + Front-End.
-                        <br>
-                        <small>EU USEI:</small> BootStrap + Plugins jQuery
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//freemb.com.br/" target="_blank">freemb.com.br</a>
-                        <br>
-                        <br>Minha primeira (e atualmente em progresso) experiência 
-                            em BOOTSTRAP, aproveitando as facilidades do framework 
-                            para desenvolver um layout simples porém efetivo de acordo
-                            com os parâmetros do cliente. Tentarei usar novamente em
-                            algum projeto futuro ou experimentarei outros.
-                    </p>
-                </li>-->
-
-                <li>
-                    <img src="img/portifolio/mbs-portifa-18b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Artemobília | Galeria</strong>
-                        <br>
-                        <small>SOBRE O QUE:</small> Empresa de Mobiliário
-                        <br>
-                        <small>O QUE EU FIZ:</small> Layout + Front-End.
-                        <br>
-                        <small>EU USEI:</small> HTML5 + CSS3 + JQuery
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <a href="//artemobilia.com.br/" target="_blank">artemobilia.com.br</a>
-                        <br>
-                        <br>Reformulação de site nos parâmetros pedidos pelo cliente de imagens abundantes.
-                    </p>
-                </li>
-                <li>
-                    <img src="img/portifolio/mbs-portifa-10b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Travel Ace</strong> 
-                        <br>
-                        <small>SOBRE O QUE:</small> Empresa do Ramo de Turismo
-                        <br>
-                        <small>O QUE EU FIZ:</small> Design da Engine.
-                        <br>
-                        <br>
-                        <br>
-                        <br>Jogo da Memória utilizado em Eventos , que pode ser individual 
-                            ou em modo de competição cujo código básico está pronto. A fácil 
-                            personalização torna a migração para quase todas as necessidades dos clientes
-                    </p>
-                </li>
-                <li>
-                    <img src="img/portifolio/mbs-portifa-11b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>São Judas</strong> 
-                        <br>
-                        <small>SOBRE O QUE:</small> Universidade
-                        <br>
-                        <small>O QUE EU FIZ:</small> Design da Engine
-                        <br>
-                        <br>
-                        <br>
-                        <br>QUIZ utilizado em Eventos, que pode ser individual 
-                            ou em modo de competição cujo código básico está pronto. A fácil 
-                            personalização torna a migração para quase todas as necessidades dos clientes.
-                    </p>
-                </li>
-                <li>
-                    <img src="img/portifolio/mbs-portifa-12b.png" alt="">
-                    <p>
-                        <small>PARA QUEM:</small>  <strong>Zenvia</strong> 
-                        <br>
-                        <small>SOBRE O QUE:</small> Serviços Móveis
-                        <br>
-                        <small>O QUE EU FIZ:</small> Design + Refinamento da Engine.
-                        <br>
-                        <small>EU USEI:</small>  Adobe Flash CS4
-                        <br>
-                        <br>
-
-                        <small>Website:</small> 
-                        <br>
-                        <br>Jogo de ROLETA utilizado em Eventos rodando em Flash cujos
-                            ajustes em ActionScript não representam grandes desafios.
-                            Entretanto, a personalização é capciosa.
-                    </p>
-                </li>
-            </ul>
-        </div>
-
-
-
-
-        <ul class="jobs">
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-b2u-001b.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>B2U Sistemas</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-16.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Marina DiVietri</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-5.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>ContactoNET</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-2.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Potential</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-17.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Célia Brandão</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-1.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Motel Cachoeiras</p>
-                        <p>＋</p>
-                    </div>
-                </a>
-            </li>
-            
-
-
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-6.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Globatech</p>
-                        <p>＋</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-4.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Sara Biava</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-3.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Relp Consultoria</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-13.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>STH Plast</p>
-                        <p>＋</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-14.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Recanto das Perdizes</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-15.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Samsung | Fortraining</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-            
-            
-            
-
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-7.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Balanças Apollo</p>
-                        <p>＋</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-8.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Ortopedia Pedro de Toledo</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-19.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>JANAHINA MORENA</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-18.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Artemobília</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-
-
-
-
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-9.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Travel Ace</p>
-                        <p>＋</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-10.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>São Judas</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="">
-                    <img class="transicao" src="img/portifolio/mbs-portifa-11.jpg" alt="">
-                    <div class="capa transicao">
-                        <p>Zenvia</p>
-                        <p>＋</p>
-
-                    </div>
-                </a>
-            </li>
-
-
-        </ul>
-
-
-        <a id="contato" href="" class="ff">></a>
-
-    </section>    
-    
-    <section class="contato fundo-parallax">
-
-        <div class="centralizado">
-
-            <h3 class="sombra">Contato</h3>
-            <small class="sombra">Bate Um Fio. Manda Um WhatsApp. Talvez Eu Possa Ajudar.</small>
-
-            <address class="sombra">
-                +55 (11) 9 7972-7575 <br>
-                <a href="">mbsantiagojr@outlook.com</a>
-            </address> 
-
-        </div>
-
-
-
-        <a id="home" href="" class="ff rw">Voltar ao Topo</a>
-
-
-    </section>
-
-
-
-
-</main>
-
-<script>
-	
-	
-    //        
-    //    
-    //var slider = $('.bxslider').bxSlider({
-    //    pager: false,
-    //    slideMargin: 0,    
-    //});
-    //    
-    //
-    //var todostrabalhos = document.querySelectorAll(".jobs li a");
-    //var cadaUm = [].slice.call(todostrabalhos);   
-    //
-    //cadaUm.forEach(function(el) {
-    //
-    //    el.addEventListener("click", function() {
-    //        event.preventDefault();
-    //        var numVetor = cadaUm.indexOf(this);
-    //        slider.goToSlide(numVetor);
-    //
-    //    });
-    //
-    //});
-    //    
-    //
-</script>
-
-<footer>
-	<p class="cprght">Copyright © 2014 <strong>MB Santiago Jr.</strong> - Todos os direitos reservados</p>						
-</footer>
-
- 
-<script src="js/funcoes.js"></script>
-
- 
 </body>
+
 </html>

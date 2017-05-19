@@ -1,0 +1,52 @@
+section.pessoal {
+    
+    & > div {
+        width: 96%;
+        height: auto;
+        text-align: center;
+        @include centraliza-tudo;
+            
+        p {
+            margin: 0 0 4% 0;
+        }
+        
+        ul {
+            li {
+                display: inline-block;
+                margin: 0 20px;
+                
+                a {
+                        display: block;
+                        width: 64px;
+                        height: 64px;
+                        text-indent: -9999px;
+                        @include transicao(0.4s);
+                    
+                    &[href*="linkedin"] {
+                        background: url(../img/icones/mbs-redes-sociais.png) 0 0 no-repeat;
+                    }                    
+                    &[href*="facebook"] {
+                        background: url(../img/icones/mbs-redes-sociais.png) -64px 0 no-repeat;
+                    }                    
+                    &[href*="twitter"] {
+                        background: url(../img/icones/mbs-redes-sociais.png) -128px 0 no-repeat;
+                    }                    
+                    &[href*="instagram"] {
+                        background: url(../img/icones/mbs-redes-sociais.png) -192px 0 no-repeat;
+                    }                    
+                    &[href*="pinterest"] {
+                        background: url(../img/icones/mbs-redes-sociais.png) -256px 0 no-repeat;
+                    }  
+                    
+                    &:hover {
+                        -webkit-transform: rotate(-45deg);
+                        -moz-transform: rotate(-45deg);
+                        -o-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}
