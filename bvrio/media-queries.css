@@ -1,0 +1,407 @@
+@media (min-width: 1025px) and (max-width: 1280px) {}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    section.rte-titulo {
+        display: block;
+        position: relative;
+        width: 100vw;
+        height: 100px;
+        text-align: left;
+        padding: 20px 2%;
+    }
+    section.rte-titulo > ul > li > a {
+        text-align: center;
+    }
+    section.rte-secoes article > h2 {
+        font-size: 1.6em;
+    }
+    section.rte-secoes .due-diligence .seletor select#input-duediligence {
+        width: 280px;
+        padding: 13px 5px;
+    }
+    section.rte-secoes .seletor > img {
+        width: initial;
+        max-width: initial;
+        height: 251px;
+        max-height: 251px;
+    }
+    section.rte-secoes article .boxes > big {
+        display: block;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        margin: 0 0 7px 0;
+    }
+    .rte-carrossel .carousel-cell p {
+        line-height: 1.4;
+        font-size: 1.3em;
+        height: 128px;
+        overflow: hidden;
+    }
+    .rte-carrossel > div {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        float: left;
+        height: auto;
+        min-height: 430px;
+        margin: 0 0 30px 0;
+    }
+    .rte-carrossel .main-carousel div {
+        height: 370px!important;
+    }
+    .rte-areadevideos iframe {
+        padding: 32px 0% 0 32px;
+        height: 520px!important;
+    }
+    .rte-carrossel big {
+        margin: 0 0 0 4%;
+        padding: 0;
+    }
+    .rte-areadevideos iframe {
+        padding: 22px 0% 0 32px;
+        height: 520px!important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 768px) {
+    section.rte-titulo {
+        display: block;
+        position: relative;
+        width: 100vw;
+        height: 100px;
+        text-align: left;
+        padding: 20px 2%;
+    }
+    section.rte-titulo > ul > li > a {
+        text-align: center;
+    }
+    section.rte-titulo > ul {
+        position: absolute;
+        right: 0;
+        top: 28px;
+        display: block;
+        height: auto;
+        width: 320px;
+        padding: 10px 0 5px 0;
+    }
+    section.rte-secoes > div {
+        margin: 20px 0;
+    }
+    section.rte-secoes .seletor > img {
+        display: block;
+        margin: 0 auto;
+        width: initial;
+        max-width: initial;
+        height: 210px;
+    }
+    section.rte-secoes .seletor > big {
+        display: block;
+        margin: 30px 0;
+        font-size: 1.25em;
+        line-height: 1.5;
+    }
+    section.rte-secoes .due-diligence .seletor select#input-duediligence {
+        display: inline-block;
+        vertical-align: middle;
+        height: 47px;
+        padding: 12px 5px;
+        margin: 0 7px 0 0;
+        border: 1px solid #ccc;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -o-border-radius: 12px;
+        border-radius: 12px;
+        font-size: 1.2em;
+        color: #878787;
+        font-weight: 300;
+        letter-spacing: 2px;
+        background: #fff;
+        -moz-appearance: none;
+        width: 195px;
+    }
+    section.rte-secoes article > h2 {
+        display: block;
+        padding: 15px;
+        font-size: 1.15em;
+        background: rgba(167, 205, 87, 1);
+        color: #fff;
+        letter-spacing: 1px;
+        margin: 0 0 25px 0;
+        font-weight: 700;
+    }
+    section p {
+        line-height: 1.4;
+        font-size: 1em!important;
+    }
+    .certificacoes li img {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+    section.rte-secoes article ul.certificacoes {
+        display: block;
+        width: 100%;
+        margin: 15px 0;
+        height: 100px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+@media screen and (max-width: 767px) {
+    section.rte-titulo {
+        display: block;
+        position: relative;
+        width: 100vw;
+        height: 120px;
+        text-align: center;
+        padding: 10px 0;
+    }
+    section.rte-titulo > h1 {
+        font-size: 1.7em;
+        font-weight: 400;
+        margin: 0 0 10px 0;
+    }
+    section.rte-titulo > big {
+        font-size: 1em;
+        font-weight: 400;
+        margin: 0;
+    }
+    section.rte-titulo > ul {
+        position: static;
+        right: initial;
+        top: 58px;
+        display: block;
+        height: auto;
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+    }
+    section.rte-secoes > div {
+        padding: 0 5px;
+        margin: 0 0;
+    }
+    section.rte-secoes .seletor {
+        padding: 20px 5px;
+    }
+    section.rte-secoes .seletor > h2 {
+        font-size: 1em;
+        text-transform: uppercase;
+        margin: 0 0 25px 0;
+        font-weight: 700;
+    }
+    section.rte-secoes .seletor > img {
+        display: block;
+        margin: 0 auto;
+        width: initial;
+        max-width: initial;
+        height: 90px;
+    }
+    section.rte-secoes .seletor > big {
+        display: block;
+        margin: 30px 0;
+        font-size: 1em;
+        line-height: 1.5;
+    }
+    section.rte-secoes .seletor > button {
+        padding: 11px 15px;
+    }
+    section.rte-secoes .seletor > big {
+        display: block;
+        margin: 19px 0;
+        font-size: 1em;
+        line-height: 1.5;
+    }
+    section.rte-secoes .due-diligence .seletor select#input-duediligence {
+        display: inline-block;
+        vertical-align: middle;
+        height: 47px;
+        padding: 13px 5px;
+        margin: 0 7px 10px 0;
+        border: 1px solid #ccc;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -o-border-radius: 12px;
+        border-radius: 12px;
+        font-size: 1em;
+        color: #878787;
+        font-weight: 300;
+        letter-spacing: 2px;
+        background: #fff;
+        -moz-appearance: none;
+        width: 100%;
+    }
+    section.rte-secoes .trade-timber .seletor > button {
+        height: 100px;
+    }
+    section.rte-secoes article {
+        margin: 40px 0 0 0;
+        padding: 0 5px;
+    }
+    section.rte-secoes article > h2 {
+        font-size: 0.8em;
+        line-height: 1.4;
+        padding: 12px;
+    }
+    section p {
+        line-height: 1.4;
+        font-size: 1em!important;
+    }
+    section.rte-secoes article ul.certificacoes {
+        display: inline-block;
+        width: 100%;
+        margin: 15px 0 5px 0;
+        height: auto;
+    }
+    section.rte-secoes article ul.certificacoes li {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        height: auto;
+        min-height: 98px;
+        float: left;
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+    section.rte-secoes article .boxes {
+        padding: 10px;
+    }
+    section.rte-secoes article .boxes > h2 {
+        display: block;
+        font-size: 1em;
+        font-weight: 400;
+        color: #555;
+        letter-spacing: 1px;
+        margin: 0 0 7px 0;
+        font-weight: 700;
+        line-height: 1.25;
+    }
+    section.rte-secoes article .boxes > big,
+    .rte-carrossel big {
+        display: block;
+        font-size: 1em;
+        letter-spacing: 1px;
+        margin: 0 0 7px 0;
+    }
+    section.rte-secoes article .boxes ul.boxes-lista li {
+        display: inline-block;
+        width: 100%;
+        margin: 0px 0 15px 0;
+        height: auto;
+        font-size: 1em;
+        line-height: 1.4;
+        padding: 28px 0 0 0;
+        position: relative;
+    }
+    section.rte-secoes article .boxes ul.boxes-lista li::before {
+        content: '';
+        display: block;
+        border: 2px solid rgba(167, 205, 87, 1);
+        background: #fff;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .boxes-databases,
+    .boxes-databases ul {
+        text-align: center;
+        width: 100%;
+        display: inline-block;
+        height: auto;
+    }
+    .boxes-databases ul > li {
+        display: inline-block;
+        float: left;
+        height: auto;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+    }
+    section.rte-secoes article ul.passos {
+        display: inline-block;
+        width: 100%;
+        margin: 10px 0 0px 0;
+        height: auto;
+        min-height: 100px;
+    }
+    section.rte-secoes article ul.passos li {
+        display: inline-block;
+        width: 100%;
+        margin: 10px 0 20px 0;
+        height: auto;
+        font-size: 1em;
+        line-height: 1.4;
+        padding: 40px 0 0 0;
+        position: relative;
+    }
+    section.rte-secoes article ul.passos li::before {
+        content: '1';
+        display: block;
+        border: 2px solid rgba(255, 205, 0, 1);
+        background: #fff;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 0;
+        padding: 1px;
+        font-size: 1.5em;
+        font-weight: 600;
+        text-align: center;
+        top: 0;
+    }
+    .rte-carrossel .carousel-cell p {
+        line-height: 1.4;
+        font-size: 1.3em;
+        height: 128px;
+        overflow: hidden;
+    }
+    .rte-carrossel > div {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        float: left;
+        height: auto;
+        min-height: 350px;
+        margin: 30px 0;
+    }
+    .rte-carrossel .main-carousel div {
+        height: 300px!important;
+    }
+    .rte-carrossel big {
+        margin: 0 0 0 4%;
+        padding: 0;
+    }
+    .rte-areadevideos iframe {
+        padding: 10px 0;
+        height: 220px!important;
+    }
+    .rte-areadevideos {
+        padding: 0px;
+        min-height: 220px !important;
+        margin: 0 !important;
+    }
+    .rte-advisory ul li {
+        display: inline-block;
+        float: left;
+        vertical-align: middle;
+        height: auto;
+        width: 100% !important;
+        margin: 0px 0 40px 0;
+    }
+}
