@@ -1,6 +1,24 @@
 @media (min-width: 1025px) and (max-width: 1280px) {}
 
 @media (min-width: 769px) and (max-width: 1024px) {
+
+
+  .rte-advisory ul li {
+    display: inline-block;
+    float: initial;
+    vertical-align: middle;
+    height: auto;
+    width: 16.66%;
+}
+
+
+    .rte-advisory ul li img {
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+    }
+
+
     section.rte-titulo {
         display: block;
         position: relative;
@@ -144,16 +162,28 @@
         margin: 15px 0;
         height: 100px;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+    .rte-advisory ul li {
+      display: inline-block;
+      float: initial;
+      vertical-align: middle;
+      height: auto;
+      width: 16.66%;
+  }
+
+
+      .rte-advisory ul li img {
+          display: block;
+          margin: 0 auto;
+          width: 70%;
+      }
+
+
+
+
+
+
 }
 
 @media screen and (max-width: 767px) {
@@ -404,4 +434,18 @@
         width: 100% !important;
         margin: 0px 0 40px 0;
     }
+
+    .rte-areadenoticias, .rte-areadevideos {
+      display: none!important;
+    }
+
+    .rte-carrossel {
+    clear: both;
+    display: inline-block;
+    height: auto;
+    min-height: 30px;
+    width: 100%;
+}
+
+
 }

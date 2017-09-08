@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -203,12 +203,12 @@ body {
     font-weight: normal;
     font-size: 12px;
     color: #595959;
-} 
+}
 
 body * {
     font-family: 'Exo';
 
-} 
+}
 
 
 
@@ -229,7 +229,7 @@ section.rte-titulo > h1 {
     font-size: 2.25em;
     font-weight: 400;
     margin: 0 0 10px 0;
-    
+
 }
 section.rte-secoes strong {
     font-weight: 700!important;
@@ -282,14 +282,14 @@ section.rte-titulo > ul > li > a:hover {
 
 
 section.rte-secoes {
-    
+
     display: block;
     position: relative;
     width: 100vw;
     margin: 0 auto;
     height: auto;
     min-height: 500px;
-    
+
 }
 
 
@@ -320,14 +320,14 @@ section.rte-secoes .seletor {
     display: block;
     width: 100%;
     height: auto;
-    text-align: center; 
+    text-align: center;
     padding: 20px;
 }
 
 
 section.rte-secoes .seletor > img {
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 section.rte-secoes .seletor > button {
@@ -356,7 +356,7 @@ section.rte-secoes .seletor > h2 {
     font-size: 2.3em;
     text-transform: uppercase;
     margin: 0 0 25px 0;
-    
+
 }
 section.rte-secoes .seletor > big {
     display: block;
@@ -396,9 +396,9 @@ section.rte-secoes .due-diligence .seletor select#input-duediligence {
     font-weight: 300;
     letter-spacing: 2px;
     background: #fff;
-    
+
      -moz-appearance: none; /*Firefox*/
-    
+
 }
 
 section.rte-secoes .due-diligence .seletor select#input-duediligence:before {
@@ -467,7 +467,7 @@ section.rte-secoes article .boxes {
     height: auto;
     min-height: 200px;
     padding: 25px;
-    background: rgba(167, 205, 87, 0.07); 
+    background: rgba(167, 205, 87, 0.07);
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -483,7 +483,7 @@ section.rte-secoes article .boxes.boxes-diligence {
 
 section.rte-secoes article .boxes.boxes-databases {
     border: 2px solid rgba(0, 154, 213, 1);
-    background: rgba(0, 154, 213, 0.07); 
+    background: rgba(0, 154, 213, 0.07);
 }
 
 
@@ -496,7 +496,7 @@ section.rte-secoes article .boxes > h2 {
     margin: 0 0 7px 0;
     font-weight: 700;
     line-height: 1.25;
-    
+
 }
 section.rte-secoes article .boxes > big, .rte-carrossel big {
     display: block;
@@ -598,7 +598,7 @@ section.rte-secoes article .boxes ul.boxes-lista h3 {
     font-weight: 700;
     height: auto;
     letter-spacing: 2px;
-    
+
 }
 
 hr {
@@ -606,7 +606,7 @@ hr {
     width: 100%;
     display: block;
     margin: 20px 0;
-    
+
 }
 
 .boxes-databases, .boxes-databases ul {
@@ -715,7 +715,7 @@ hr {
 
 .rte-advisory ul li {
     display: inline-block;
-    float: left;
+    float: initial;
     vertical-align: middle;
     height: auto;
     width: 16.66%;
