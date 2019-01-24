@@ -109,7 +109,7 @@ h1:first-of-type {
 main {
     width: 100%;
     height: auto;
-    min-height: 100vh;    
+/*    min-height: 100vh;    */
     background: url(../img/ccnd_bg.png);
     
 }
