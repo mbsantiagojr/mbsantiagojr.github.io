@@ -1,11 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
+.centralizar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.transicao {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
 html,
 body {
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
+  color: #231f20;
 }
 
 body * {
@@ -15,6 +34,19 @@ body * {
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   width: 0; }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #231f20;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #231f20;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #231f20;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #231f20;
+}
 
 html {
   overflow: -moz-scrollbars-none; 
@@ -33,10 +65,39 @@ h1, big {
     line-height: 1.2;
 }
 
+h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+
+h3 {
+    margin: 10px 0;
+}
+
+h6 {
+    font-size: 0.75rem;
+    color: white;
+    margin: 0 0 30px 0;
+}
+
+sup {
+    vertical-align: text-top;
+    font-size: 0.7em;
+}
+
 big {
     width: auto;
     font-weight:400;
     margin: 5% 0 4% 0;
+}
+
+small {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    line-height: 1.2;
 }
 
 h1:first-of-type {
@@ -76,7 +137,11 @@ section.abertura .foto {
     background-size: cover;
     background-position: bottom right;
     float: left;
-    padding: 5% 0 0 22%;
+    position: relative;
+}
+section.abertura .foto .titulo {
+    top: 35%;
+    left: 45%;
 }
 
 section.abertura .contato {
@@ -92,6 +157,38 @@ section.abertura .contato img {
     margin: 0 auto 30px auto;
 }
 
+section.abertura .contato .form {
+    width: 83%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+section.abertura .contato .form small {
+    margin: 5px 0 30px 0;
+    display: inline-block;
+}
+
+section.abertura .contato form input {
+    display: block;
+    width: 100%;
+    margin: 11px 0;
+    height: 30px;
+    border: none;
+    background: #ecedef;
+    padding: 0 0 0 15px;   
+}
+section.abertura .contato form input[type="submit"] {
+    color: #ffffff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #231f20;
+    padding: 10px 0;
+    height: auto;
+    text-transform: uppercase;
+    font-size: 0.6em;
+}
+
 
 section.detalhes {
     background: #ecedef;
@@ -99,26 +196,83 @@ section.detalhes {
     max-height: 233px;
 }
 
-section.detalhes .detalhes-lista {
+section.detalhes .lista {
     width: 60vw;
     height: 100%;
     float: left;
+    position: relative;
 }
 
-section.detalhes .detalhes-metragem {
+section.detalhes .lista ul {
+    left: calc(30% + 20px);
+    width: auto;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0%, -50%);
+    -o-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+section.detalhes .lista ul li {
+    display: block;
+    margin: 10px 0;
+    padding: 0 0 0 30px;
+    font-size: 1.5rem;
+    background: url(../img/ccnd_lista_bullet.png) left center no-repeat;
+}
+
+section.detalhes .metragem {
     width: 40vw;
     height: 100%;
     float: left;
-    background: #211915;
+    background: #231f20;
+    position: relative;
+    color: #fff;
+    font-size: 2.3rem;
+    font-weight: 400;
+}
+
+section.detalhes .metragem > div {
+   left: 3.5%!important;
+   text-align: center;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0%, -50%);
+    -o-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+
+section.detalhes .metragem span {
+    font-weight: 100;
+    font-size: 3.5rem;
 }
 
 section.jimcarrey {
     
     width: 100%;
     height: auto;
-    height: 75vh;
     max-height: 847px;
 
+}
+
+section.jimcarrey .carousel-cell {
+    width: 100%;
+}
+
+section.jimcarrey .carousel-cell .planta {
+    width: 62%;
+    display: block;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    overflow: hidden;
+}
+
+section.jimcarrey .carousel-cell .planta img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -127,5 +281,58 @@ footer {
     clear: both;
     display: block;
     height: 233px;
-    background: #211915;
+    background: #231f20;
+    position: relative;
+    color: white;
+    text-align: center;
 }
+
+footer > div {
+    width: 62%;
+    height: auto;
+    max-height: 98%;
+    overflow: hidden;
+    padding: 10px 0;
+    color: white;
+}
+
+footer > div li {
+    display: inline-block;
+    height: auto;
+    float: left;
+    text-align: center;
+    margin: 0 30px 0 0;
+}
+
+
+footer > div li:last-child {
+    display: inline-block;
+    height: auto;
+    float: left;
+    text-align: left;
+    padding: 0
+}
+
+footer > div li:last-child h6 {
+    padding: 0;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+    
+}
+
+footer > div li:last-child big {
+    padding: 0;
+    font-size: 3.2rem;
+    margin: 0;
+    
+}
+
+footer  p {
+    font-size: 0.625rem;
+    display: inline-block;
+    margin: 40px 0 0 0;
+}
+
+
+

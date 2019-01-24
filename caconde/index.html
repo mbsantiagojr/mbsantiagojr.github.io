@@ -3,32 +3,37 @@
 
 <head>
 
-  <!--
-  /*************************************************************/
-   * Data           : 01/2019                      		 
-   * Layout         : Allure Comunicação  
-   * Development    : MB Santiago jnr  
-   * Módulo         : Landing Page   	    	    		 
-   *************************************************************/
-  -->
+    <!--
+    /*************************************************************/
+    * Data           : 01/2019                      		 
+    * Layout         : Allure Comunicação  
+    * Development    : MB Santiago jnr  
+    * Módulo         : Landing Page   	    	    		 
+    *************************************************************/
+    -->
 
-  <meta charset="UTF-8" />
-  <meta name="dc.title" content="Vista Caconde | Jardins" />
-  <meta name="dc.creator" content="MB Santiago Jr" /> 
-  <meta name="language" content="pt-br">
-  <meta name="description" content="Teste de Front-End">
-  <meta name="keywords" content="Teste + Design + HTML + CSS + jQuery">
-  <meta name="robots" content="index,follow">
-  <meta name="author" content="MB Santiago Jr">
-  <meta name="contact" content="mbsantiagojr@outlook.com">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="dc.title" content="Vista Caconde | Jardins" />
+    <meta name="dc.creator" content="MB Santiago Jr" /> 
+    <meta name="language" content="pt-br">
+    <meta name="description" content="Teste de Front-End">
+    <meta name="keywords" content="Teste + Design + HTML + CSS + jQuery">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="MB Santiago Jr">
+    <meta name="contact" content="mbsantiagojr@outlook.com">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <link rel="shortcut icon" href="favicon.ico" />
-  <title>Vista Caconde | Jardins</title>
-  
-  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link href="resources/css/reset.css" rel="stylesheet" />
-  <link href="resources/css/estilos.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Vista Caconde | Jardins</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="resources/css/reset.css" rel="stylesheet" />
+    <link href="resources/css/estilos.css" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   
 </head>
 
@@ -38,38 +43,118 @@
        
         <section class="abertura">
             <div class="foto">
+               <div class="centralizar titulo">
                 <h1>Breve Lançamento</h1>
                 <big>O Novo no Jardins</big>
                 <h1>Vista para o Parque do Ibirapuera</h1>
+               </div>
             </div>
             <div class="contato">
                 <img src="../caconde/resources/img/ccnd_logo.png" alt="Vista Caconde | Jardins">
+                <div class="form" >
+                    <form method="post" action="">
+                       <h2>Antecipe-se</h2>
+                       <small>Faça seu cadastro para receber mais informações</small>
+                        <div>
+                            <div>
+                                <input title="DICA: Preencha o campo NOME somente com letras" name="nome" type="text" maxlength="35" arequired="required" autofocus placeholder="Nome" pattern="[a-zA-çZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄ\s\'\-]*">
+                            </div>
+                            <div>
+                                <input title="Preencha o campo E-MAIL corretamente. Ex: teste@teste.com.br" name="email" type="email" aria-describedby="email" required="required" placeholder="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            </div>
+                            <div>
+                                <input type="text" maxlength="15" required="required" placeholder="Telefone">
+                            </div>		
+                        </div>
+                        <input class="botao" title="Enviar Formulário" name="Enviar" type="submit"  value="Receber Mais Informações" aria-describedby="enviar">
+				    </form>  
+                </div>
             </div>
         </section>
 
         <section class="detalhes">
-          
-              <ul class="detalhes-lista">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-              </ul>
+         
+             <div class="lista">
+                  <ul class="centralizar">
+                      <li>Entrada social com pé-direito triplo</li>
+                      <li>Living e varanda com pé-direito duplo</li>
+                      <li>Aptos. Tipo Garden com 138m<sup>2</sup> privativos</li>
+                      <li>Cobertura Duplex com 241m<sup>2</sup> e Terraço Gourmet</li>
+                  </ul>
+             </div>
               
-              <div class="detalhes-metragem">
+              <div class="metragem">
+                 
+                 <div class="centralizar">
+                    <h3><span>3</span> suítes, <span>127</span>m<sup>2</sup></h3>
+                    <h3><span>2</span> ou <span>3</span> vagas</h3>
+                 </div>
                   
               </div>
            
         </section>
 
         <section class="jimcarrey">
+           
+            <div class="carousel" data-flickity data-flickity-options='{ "cellAlign": "left", "pageDots": false, "groupCells": 1, "pauseAutoPlayOnHover": false }'>
+               
+                <div class="carousel-cell">
+                   <div class="planta">
+                        <img src="../caconde/resources/img/ccnd_jimcarrey_01.png" alt="Uma Planta">
+                   </div> 
+                </div>  
+                                
+                <div class="carousel-cell">
+                   <div class="planta">
+                        <img src="../caconde/resources/img/ccnd_jimcarrey_01.png" alt="Outra Planta">
+                   </div> 
+                </div>      
+                                
+                <div class="carousel-cell">
+                   <div class="planta">
+                        <img src="../caconde/resources/img/ccnd_jimcarrey_01.png" alt="Mais Uma Planta">
+                   </div> 
+                </div>    
+  
+                
+            </div>
             
         </section>
         
     </main>
 
     <footer>
-
+      
+      <div class="centralizar">
+       
+        <ul>
+           
+            <li>
+                <h6>Decoração de Áreas Comuns</h6>
+                <img src="../caconde/resources/img/ccnd_parceiros_cb.png" alt="">
+            </li>
+           
+            <li>
+                <h6>Projeto:</h6>
+                <img src="../caconde/resources/img/ccnd_parceiros_kv.png" alt="">
+            </li>
+           
+            <li>
+                <h6>Incorporação:</h6>
+                <img src="../caconde/resources/img/ccnd_parceiros_sm.png" alt="">
+            </li>
+           
+            <li>
+                <h6>Informações</h6>
+                <big>3165.3165 94469.1691</big>
+            </li>
+            
+        </ul>
+        
+        <p>Memorial de Incorporação Registrado em 26/09/2018, matrícula 186.900, do 4º Oficial de Registro de Imóveis de São Paulo/SP. Projeto Arquitetônico Königsberger Vannucchi. Seisa Mester Creci/SP sob o nº 097255. Perspectiva artística ilustrativa da fachada.</p>
+        
+      </div>
+      
     </footer>
 
 
