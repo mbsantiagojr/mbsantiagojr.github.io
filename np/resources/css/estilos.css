@@ -754,6 +754,14 @@ footer ul li:nth-child(3) > a > i.material-icons {
 #home a {
   color: #fdd633;
 }
+#home a:hover img {
+  -webkit-filter: grayscale(0) !important;
+  filter: grayscale(0) !important;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
 #home .fundo {
   background: url(../img/bgs/bg-login.jpg) center bottom no-repeat;
   background-size: cover;
@@ -771,6 +779,10 @@ footer ul li:nth-child(3) > a > i.material-icons {
   border: 1px solid #fff;
   border-left: 2px solid #fdd633;
   border-bottom: 2px solid #fdd633;
+}
+#home div.card-image img {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 #home div.card-image > div {
   position: absolute;
@@ -886,6 +898,35 @@ footer ul li:nth-child(3) > a > i.material-icons {
 }
 #festa .fotos .fotos-todas img:nth-child(even) {
   float: right;
+}
+
+#mapa {
+  height: 100vh;
+  padding: 72px 0;
+}
+#mapa a {
+  color: #fdd633;
+}
+#mapa .fundo {
+  background: url(../img/bgs/bg-login.jpg) center bottom no-repeat;
+  background-size: cover;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+#mapa section > div {
+  width: 100%;
+  height: auto;
+}
+#mapa section > div a {
+  color: white;
+}
+#mapa iframe {
+  height: calc(100vh - 50px);
+  position: fixed;
+  top: 64px;
+  left: 0;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 /***********************************************/
