@@ -1,0 +1,103 @@
+#festa {
+
+    height: auto;
+    padding: 72px 0;
+
+    a {
+        color: #fdd633;
+    }
+
+    .fundo {
+
+        background: url(../img/bgs/bg-login.jpg) center bottom no-repeat;
+        background-size: cover;
+        filter: grayscale(100%);
+        z-index: -1;
+    }
+
+    & section > div {
+        width: 100%;
+        height: auto;
+
+        a {
+            color: white;
+        }
+
+
+    }
+
+    div.card-image {
+        border-left: 2px solid #fdd633;
+    }
+
+    div.card-image > div {
+
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        @include gradiente-linear(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
+        @include sombra(30px, #000);
+        bottom: 0;
+
+        .card-title {
+            font-weight: 700;
+            color: #fdd633;
+            bottom: initial;
+            top: 8px;
+            padding: 16px;
+        }
+
+        .card-subtitle {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            font-size: 1rem;
+
+            &:last-child {
+                left: initial;
+                right: 16px;
+            }
+        }
+
+    }
+
+    .fotos {
+
+        div {
+            display: inline-block;
+            vertical-align: top;
+            float: left;
+            width: 50%;
+            padding: 0 8px 0 0;
+        }
+
+        .fotos-principal img {
+            width: 100%;
+            border: 1px solid #fff;
+            filter: grayscale(1)
+        }
+
+        .fotos-todas {
+
+            h2 {
+                text-align: right;
+                font-weight: 100;
+                color: #fdd633;
+            }
+
+            img {
+                display: inline-block;
+                width: 48%;
+                float: left;
+                filter: grayscale(1);
+                padding: 0 0 4px 0;
+
+                &:nth-child(even) {
+                    float: right;
+                }
+            }
+
+        }
+    }
+
+}

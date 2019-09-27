@@ -1,0 +1,66 @@
+#home {
+
+    height: auto;
+    padding: 72px 0;
+
+    a {
+        color: #fdd633;
+    }
+
+    .fundo {
+
+        background: url(../img/bgs/bg-login.jpg) center bottom no-repeat;
+        background-size: cover;
+        filter: grayscale(100%);
+        z-index: -1;
+    }
+
+    & section > div {
+        width: 100%;
+        height: auto;
+
+        a {
+            color: white;
+        }
+
+
+    }
+
+    div.card-image {
+        border: 1px solid #fff;
+        border-left: 2px solid #fdd633;
+        border-bottom: 2px solid #fdd633;
+    }
+
+    div.card-image > div {
+
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        @include gradiente-linear(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
+        @include sombra(30px, #000);
+        bottom: 0;
+
+        .card-title {
+            font-weight: 700;
+            color: #fdd633;
+            bottom: initial;
+            top: 8px;
+            padding: 16px;
+        }
+
+        .card-subtitle {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            font-size: 1rem;
+
+            &:last-child {
+                left: initial;
+                right: 16px;
+            }
+        }
+
+    }
+
+}
