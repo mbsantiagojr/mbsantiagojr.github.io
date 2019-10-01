@@ -15,6 +15,13 @@ $(window).load(function () {
         $('.sidenav').sidenav();
     });
 
+    setTimeout(function () {
+        $('.loader').hide();
+        $('.abertura').css('height', '100%');
+
+    }, 6000);
+
+
 });
 
 

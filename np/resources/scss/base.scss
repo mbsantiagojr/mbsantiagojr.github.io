@@ -347,6 +347,30 @@ a {
     z-index: 999;
 }
 
+.btn {
+    background: #cfa12e !important;
+    color: white !important;
+    font-weight: 500;
+}
+
+.chip {
+    display: inline-block;
+    height: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 32px;
+    padding: 0;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+    margin-bottom: 0;
+    margin-right: 0;
+
+    img {
+        margin: 0;
+    }
+}
+
 footer {
 
     position: fixed;

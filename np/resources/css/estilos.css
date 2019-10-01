@@ -152,6 +152,29 @@ a {
   z-index: 999;
 }
 
+.btn {
+  background: #cfa12e !important;
+  color: white !important;
+  font-weight: 500;
+}
+
+.chip {
+  display: inline-block;
+  height: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 32px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #e4e4e4;
+  margin-bottom: 0;
+  margin-right: 0;
+}
+.chip img {
+  margin: 0;
+}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -701,6 +724,127 @@ footer ul li:nth-child(3) > a > i.material-icons {
   display: none;
 }
 
+#login {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+#login .loader {
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(black), to(black));
+  background: -webkit-radial-gradient(circle, black, black);
+  background: -moz-radial-gradient(circle, black, black);
+  background: -o-radial-gradient(circle, black, black);
+  background: -ms-radial-gradient(circle, black, black);
+  background: radial-gradient(circle, black, black);
+  z-index: 999;
+}
+#login .abertura {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  left: 0;
+  width: 100vw;
+  height: 0;
+  position: absolute;
+  width: 100%;
+}
+#login .abertura .carousel.carousel-slider {
+  height: 100% !important;
+  width: 100% !important;
+}
+#login .fundo {
+  background: url(../img/bgs/bg-login.jpg) center bottom no-repeat;
+  background-size: cover;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+#login section > div {
+  width: 80%;
+  height: auto;
+}
+#login section > div img {
+  display: block;
+  width: 79px;
+  margin: 0 auto 36px auto;
+}
+#login section > div a {
+  color: white;
+}
+#login section > div input[type=submit] {
+  display: block;
+  background: #cfa12e;
+  border: none;
+  border-radius: 15px;
+  width: 90%;
+  height: 50px;
+  color: white;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+#login section > div input[type=submit]:hover {
+  width: 100%;
+}
+#login section > div .dados * {
+  color: white !important;
+}
+#login section > div .dados input {
+  border-bottom-color: white;
+}
+#login div#wave {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(0px, -100%);
+}
+#login div#wave .line {
+  display: inline-block;
+  width: 12px;
+  margin-right: 3px;
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(rgba(253, 214, 51, 0.9)), to(#fdd633));
+  background: -webkit-radial-gradient(circle, rgba(253, 214, 51, 0.9), #fdd633);
+  background: -moz-radial-gradient(circle, rgba(253, 214, 51, 0.9), #fdd633);
+  background: -o-radial-gradient(circle, rgba(253, 214, 51, 0.9), #fdd633);
+  background: -ms-radial-gradient(circle, rgba(253, 214, 51, 0.9), #fdd633);
+  background: radial-gradient(circle, rgba(253, 214, 51, 0.9), #fdd633);
+  animation: wave 1.3s linear infinite;
+}
+#login div#wave .line:nth-child(1) {
+  height: 10px;
+}
+#login div#wave .line:nth-child(2) {
+  height: 20px;
+  animation-delay: -1.2s;
+}
+#login div#wave .line:nth-child(3) {
+  height: 30px;
+  animation-delay: -1.1s;
+}
+#login div#wave .line:nth-child(4) {
+  height: 40px;
+  animation-delay: -1s;
+}
+#login div#wave .line:nth-child(5) {
+  height: 50px;
+  animation-delay: -0.9s;
+}
+
+@keyframes wave {
+  0%, 60%, 100% {
+    transform: initial;
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+}
 #index {
   height: 100%;
 }
