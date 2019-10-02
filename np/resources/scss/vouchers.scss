@@ -1,0 +1,75 @@
+#vouchers {
+
+    height: auto;
+    padding: 72px 0;
+
+    section {
+
+        min-height: 100px;
+        background: rgba(0, 0, 0, 0.8);
+        border-bottom: 1px solid #fdd633;
+        border-right: 1px solid #fdd633;
+        margin: 16px;
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            width: 100%;
+            filter: grayscale(1);
+            opacity: 0.55;
+        }
+
+
+
+        button {
+            position: absolute;
+            right: 0;
+            height: 100%;
+            background: $cor-base;
+            padding: 16px;
+            width: 48px;
+            border: none;
+
+        }
+
+
+
+    }
+
+
+    a {
+        color: $cor-base;
+
+        &:hover img {
+            -webkit-filter: grayscale(0) !important;
+            filter: grayscale(0) !important;
+            @include transicao(0.8s);
+        }
+    }
+
+    .fundo {
+
+        background: url(../img/bgs/bg-login.jpg) center bottom no-repeat;
+        background-size: cover;
+        filter: grayscale(100%);
+        z-index: -1;
+
+    }
+
+    & section > div {
+        width: 100%;
+        height: auto;
+
+        a {
+            color: white;
+        }
+
+
+
+
+    }
+
+
+
+}

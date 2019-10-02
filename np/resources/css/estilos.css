@@ -73,6 +73,10 @@ body {
   font-weight: 200;
 }
 
+body {
+  padding: 0 0 128px 0;
+}
+
 main .fundo {
   position: fixed;
   top: 0;
@@ -964,7 +968,23 @@ footer ul li:nth-child(3) > a > i.material-icons {
 
 #festa {
   height: auto;
-  padding: 72px 0;
+  padding: 72px 8px 0 8px;
+}
+#festa .festa {
+  border-left: 1px solid #fdd633;
+  border-bottom: 1px solid #fdd633;
+}
+#festa .card {
+  min-height: 100px;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 16px;
+}
+#festa .card p {
+  margin: 0 0 8px 0;
+}
+#festa .card p big {
+  display: block;
+  color: #fdd633;
 }
 #festa a {
   color: #fdd633;
@@ -1016,6 +1036,9 @@ footer ul li:nth-child(3) > a > i.material-icons {
 #festa div.card-image > div .card-subtitle:last-child {
   left: initial;
   right: 16px;
+}
+#festa .fotos {
+  border-left: 2px solid #fdd633;
 }
 #festa .fotos div {
   display: inline-block;
@@ -1072,6 +1095,59 @@ footer ul li:nth-child(3) > a > i.material-icons {
   left: 0;
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
+}
+
+#vouchers {
+  height: auto;
+  padding: 72px 0;
+}
+#vouchers section {
+  min-height: 100px;
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #fdd633;
+  border-right: 1px solid #fdd633;
+  margin: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#vouchers section img {
+  position: absolute;
+  width: 100%;
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+#vouchers section button {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background: #fdd633;
+  padding: 16px;
+  width: 48px;
+  border: none;
+}
+#vouchers a {
+  color: #fdd633;
+}
+#vouchers a:hover img {
+  -webkit-filter: grayscale(0) !important;
+  filter: grayscale(0) !important;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+#vouchers .fundo {
+  background: url(../img/bgs/bg-login.jpg) center bottom no-repeat;
+  background-size: cover;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+#vouchers section > div {
+  width: 100%;
+  height: auto;
+}
+#vouchers section > div a {
+  color: white;
 }
 
 /***********************************************/

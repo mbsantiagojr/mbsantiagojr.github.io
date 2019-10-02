@@ -6,6 +6,7 @@
 $texto-base: 'Roboto',
 sans-serif;
 $titulo-base: 'Open Sans';
+$cor-base: #fdd633;
 
 .titulo {
     font-weight: 700;
@@ -254,6 +255,10 @@ body {
     font-family: 'Fira Sans', sans-serif;
     font-size: 11pt;
     font-weight: 200;
+}
+
+body {
+    padding: 0 0 128px 0;
 }
 
 main {

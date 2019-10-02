@@ -1,7 +1,27 @@
 #festa {
 
     height: auto;
-    padding: 72px 0;
+    padding: 72px 8px 0 8px;
+
+    .festa {
+        border-left: 1px solid #fdd633;
+        border-bottom: 1px solid #fdd633;
+    }
+
+    .card {
+        min-height: 100px;
+        background: rgba(0, 0, 0, 0.55);
+        padding: 16px;
+
+        p {
+            margin: 0 0 8px 0;
+
+            big {
+                display: block;
+                color: $cor-base;
+            }
+        }
+    }
 
     a {
         color: #fdd633;
@@ -62,6 +82,8 @@
     }
 
     .fotos {
+
+        border-left: 2px solid #fdd633;
 
         div {
             display: inline-block;
