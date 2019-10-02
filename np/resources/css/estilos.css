@@ -748,6 +748,7 @@ footer ul li:nth-child(3) > a > i.material-icons {
   height: 0;
   position: absolute;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
 }
 #login .abertura .carousel.carousel-slider {
   height: 100% !important;
