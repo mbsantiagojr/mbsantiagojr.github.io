@@ -161,12 +161,12 @@
         <section id="fotos" class="fotos">
 
             <div class="fotos-principal">
-                <h2>FOTOS</h2>
+                <h2> </h2>
                 <img src="resources/dados/festaquatro.png">
             </div>
 
             <div class="fotos-todas">
-                <h2>Todas</h2>
+                <h2> </h2>
                 <img src="resources/dados/festaum.png">
                 <img src="resources/dados/festadois.png">
                 <img src="resources/dados/festatres.png">
@@ -195,6 +195,11 @@
     <script>
         $(document).ready(function() {
             $('.tabs').tabs();
+        });
+
+        $('.carousel.carousel-slider').carousel({
+            fullWidth: true,
+            indicators: true
         });
 
     </script>
