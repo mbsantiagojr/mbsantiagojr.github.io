@@ -95,14 +95,70 @@
 
         </section>
 
-        <section class="infos card m-v-24">
+
+        <section class="modulos m-0">
+            <div class="row m-0">
+                <div class="col s12">
+                    <ul class="tabs m-0">
+                        <li class="tab col s4"><a href="#fotos">FOTOS</a></li>
+                        <li class="tab col s4"><a href="#eventos">EVENTOS</a></li>
+                        <li class="tab col s4"><a href="#mapas">MAPAS</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="mapas" class="infos card m-0 m-v-24">
             <p><big>LOCAL: </big> Nome do local</p>
             <p><big>HORÁRIO: </big> A partie de xHs</p>
             <p><big>ESTILO: </big> House Music</p>
-            <p><big>Lotação: </big> 3000 pessoas</p>
         </section>
 
-        <section class="fotos">
+        <div id="eventos">
+
+            <section id="eventos" class="voucher card">
+                <img src="resources/dados/festaum.png" alt="">
+
+                <a href="">
+                    <i class="material-icons medium pos-a c-50-50">
+                        keyboard_arrow_left
+                    </i>
+                </a>
+
+                <div class="card-image">
+                    <div>
+                        <span class="card-title">BAILE FUNK & SAMBA</span>
+                        <small class="card-subtitle">Data: 04/04/2020 | Código: ONH6 </small>
+                        <big class="card-discount">40%</big>
+                    </div>
+                </div>
+
+            </section>
+            <section id="eventos" class="voucher card">
+                <img src="resources/dados/festaum.png" alt="">
+
+                <a href="">
+                    <i class="material-icons medium pos-a c-50-50">
+                        keyboard_arrow_left
+                    </i>
+                </a>
+
+                <div class="card-image">
+                    <div>
+                        <span class="card-title">BAILE FUNK & SAMBA</span>
+                        <small class="card-subtitle">Data: 04/04/2020 | Código: ONH6 </small>
+                        <big class="card-discount">40%</big>
+                    </div>
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+        <section id="fotos" class="fotos">
 
             <div class="fotos-principal">
                 <h2>FOTOS</h2>
@@ -135,6 +191,14 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="resources/js/base.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.tabs').tabs();
+        });
+
+    </script>
+
 
 </body>
 

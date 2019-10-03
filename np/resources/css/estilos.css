@@ -100,6 +100,16 @@ a {
   color: #fdd633;
 }
 
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+  background-color: transparent !important;
+  outline: none;
+}
+
+.tabs .indicator {
+  background-color: #fdd633;
+}
+
 .sidenav-trigger i {
   margin: 0 8px;
   vertical-align: middle;
@@ -434,7 +444,7 @@ footer ul li:nth-child(3) > a > i.material-icons {
 /*#endregion */
 /*#region [margins] */
 .m-0 {
-  margin: 0;
+  margin: 0 !important;
 }
 
 .m-4 {
@@ -989,6 +999,17 @@ footer ul li:nth-child(3) > a > i.material-icons {
 #festa a {
   color: #fdd633;
 }
+#festa .modulos .tabs {
+  background: rgba(0, 0, 0, 0.25);
+  height: 42px;
+  margin: 16px 0 16px 0;
+}
+#festa .modulos .col.s12 {
+  padding: 0;
+}
+#festa .modulos .col.s12 li.tab {
+  padding: 13px 0;
+}
 #festa .fundo {
   background: url(../img/bgs/bg-login.jpg) center bottom no-repeat;
   background-size: cover;
@@ -999,8 +1020,11 @@ footer ul li:nth-child(3) > a > i.material-icons {
   width: 100%;
   height: auto;
 }
+#festa section > div a:focus,
+#festa section > div a:focus.active,
 #festa section > div a {
-  color: white;
+  color: white !important;
+  background-color: none !important;
 }
 #festa div.card-image {
   border-left: 2px solid #fdd633;
@@ -1066,6 +1090,93 @@ footer ul li:nth-child(3) > a > i.material-icons {
 }
 #festa .fotos .fotos-todas img:nth-child(even) {
   float: right;
+}
+#festa section.voucher {
+  min-height: 100px;
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #fdd633;
+  border-right: 1px solid #fdd633;
+  margin: 16px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#festa section.voucher:hover img {
+  filter: grayscale(0);
+}
+#festa section.voucher img {
+  position: absolute;
+  width: 100%;
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+#festa section.voucher a {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: #fdd633;
+  padding: 16px;
+  width: 48px;
+  border: none;
+  z-index: 99;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+#festa section.voucher a i {
+  color: black;
+}
+#festa section.voucher a:hover {
+  width: 68px;
+}
+#festa section.voucher div.card-image {
+  position: absolute;
+}
+#festa section.voucher div.card-image > div {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(black));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), black);
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), black);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), black);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), black);
+  background: linear-gradient(top, rgba(0, 0, 0, 0.5), black);
+  -webkit-box-shadow: 0px 0px 30px #000;
+  -moz-box-shadow: 0px 0px 30px #000;
+  box-shadow: 0px 0px 30px #000;
+  bottom: -64px;
+  left: -11px;
+  z-index: 88;
+}
+#festa section.voucher div.card-image > div .card-title {
+  font-weight: 700;
+  color: #fdd633;
+  bottom: initial;
+  top: 8px;
+  padding: 16px;
+  font-size: 16px;
+}
+#festa section.voucher div.card-image > div .card-subtitle {
+  position: absolute;
+  bottom: -11px;
+  left: 16px;
+  font-size: 1rem;
+}
+#festa section.voucher div.card-image > div big {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  top: -21px;
+  right: 60px;
+  padding: 20px 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FDD628;
+  border: 1px solid white;
 }
 
 #mapa {

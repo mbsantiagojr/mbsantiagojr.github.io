@@ -290,6 +290,16 @@ a {
     color: #fdd633
 }
 
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    background-color: transparent !important;
+    outline: none;
+}
+
+.tabs .indicator {
+    background-color: $cor-base;
+}
+
 .sidenav-trigger {
 
     i {
