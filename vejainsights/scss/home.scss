@@ -1,0 +1,324 @@
+html,
+body {
+    width: 100vw;
+    height: auto;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 500;
+    padding: 0 0 8px 0;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+header {
+    width: 100%;
+    height: 150px;
+    background: #AE0F09;
+    padding: 42px 128px;
+}
+
+header .logo {
+    max-height: 60px;
+    overflow: hidden;
+    border: 2px solid #232323;
+    background-color: #232323;
+    color: #f2f2f2;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+
+    margin: 0 auto;
+
+    svg {
+
+        fill: #f2f2f2;
+        margin: 5px 20px;
+        max-width: 50%;
+        height: fit-content;
+        max-height: 50px;
+
+        path {
+
+            fill: #f2f2f2;
+            margin: 5px 20px;
+            max-width: 50%;
+            height: fit-content;
+            max-height: 50px;
+        }
+    }
+
+    span {
+        background-color: #f2f2f2;
+        color: #232323;
+        height: 100%;
+        width: unset;
+        font-size: 30px;
+        font-weight: 300;
+        padding: 50px 10px;
+        font-stretch: semi-condensed;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+}
+
+section {
+    width: 100%;
+    min-height: 100px;
+}
+
+section.banner {
+    height: 376px;
+    background: #ffffff url(../img/veja-insights-banner-bg.jpg) right center no-repeat;
+    background-size: cover;
+    border-top: 3px solid #fff;
+
+    & > * {
+        color: #fff;
+    }
+
+    .banner-texto {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+
+        p {
+            margin: 12px 0;
+        }
+
+        div {
+            @include centralizador(0, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 0 42px 0 0;
+        }
+
+
+        form {
+            height: 74px;
+            display: block;
+            margin: 0 auto;
+
+            input,
+            button {
+                border: none;
+            }
+
+            input[type="text"] {
+                display: inline-block;
+                vertical-align: top;
+                height: 45px;
+                width: calc(100% - 150px);
+                max-width: 700px;
+                padding: 4px 8px;
+                float: left;
+                color: #525252;
+                font-weight: 600;
+            }
+
+            button {
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                width: 150px;
+                padding: 1px 16px;
+                height: 45px;
+                background: #AE0F09;
+                color: #fff;
+                text-transform: uppercase;
+                text-align: center
+            }
+
+            span {
+                display: block;
+                padding: 54px 0 0 0;
+                width: 100%;
+                text-align: left;
+                font-size: 11px;
+
+                input {
+                    vertical-align: sub;
+                }
+            }
+
+        }
+
+
+
+    }
+
+
+}
+
+section.queroReceber {
+    width: 100%;
+    height: auto;
+    background: #000;
+    border-top: 3px solid #AE0F09;
+    border-bottom: 3px solid #AE0F09;
+    text-align: center;
+    padding: 24px 36px;
+    color: #fff;
+
+    h3 {
+        margin: 0 0 16px 0;
+    }
+
+    form {
+        width: 90%;
+        height: 74px;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+
+        input,
+        button {
+            border: none;
+        }
+
+        div {
+            display: block;
+            margin: 0 auto;
+            max-width: 800px;
+            text-align: center;
+            height: 45px;
+
+            input[type="text"] {
+                display: inline-block;
+                vertical-align: top;
+                height: 45px;
+                width: calc(100% - 150px);
+                max-width: 700px;
+                padding: 4px 8px;
+                float: left;
+                color: #525252;
+                font-weight: 600;
+            }
+
+            button {
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                width: 150px;
+                padding: 1px 16px;
+                height: 45px;
+                background: #AE0F09;
+                color: #fff;
+                text-transform: uppercase;
+                text-align: center
+            }
+
+            span {
+                display: block;
+                padding: 54px 0 0 0;
+                width: 100%;
+                text-align: left;
+                font-size: 11px;
+
+                input {
+                    vertical-align: sub;
+                }
+            }
+        }
+    }
+
+
+
+}
+
+section.materias {
+    width: 100%;
+    height: auto;
+    padding: 16px 48px;
+
+    a {
+        text-decoration: none;
+        color: initial;
+    }
+
+    h2 {
+        font-size: 36px;
+        margin: 8px 0;
+    }
+
+    div.materias-bloco {
+        display: inline-block;
+        width: 100%;
+        max-width: 1272px;
+        height: auto;
+        margin: 0 auto;
+
+        article {
+            display: inline-block;
+            vertical-align: top;
+            float: left;
+            width: 31.33%;
+            margin: 24px 0;
+
+
+            &:nth-child(3n+2) {
+                margin: 24px 3%;
+            }
+
+            div.materias-media {
+                position: relative;
+
+                .tarja {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: rgb(0, 0, 0);
+                    background: linear-gradient(0, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 7%, rgba(0, 0, 0, 0.14189425770308128) 37%, rgba(0, 0, 0, 0) 100%);
+                }
+
+                & > div {
+                    position: absolute;
+                    bottom: 4px;
+                    right: 8px;
+                }
+
+                & > a > img {
+                    display: block;
+                    width: 100%;
+                    margin: 0 0 8px 0;
+                    z-index: -1
+                }
+            }
+
+            big {
+                display: block;
+                margin: 16px 0;
+                font-size: 32px;
+                font-weight: 300;
+                color: #272727;
+            }
+
+            h4 {
+                font-size: 28px;
+                font-weight: 500;
+                line-height: 1.2;
+                color: #AE0F09;
+                margin: 8px 0;
+                max-height: 100px;
+                overflow: hidden;
+            }
+
+            small {
+                font-size: 14px;
+                font-weight: 500;
+                color: #2f2f2f;
+            }
+
+
+        }
+    }
+
+
+}
