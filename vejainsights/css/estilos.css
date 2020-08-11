@@ -5,6 +5,10 @@ body {
   height: auto;
 }
 
+body.noscroll {
+  overflow: hidden;
+}
+
 h3 {
   font-size: 28px;
   font-weight: 500;
@@ -24,7 +28,7 @@ header {
   padding: 24px 128px;
 }
 
-header .logo {
+.logo {
   max-height: 60px;
   overflow: hidden;
   border: 2px solid #232323;
@@ -35,21 +39,21 @@ header .logo {
   align-items: center;
   margin: 0 auto;
 }
-header .logo svg {
+.logo svg {
   fill: #f2f2f2;
   margin: 5px 20px;
   max-width: 50%;
   height: fit-content;
   max-height: 50px;
 }
-header .logo svg path {
+.logo svg path {
   fill: #f2f2f2;
   margin: 5px 20px;
   max-width: 50%;
   height: fit-content;
   max-height: 50px;
 }
-header .logo span {
+.logo span {
   background-color: #f2f2f2;
   color: #232323;
   height: 100%;
@@ -80,7 +84,7 @@ section.banner .banner-texto {
   position: relative;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
 }
 section.banner .banner-texto p {
   margin: 12px 0;
@@ -95,113 +99,6 @@ section.banner .banner-texto div {
   top: 50%;
   left: 50%;
   padding: 0 42px 0 0;
-}
-section.banner .banner-texto form {
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-section.banner .banner-texto form input,
-section.banner .banner-texto form button {
-  border: none;
-}
-section.banner .banner-texto form input[type=text] {
-  display: inline-block;
-  vertical-align: top;
-  height: 45px;
-  width: calc(100% - 150px);
-  max-width: 700px;
-  padding: 4px 8px;
-  float: left;
-  color: #525252;
-  font-weight: 600;
-}
-section.banner .banner-texto form button {
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-  width: 150px;
-  padding: 1px 16px;
-  height: 45px;
-  background: #AE0F09;
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-}
-section.banner .banner-texto form span {
-  display: block;
-  padding: 54px 0 0 0;
-  width: 100%;
-  text-align: left;
-  font-size: 11px;
-}
-section.banner .banner-texto form span input {
-  vertical-align: sub;
-}
-
-section.queroReceber {
-  width: 100%;
-  height: auto;
-  background: #000;
-  border-top: 3px solid #AE0F09;
-  border-bottom: 3px solid #AE0F09;
-  text-align: center;
-  padding: 24px 36px;
-  color: #fff;
-}
-section.queroReceber h3 {
-  margin: 0 0 16px 0;
-}
-section.queroReceber form {
-  width: 90%;
-  height: 74px;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}
-section.queroReceber form input,
-section.queroReceber form button {
-  border: none;
-}
-section.queroReceber form div {
-  display: block;
-  margin: 0 auto;
-  max-width: 800px;
-  text-align: center;
-  height: 45px;
-}
-section.queroReceber form div input[type=text] {
-  display: inline-block;
-  vertical-align: top;
-  height: 45px;
-  width: calc(100% - 150px);
-  max-width: 700px;
-  padding: 4px 8px;
-  float: left;
-  color: #525252;
-  font-weight: 600;
-}
-section.queroReceber form div button {
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-  width: 150px;
-  padding: 1px 16px;
-  height: 45px;
-  background: #AE0F09;
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-}
-section.queroReceber form div span {
-  display: block;
-  padding: 54px 0 0 0;
-  width: 100%;
-  text-align: left;
-  font-size: 11px;
-}
-section.queroReceber form div span input {
-  vertical-align: sub;
 }
 
 section.materias {
@@ -220,7 +117,6 @@ section.materias h2 {
 section.materias div.materias-bloco {
   display: inline-block;
   width: 100%;
-  max-width: 1272px;
   height: auto;
   margin: 0 auto;
 }
@@ -228,11 +124,14 @@ section.materias div.materias-bloco article {
   display: inline-block;
   vertical-align: top;
   float: left;
-  width: 31.33%;
+  width: 32.33%;
   margin: 24px 0;
 }
 section.materias div.materias-bloco article:nth-child(3n+2) {
-  margin: 24px 3%;
+  margin: 24px 1.5%;
+}
+section.materias div.materias-bloco article:nth-child(3n+1) {
+  clear: left;
 }
 section.materias div.materias-bloco article div.materias-media {
   position: relative;
@@ -244,12 +143,12 @@ section.materias div.materias-bloco article div.materias-media .tarja {
   background: rgba(0, 0, 0, 0);
   background: linear-gradient(0, black 0%, black 7%, rgba(0, 0, 0, 0.1418942577) 37%, rgba(0, 0, 0, 0) 100%);
 }
-section.materias div.materias-bloco article div.materias-media > div {
+section.materias div.materias-bloco article div.materias-media > div.materias-media-links {
   position: absolute;
   bottom: 4px;
   right: 8px;
 }
-section.materias div.materias-bloco article div.materias-media > a > img {
+section.materias div.materias-bloco article div.materias-media > img {
   display: block;
   width: 100%;
   margin: 0 0 8px 0;
@@ -268,13 +167,112 @@ section.materias div.materias-bloco article h4 {
   line-height: 1.2;
   color: #AE0F09;
   margin: 8px 0;
-  max-height: 100px;
-  overflow: hidden;
 }
 section.materias div.materias-bloco article small {
   font-size: 14px;
   font-weight: 500;
   color: #2f2f2f;
+}
+
+section.modal {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+}
+section.modal > div {
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  width: 672px;
+  height: auto;
+  background: #fff;
+  border: 5px solid #AE0F09;
+  padding: 36px 16px;
+}
+section.modal > div .logo {
+  max-height: 46px;
+  width: 214px;
+  margin-bottom: 32px;
+}
+section.modal > div .logo span {
+  font-size: 20px;
+  padding: 11px 8px;
+  letter-spacing: 2px;
+}
+
+form.inscreva-se {
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+form.inscreva-se input,
+form.inscreva-se button {
+  border: none;
+}
+form.inscreva-se p {
+  margin: 12px 0;
+}
+form.inscreva-se input[type=text] {
+  display: inline-block;
+  vertical-align: top;
+  height: 45px;
+  width: calc(90% - 150px);
+  max-width: 700px;
+  padding: 4px 8px;
+  float: left;
+  color: #525252;
+  font-weight: 600;
+}
+form.inscreva-se button {
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  width: 150px;
+  padding: 1px 16px;
+  height: 45px;
+  background: #AE0F09;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+form.inscreva-se span {
+  display: block;
+  padding: 54px 0 0 0;
+  width: 100%;
+  text-align: left;
+  font-size: 11px;
+}
+form.inscreva-se span input {
+  vertical-align: sub;
+}
+
+form.inscreva-se.inscreva-se-modal input[type=text] {
+  width: calc(100% - 150px);
+  border: 1px solid #707070;
+}
+
+.botao {
+  cursor: pointer;
+}
+
+.botao.botao-fechar {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.mostra-modal {
+  display: block !important;
 }
 
 /***********************************************/

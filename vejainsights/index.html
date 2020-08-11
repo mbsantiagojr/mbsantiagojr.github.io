@@ -28,6 +28,9 @@
     <link href="css/reset.css" rel="stylesheet" />
     <link href="css/estilos.css" rel="stylesheet" />
 
+
+    <!-- BIBLIOTECAS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 
 <body>
@@ -98,13 +101,13 @@
         <div class="banner-texto">
 
             <div>
-                <form action="">
+                <form class="inscreva-se" action="">
                     <p>
                         <strong>VEJA Insights</strong> é uma plataforma de conteúdo em profundidade
                         produzido por VEJA sobre política, economia, educação e tecnologia,
                         com parceria de instituições e pesquisadores de renome.
                     </p>
-                            
+
                     <p>
                         Cadastre seu email para fazer o download gratuito dos estudos.
                     </p>
@@ -127,29 +130,6 @@
 
     </section>
 
-<!--
-    <section class="queroReceber">
-
-        <h3>
-            Inscreva-se aqui para ter acesso ao conteúdo em profundidade produzido pela VEJA
-        </h3>
-
-        <form action="">
-            <div>
-                <input type="text" placeholder="Digite seu e-mail...">
-                <button class="queroReceber-button">Quero receber</button>
-
-                <span>
-                    <input type="checkbox"> Aceito receber ofertas, produtos e serviços do Grupo Abril.
-                </span>
-
-            </div>
-
-        </form>
-
-    </section>
--->
-
     <section class="materias">
 
         <h2>
@@ -159,13 +139,13 @@
         <div class="materias-bloco">
 
             <article>
-                <a href="" class="">
+                <a href="" class="altera-status-modal">
                     <div class="materias-media">
                         <div class="tarja"></div>
                         <img src="img/zeroUm.jpg">
-                        <div>
-                            <a href="#"><img src="img/visibility.svg" alt="Visualizar"></a>
-                            <a href="#"><img src="img/get_app.svg" alt="Baixar o PDF"></a>
+                        <div class="materias-media-links">
+                            <img class="botao" src="img/visibility.svg" alt="Visualizar">
+                            <img class="botao" src="img/get_app.svg" alt="Baixar o PDF">
                         </div>
                     </div>
                     <big>#01</big>
@@ -175,13 +155,13 @@
             </article>
 
             <article>
-                <a href="" class="">
+                <a href="" class="altera-status-modal">
                     <div class="materias-media">
                         <div class="tarja"></div>
                         <img src="img/zeroDois.png">
-                        <div>
-                            <a href="#"><img src="img/visibility.svg" alt="Visualizar"></a>
-                            <a href="#"><img src="img/get_app.svg" alt="Baixar o PDF"></a>
+                        <div class="materias-media-links">
+                            <img class="botao" src="img/visibility.svg" alt="Visualizar">
+                            <img class="botao" src="img/get_app.svg" alt="Baixar o PDF">
                         </div>
                     </div>
                     <big>#02</big>
@@ -191,13 +171,13 @@
             </article>
 
             <article>
-                <a href="" class="">
+                <a href="" class="altera-status-modal">
                     <div class="materias-media">
                         <div class="tarja"></div>
                         <img src="img/zeroTres.png">
-                        <div>
-                            <a href="#"><img src="img/visibility.svg" alt="Visualizar"></a>
-                            <a href="#"><img src="img/get_app.svg" alt="Baixar o PDF"></a>
+                        <div class="materias-media-links">
+                            <img class="botao" src="img/visibility.svg" alt="Visualizar">
+                            <img class="botao" src="img/get_app.svg" alt="Baixar o PDF">
                         </div>
                     </div>
                     <big>#03</big>
@@ -207,13 +187,13 @@
             </article>
 
             <article>
-                <a href="" class="">
+                <a href="" class="altera-status-modal">
                     <div class="materias-media">
                         <div class="tarja"></div>
                         <img src="img/zeroQuatro.png">
-                        <div>
-                            <a href="#"><img src="img/visibility.svg" alt="Visualizar"></a>
-                            <a href="#"><img src="img/get_app.svg" alt="Baixar o PDF"></a>
+                        <div class="materias-media-links">
+                            <img class="botao" src="img/visibility.svg" alt="Visualizar">
+                            <img class="botao" src="img/get_app.svg" alt="Baixar o PDF">
                         </div>
                     </div>
                     <big>#04</big>
@@ -223,13 +203,13 @@
             </article>
 
             <article>
-                <a href="" class="">
+                <a href="" class="altera-status-modal">
                     <div class="materias-media">
                         <div class="tarja"></div>
                         <img src="img/zeroCinco.png">
-                        <div>
-                            <a href="#"><img src="img/visibility.svg" alt="Visualizar"></a>
-                            <a href="#"><img src="img/get_app.svg" alt="Baixar o PDF"></a>
+                        <div class="materias-media-links">
+                            <img class="botao" src="img/visibility.svg" alt="Visualizar">
+                            <img class="botao" src="img/get_app.svg" alt="Baixar o PDF">
                         </div>
                     </div>
                     <big>#05</big>
@@ -239,13 +219,13 @@
             </article>
 
             <article>
-                <a href="" class="">
+                <a href="" class="altera-status-modal">
                     <div class="materias-media">
                         <div class="tarja"></div>
                         <img src="img/zeroSeis.png">
-                        <div>
-                            <a href="#"><img src="img/visibility.svg" alt="Visualizar"></a>
-                            <a href="#"><img src="img/get_app.svg" alt="Baixar o PDF"></a>
+                        <div class="materias-media-links">
+                            <img class="botao" src="img/visibility.svg" alt="Visualizar">
+                            <img class="botao" src="img/get_app.svg" alt="Baixar o PDF">
                         </div>
                     </div>
                     <big>#06</big>
@@ -254,58 +234,93 @@
                 </a>
             </article>
 
-            <article>
-                <a href="" class="">
-                    <div class="materias-media">
-                        <div class="tarja"></div>
-                        <img src="img/zeroUm.jpg">
-                        <div>
-                            <a href="#"><img src="img/visibility.svg" alt="Visualizar"></a>
-                            <a href="#"><img src="img/get_app.svg" alt="Baixar o PDF"></a>
-                        </div>
-                    </div>
-                    <big>#07</big>
-                    <h4>Ano Zero: Reflexões sobre Política e Economia Pós-Pandemia</h4>
-                    <small>Por Murilo de Aragão</small>
-                </a>
-            </article>
-
-            <article>
-                <a href="" class="">
-                    <div class="materias-media">
-                        <div class="tarja"></div>
-                        <img src="img/zeroDois.png">
-                        <div>
-                            <a href="#"><img src="img/visibility.svg" alt="Visualizar"></a>
-                            <a href="#"><img src="img/get_app.svg" alt="Baixar o PDF"></a>
-                        </div>
-                    </div>
-                    <big>#08</big>
-                    <h4>Governo federal abre caminho para privatização da Ceagesp</h4>
-                    <small>Por Murilo de Aragão</small>
-                </a>
-            </article>
-
-            <article>
-                <a href="" class="">
-                    <div class="materias-media">
-                        <div class="tarja"></div>
-                        <img src="img/zeroTres.png">
-                        <div>
-                            <a href="#"><img src="img/visibility.svg" alt="Visualizar"></a>
-                            <a href="#"><img src="img/get_app.svg" alt="Baixar o PDF"></a>
-                        </div>
-                    </div>
-                    <big>#09</big>
-                    <h4>Iraque contabiliza mais de 100 mortos em seis dias de protestos</h4>
-                    <small>Por Murilo de Aragão</small>
-                </a>
-            </article>
-
         </div>
 
     </section>
 
+    <section class="modal">
+        <div>
+            <img src="img/close.svg" alt="" class="botao botao-fechar altera-status-modal">
+            <div class="logo">
+                <svg class="brand-img" viewBox="0 0 101.58 48" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <clipPath id="h">
+                            <path transform="translate(0 137.46)" d="M26.791-137.465l-9.358,20.332L7.8-137.465H0l14.847,28.672h5.172l14.857-28.672H26.791" clip-rule="evenodd" fill="#ae0f09" data-name="Path 2"></path>
+                        </clipPath>
+                        <clipPath id="g">
+                            <path transform="translate(-224.35 167.41)" d="m224.35-160.6h6.49v-6.808h-6.49z" clip-rule="evenodd" fill="#ae0f09" data-name="Path 4"></path>
+                        </clipPath>
+                        <clipPath id="f">
+                            <path transform="translate(-108.71 139.65)" d="m108.71-139.65h39.325v39.632h-39.325z" clip-rule="evenodd" fill="#ae0f09" data-name="Path 11"></path>
+                        </clipPath>
+                        <clipPath id="e">
+                            <rect width="39.748" height="40.032" fill="#ae0f09" data-name="Rectangle 1"></rect>
+                        </clipPath>
+                        <clipPath id="d">
+                            <path transform="translate(-108.71 139.65)" d="M124.06-134.22c4.369,0,7.786,2.882,8.249,6.521h-15.97A7.554,7.554,0,0,1,124.06-134.22Zm-.108,24.895a15.757,15.757,0,0,0,15.358-11.155h-7.336c-1.213,3.408-3.794,5.66-8.5,5.66a7.54,7.54,0,0,1-7.338-7.971h23.684c0-.4-.009-.958-.009-1.362,0-10.3-8.21-15.5-15.859-15.5a15.183,15.183,0,0,0-15.242,15.07c0,8.828,6.06,15.257,15.244,15.257Z" clip-rule="evenodd" fill="#ae0f09" data-name="Path 7"></path>
+                        </clipPath>
+                        <clipPath id="a">
+                            <path transform="translate(-108 140)" d="M108-100.252h39.748V-140H108Z" fill="#ae0f09" data-name="Path 6"></path>
+                        </clipPath>
+                        <clipPath id="c">
+                            <path transform="translate(-203.88 137.46)" d="m216.18-137.46h-6.52v29.043a3.841 3.841 0 0 1-4.072 4.049h-1.711v5.935s1.02-0.011 1.656 0a12.563 12.563 0 0 0 5.794-1.014 8.2 8.2 0 0 0 3.711-3.9 14.313 14.313 0 0 0 1.142-5.869v-28.246" clip-rule="evenodd" fill="#ae0f09" data-name="Path 10"></path>
+                        </clipPath>
+                        <clipPath id="b">
+                            <path transform="translate(-253.18 139.87)" d="M275.4-122.605c-.047,6.222-4.969,7.784-8.943,7.713-3.9-.07-5.962-1.885-5.962-4.022,0-2.253,2.1-2.619,3.951-2.792,3.235-.4,8.494-.378,10.955-2.011Zm-6.305-17.265c-5.2,0-8.192.713-10.7,2.388a8.77,8.77,0,0,0-3.721,6.868c0,.4-.009.768,0,1.064l7.035.019.009-.158c-.046-3.258,3.548-4.928,7.476-4.928,3.7,0,5.992,1.489,5.992,3.974,0,.4.13,2.611-4.49,2.9l-8.838.52c-5.882.144-8.674,3.509-8.674,8.188,0,5.833,4.688,9.775,12.833,9.775A15.314,15.314,0,0,0,275.3-112.2v1.68h6.546v-20.477c0-4.415-3.341-8.877-12.756-8.877Z" clip-rule="evenodd" fill="#ae0f09" data-name="Path 13"></path>
+                        </clipPath>
+                    </defs>
+                    <g transform="translate(0 167.41)" data-name="logo veja">
+                        <g transform="translate(0 -158.69)" clip-path="url(#h)" data-name="Group 1">
+                            <path transform="translate(3.58 141.04)" d="M-5-110.954H32.715v-31.511H-5Z" fill="#ae0f09" data-name="Path 1"></path>
+                        </g>
+                        <g transform="translate(64.394 -167.41)" clip-path="url(#g)" data-name="Group 2">
+                            <path transform="translate(-220.77 170.99)" d="m219.35-162.76h9.329v-9.647h-9.329z" fill="#ae0f09" data-name="Path 3"></path>
+                        </g>
+                        <g transform="translate(31.383 -159.04)" clip-path="url(#f)" data-name="Group 8">
+                            <g transform="translate(-.201 -.099)" clip-path="url(#e)" data-name="Group 7">
+                                <g transform="translate(.201 .099)" clip-path="url(#d)" data-name="Group 4">
+                                    <g transform="translate(-.201 -.099)" clip-path="url(#a)" data-name="Group 3">
+                                        <path transform="translate(-104.93 143.33)" d="m103.71-111.49h33.949v-33.166h-33.949z" fill="#ae0f09" data-name="Path 5"></path>
+                                    </g>
+                                </g>
+                                <g transform="translate(27.221 .72)" clip-path="url(#c)" data-name="Group 6">
+                                    <g transform="translate(-27.221 -.72)" clip-path="url(#a)" data-name="Group 5">
+                                        <path transform="translate(-173.08 141.76)" d="m198.88-100.6h15.144v-41.868h-15.144z" fill="#ae0f09" data-name="Path 8"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <g transform="translate(72.911 -159.37)" clip-path="url(#b)" data-name="Group 9">
+                            <path transform="translate(-249.6 143.45)" d="m248.18-111.42h31.506v-33.451h-31.506z" fill="#ae0f09" data-name="Path 12"></path>
+                        </g>
+                    </g>
+                </svg>
+                <span>Insights</span>
+            </div>
+
+            <form class="inscreva-se inscreva-se-modal" action="">
+
+                <p>
+                    Cadastre seu email para fazer o download gratuito dos estudos.
+                </p>
+
+                <p>
+                    <input type="text" placeholder="Digite seu e-mail...">
+                    <button class="queroReceber-button">Inscrever-se</button>
+
+                    <span>
+                        <input type="checkbox"> Aceito receber ofertas, produtos e serviços do Grupo Abril.
+                    </span>
+                </p>
+
+            </form>
+
+
+        </div>
+    </section>
+
 </body>
+
+<script src="js/base.js"></script>
 
 </html>
