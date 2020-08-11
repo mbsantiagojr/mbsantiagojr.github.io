@@ -97,7 +97,7 @@ section.banner .banner-texto div {
   padding: 0 42px 0 0;
 }
 section.banner .banner-texto form {
-  height: 74px;
+  height: auto;
   display: block;
   margin: 0 auto;
 }
