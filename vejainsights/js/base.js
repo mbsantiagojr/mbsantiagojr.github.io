@@ -8,10 +8,10 @@
 
         event.preventDefault();
         
-        $('body,html')
-        .animate({
-            scrollTop: 0
-        }, 100);
+//        $('body,html')
+//        .animate({
+//            scrollTop: 0
+//        }, 100);
         
         $("body").toggleClass('noscroll');
         $('.modal').toggleClass('mostra-modal');
