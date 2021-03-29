@@ -1,0 +1,220 @@
+html,
+body {
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+
+/*HELPERS */
+
+.centralizado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* BLOCO PRINCIPAL */
+
+.grupo-abril {
+    width: 94%;
+    height: auto;
+}
+
+.grupo-abril .grupo-abril-titulo {
+    box-sizing: content-box;
+    width: 100%;
+    height: 92px;
+    margin-bottom: 42px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #C6C6C6;
+    text-align: center;
+}
+
+.grupo-abril .grupo-abril-marcas ul {
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.grupo-abril .grupo-abril-marcas ul li {
+    display: inline-block;
+    float: left;
+    width: 14.2857%;
+    height: 44px;
+    margin-bottom: 48px;
+    padding: 0 1%;
+    vertical-align: top;
+}
+
+.grupo-abril .grupo-abril-marcas ul li:nth-child(n+15) {
+    width: 20%;
+    margin-bottom: 0;
+}
+
+.grupo-abril .grupo-abril-marcas ul li a {
+    display: block;
+    height: 100%;
+    max-height: 44px;
+    text-indent: -9999px;
+    background: transparent url("img/abril-veja.svg") center center no-repeat;
+    background-size: contain;
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//vejasp."] {
+    background-image: url("img/abril-veja-sp.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//vejario."] {
+    background-image: url("img/abril-veja-rio.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//saude."] {
+    margin-top: 8px;
+    max-height: 32px;
+    background-image: url("img/abril-veja-saude.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//super."] {
+    margin-top: 6px;
+    max-height: 36px;
+    background-image: url("img/abril-super.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//claudia."] {
+    background-image: url("img/abril-claudia.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//capricho."] {
+    background-image: url("img/abril-capricho.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//quatrorodas."] {
+    background-image: url("img/abril-quatrorodas.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//guiadoestudante."] {
+    background-image: url("img/abril-ge.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//bebe."] {
+    background-image: url("img/abril-bebe.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//viagemeturismo."] {
+    background-image: url("img/abril-vet.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//vocesa."] {
+    margin-top: 10px;
+    max-height: 28px;
+    background-image: url("img/abril-vcsa.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//vocerh."] {
+    margin-top: 10px;
+    max-height: 28px;
+    background-image: url("img/abril-vcrh.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//boaforma."] {
+    background-image: url("img/abril-boaforma.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//casacor."] {
+    background-image: url("img/abril-casacor.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//elasticaoficial."] {
+    margin-top: 14px;
+    max-height: 24px;
+    background-image: url("img/abril-elastica.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="//especiallistas."] {
+    margin-top: 10px;
+    max-height: 28px;
+    background-image: url("img/abril-especiallistas.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="placar"] {
+    margin-top: 14px;
+    max-height: 24px;
+    background-image: url("img/abril-placar.svg");
+}
+
+.grupo-abril .grupo-abril-marcas ul li a[href*="goread"] {
+    margin-top: 10px;
+    max-height: 28px;
+    background-image: url("img/abril-goread.svg");
+}
+
+@media(max-width:991px) {
+    .grupo-abril {
+        position: static;
+        width: calc(100% - 32px);
+        height: auto;
+        margin: 24px auto 0 auto;
+        transform: none;
+    }
+
+    .grupo-abril .grupo-abril-titulo {
+        height: auto;
+        margin-bottom: 32px;
+    }
+
+    .grupo-abril img {
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .grupo-abril .grupo-abril-marcas ul li,
+    .grupo-abril .grupo-abril-marcas ul li:nth-child(n+15) {
+        width: 33.3333%;
+        margin-bottom: 24px!important;
+        padding: 0 2%;
+    }
+
+    .grupo-abril .grupo-abril-marcas ul li:nth-child(n+16) {
+        width: 50%;
+    }
+
+    .grupo-abril .grupo-abril-marcas ul li a {
+        margin-top: 0!important;
+        max-height: 29px;
+    }
+
+    .grupo-abril .grupo-abril-marcas ul li a[href*="//super."] {
+        margin-top: 4px!important;
+        max-height: 24px;
+    }
+
+    .grupo-abril .grupo-abril-marcas ul li a[href*="//guiadoestudante."] {
+        max-height: 36px;
+    }
+
+    .grupo-abril .grupo-abril-marcas ul li a[href*="//vocesa."] {
+        max-height: 24px;
+    }
+
+    .grupo-abril .grupo-abril-marcas ul li a[href*="//elasticaoficial."] {
+        max-height: 20px;
+    }
+
+    .grupo-abril .grupo-abril-marcas ul li a[href*="//especiallistas."] {
+        max-height: 24px;
+    }
+
+    .grupo-abril .grupo-abril-marcas ul li a[href*="placar"] {
+        max-height: 16px;
+    }
+
+    .grupo-abril .grupo-abril-marcas ul li a[href*="goread"] {
+        margin-top: -4px!important;
+        max-height: 20px;
+    }
+}
